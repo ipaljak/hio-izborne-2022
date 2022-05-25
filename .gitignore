@@ -8,3 +8,15 @@
 !*/
 
 ### Above combination will ignore all files without extension ###
+
+# Ignore Latex build artifacts
+*.aux
+*.log
+*.out
+*.prl
+*.pdf
+
+# Ignore vim temporary and swap files
+*.swp
+*.swo
+*~
