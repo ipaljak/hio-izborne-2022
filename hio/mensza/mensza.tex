@@ -1,0 +1,155 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Problem statement
+\begin{statement}[
+  problempoints=100,
+  timelimit=1 sekunda,
+  memorylimit=512 MiB,
+]{Mensza}
+
+Gospodin Malnar nedavno je osnovao Menszu -- najveću, najprestižniju i jedinu
+međunarodnu udrugu visokointeligentnih ljubitelja gastronomije. Pogađate, članom
+udruge ne može postati bilo tko, već samo kandidati koji postignu izvrsne
+rezultate na prijamnom ispitu. Dakako, ispit se sastoji od zahtjevnog IQ dijela
+i vrlo zahtjevnog gurmanskog \sout{di}jela. Primjer tipičnog IQ dijela ispita
+predstavit ćemo vam u ovom zadatku, dok ćete primjer gurmanskog jela imati
+prilike okusiti tek nakon natjecanja.
+
+Prijamnom ispitu pristupili su Alojzije, Benjamin i Cesarica. Gospodin Malnar
+ih je odmjerio, brzo smislio pravedan zadatak, te se obratio Alojziju:
+
+\textit{Alojzije, najprije ću tebe pozvati u svoj ured i pokazat ću ti prirodan
+  broj $A$.  Zatim ćeš mi ti na papir napisati niz brojeva $a = (a_1, a_2,
+\ldots, a_{l_a})$.}
+
+Nakon što se uvjerio da je Alojzije shvatio svoj dio posla, obratio se Benjaminu:
+
+\textit{Benjamine, tebe ću sljedećeg pozvati u ured i pokazat ću ti prirodan
+  broj $B \ne A$.  Zatim ćeš mi ti na papir napisati niz brojeva $b = (b_1, b_2,
+\ldots, b_{l_b})$.}
+
+Potom se obratio i Cesarici:
+
+\textit{Cesarice, tebe ću posljednju pozvati u ured i pokazat ću ti niz $c$ koji
+  sam odredio na temelju nizova $a$ i $b$. Precznije, za svaki broj koji se barem
+  jednom pojavljuje u nizovima $a$ i $b$, u niz $c$ ću dodati koliko se ukupno puta
+  pojavljuje u uniji nizova $a$ i $b$, a elemente niza $c$ ću ti pokazati u
+  neopadajućem poretku. Primjerice, ako je $a = (1, 2, 4)$ i $b = (1, 1, 2, 3)$,
+  pokazat ću ti $c = (1, 1, 2, 3)$ zato što se brojevi $3$ i $4$ pojavljuju jednom,
+  broj $2$ dva puta i broj $1$ tri puta. Nakon što ti pokažem niz $c$, ti mi trebaš
+  odgovoriti koji je od brojeva $A$ i $B$ veći.}
+
+Konačno, kada su se dojmovi malo slegli, obratio se i svim kandidatima zajedno:
+
+\textit{Imate 60 minuta da smislite strategiju pa krećemo s ispitom. Nakon toga
+  više ne smijete komunicirati. Ovaj postupak ćemo ponoviti par puta 
+  \sout{da se uvjerim da se ne radi o sreći} dok ne stigne klopa.}
+
+Vaš je zadatak osmisliti strategiju koja bi omogučila Alojziju, Benjaminu i
+Cesarici da prođu IQ dio ispita.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Input
+\subsection*{Ulazni podaci}
+U prvom je retku prirodan broj $Q$, broj scenarija koje morate obraditi. Svaki
+scenarij odgovara nekoj interakciji koja se zbiva u uredu gospodina Malnara.
+
+U $i$-tom od sljedećih $Q$ redaka opisan je $i$-ti scenarij. Redak će započeti
+riječju \texttt{alojzije}, \texttt{benjamin} ili \texttt{cesarica}, ovisno o
+tome kojeg je kandidata gospodin Malnar pozvao u ured.
+
+Ako $i$-ti redak započinje riječju \texttt{alojzije}, tada se u nastavku retka
+nalazi prirodan broj $A$.
+
+Ako $i$-ti redak započinje riječju \texttt{benjamin}, tada se u nastavku retka
+nalazi prirodan broj $B$.
+
+Ako $i$-ti redak započinje riječju \texttt{cesarica}, tada se u nastavku retka
+najprije nalazi prirodan broj $l_c$ (duljina niza $c$), a zatim se nalaze
+elementi niza $c$ u neopadajućem poretku ($c_1 \le c_2 \le \ldots \le c_{l_c}$).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Output
+\subsection*{Izlazni podaci}
+U $i$-tom od $Q$ redaka treba ispisati odgovor na $i$-ti scenarij iz ulaza.
+
+Ako je $i$-ti scenarij iz ulaza bio oblika \texttt{alojzije $A$}, tada treba
+najprije ispisati broj $l_a$ (duljinu niza $a$), a zatim elemente niza $a$ koji
+predstavljaju niz brojeva koje bi Alojzije napisao na papir nakon što mu gospodin
+Malnar pokaže broj $A$.
+
+Ako je $i$-ti scenarij iz ulaza bio oblika \texttt{benjamin $B$}, tada treba
+najprije ispisati broj $l_b$ (duljinu niza $b$), a zatim elemente niza $b$ koji
+predstavljaju niz brojeva koje bi Benjamin napisao na papir nakon što mu gospodin
+Malnar pokaže broj $B$.
+
+Ako je $i$-ti scenarij iz ulaza bio oblika \texttt{cesarica $l_c$ $c_1$ ...
+$c_{l_c}$}, tada treba ispisati \texttt{"A"} ako bi Cesarica na temelju niza
+$c$ zaključila da je $A > B$, odnosno treba ispisati \texttt{"B"} bi Cesarica
+zaključila da je $A < B$. Možete pretpostaviti da će niz $c$ biti generiran na
+temelju nizova $a$ i $b$ koje je vaš program ispisao prilikom obrade scenarija
+\texttt{alojzije A} i \texttt{benjamin B}. Pritom je moguće da je vaš program
+takve nizove $a$ i $b$ ispisao u nekom od prethodnih izvođenja.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Scoring
+\subsection*{Bodovanje}
+Vaše rješenje bit će testirano u dva koraka. Prvo će biti pozvano na testnom
+podatku u kojem su svi scenariji oblika \texttt{alojzije A} ili
+\texttt{benjamin B}. Uz pretpostavku da vaš program obradi sve scenarije u
+ispravnom formatu, vaše će rješenje biti pozvano na testnom podatku u kojem
+su svi scenariji započinju riječju \texttt{cesarica}, a pripadajući nizovi $c$
+bit će generirani temeljem raznih kombinacija nizova $a$ i $b$ koje je vaš
+program ispisao u prethodnom izvođenju.
+
+Ako vaš program u drugom izvođenju ispravno odgovori na sve scenarije, bodovat
+će se prema
+
+
+Prvo će biti pozvano sa
+službenim ulaznim podatcima u kojima je $M=1$. Ako je izlaz vašeg
+rješenja niz od $N$ valjanih matrica, u drugom koraku vaše rješenje bit
+će ponovno pokrenuto s matricama ispisanima u prvom koraku.
+Ako su stringovi koje vaš program ispiše u drugom koraku jednaki
+stringovima u službenim ulaznim podatcima, dobit ćete sve bodove za
+taj službeni ulaz.
+
+Vrijeme izvršavanja vašeg rješenja je zbroj vremena izvršavanja
+oba koraka evaluacije.
+
+{\renewcommand{\arraystretch}{1.4}
+  \setlength{\tabcolsep}{6pt}
+  \begin{tabular}{ccl}
+   Podzadatak & Broj bodova & Ograničenja \\ \midrule
+    1 & 10 & $1 \le l_i \le 3$ \\
+    2 & 10 & $1 \le l_i \le 7$ \\
+    3 & 4 & $1 \le l_i \le 11$ i stringovi iz ulaza su nasumično generirani\\
+    4 & 6 & $1 \le l_i \le 11$ \\
+    5 & 4 & $1 \le l_i \le 12$ i stringovi iz ulaza su nasumično generirani\\
+    6 & 6 & $1 \le l_i \le 12$ \\
+    7 & 7 & $1 \le l_i \le 13$ i stringovi iz ulaza su nasumično generirani\\
+    8 & 8 & $1 \le l_i \le 13$ \\
+    9 & 9 & $1 \le l_i \le 14$ i stringovi iz ulaza su nasumično generirani\\
+   10 & 11 & $1 \le l_i \le 14$ \\
+   11 & 12 & $1 \le l_i \le 15$ i stringovi iz ulaza su nasumično generirani\\
+   12 & 13 & $1 \le l_i \le 15$
+\end{tabular}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Examples
+\subsection*{Probni primjer}
+% \begin{tabularx}{\textwidth}{X'X}
+% \sampleinputs{test/novine.dummy.in.1}{sample/a1out} &
+% \sampleinputs{sample/a2in}{sample/a2out}
+% \end{tabularx}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% We're done
+\end{statement}
+
+%%% Local Variables:
+%%% mode: latex
+%%% mode: flyspell
+%%% ispell-local-dictionary: "croatian"
+%%% TeX-master: "../hio.tex"
+%%% End:
