@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int q;
+int l, q;
 
 void alojzije() {
   int a;
@@ -28,7 +28,7 @@ void benjamin() {
 
   vector<int> ret;
   int curr = 0;
-  for (int i = 30; i >= 0; --i) {
+  for (int i = 18; i >= 0; --i) {
     if (b & (1 << i))
       curr |= 1 << i;
     else
@@ -52,7 +52,7 @@ void cesarica() {
 }
 
 int main(void) {
-  scanf("%d", &q);
+  scanf("%d%d", &l, &q);
   while (q--) {
     char t[10];
     scanf("%s", t);
