@@ -40,7 +40,7 @@ void benjamin() {
   printf("\n");
 }
 
-void cesarica() {
+void cecilija() {
   int l, x;
   scanf("%d", &l);
   for (int i = 0; i < l; ++i)
@@ -58,7 +58,7 @@ int main(void) {
     scanf("%s", t);
     if (t[0] == 'a') alojzije();
     if (t[0] == 'b') benjamin();
-    if (t[0] == 'c') cesarica();
+    if (t[0] == 'c') cecilija();
   }
   return 0;
 }
