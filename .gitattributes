@@ -1,2 +1,3 @@
 *.in.* linguist-language=Text
 *.out.* linguist-language=Text
+*.conf.* linguist-language=Text
