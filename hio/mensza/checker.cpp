@@ -145,6 +145,9 @@ void check_a1(ifstream &fin, ifstream &fconf, ifstream &a1out, ofstream &a2in) {
 
     a1_arrays.emplace_back(curr_array);
   }
+  string garbage;
+  if (a1out >> garbage) finish(0);
+
 
   // Generate a2in based on config file and a1out
   int Q_conf;
@@ -237,6 +240,8 @@ void check_a2(ifstream &fin, ifstream &fconf, ifstream &a1out, ifstream &a2in,
     if ((int) out_i.size() != 1) finish(0);
     if (out_i[0] != correct[i]) finish(0);
   }
+  string garbage;
+  if (a2out >> garbage) finish(0);
 
   finish(1);
   // The function MUST terminate before this line via finish()!
