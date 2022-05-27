@@ -71,8 +71,8 @@ int main() {
         if (pow2[i] >= MOD) pow2[i] -= MOD;
     }
 
-    int n, t;
-    cin >> n >> t;
+    int n;
+    cin >> n;
 
     string s = "a";
     for (int i = 0; i + 1 < n; i++)

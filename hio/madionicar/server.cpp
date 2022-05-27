@@ -26,10 +26,9 @@ using namespace std;
 /******************************* ENGLISH ***************************************/
 
 #define CANNOT_READ_S "Input file error: cannot read the string."
-#define CANNOT_READ_T "Input file error: cannot read the subtask number."
-#define SENDING_N_AND_T "Sending n and the subtask number to contestant program..."
+#define SENDING_N "Sending n to contestant program..."
 #define WAITING "Waiting for queries..."
-#define WA_PREMATURE_TERMINATION "Wrong answer: Contestant program termimanted execution without sending a solution."
+#define WA_PREMATURE_TERMINATION "Wrong answer: Contestant program terminated execution without sending a solution."
 #define COMMAND_RECEIVED_PRE "Received command '"
 #define COMMAND_RECEIVED_POST "' from the contestant program."
 #define WA_TOO_MANY_QUERIES "Wrong answer: Contestant program asked too many queries."
@@ -38,7 +37,6 @@ using namespace std;
 #define WA_INVALID_L_AND_R "Wrong answer: l and r in the %d-th query are not valid."
 #define LOG_QUERY  "Query: "
 #define LOG_ANSWER ", Answer: "
-#define WAITING_FOR_SOLUTION "Waiting for the solution..."
 #define WA_CANNOT_READ_SOLUTION "Wrong answer: Cannot read the solution."
 #define CONTESTANT_SOLUTION "Contestant reported solution: "
 #define WA_INCORRECT "Wrong answer: the solution is not correct."
@@ -49,8 +47,7 @@ using namespace std;
 /******************************* CROATIAN ***************************************/
 
 #define CANNOT_READ_S "Neispravna ulazna datoteka: ne mogu procitati string."
-#define CANNOT_READ_T "Neispravna ulazna datoteka: ne mogu procitati broj podzadatka."
-#define SENDING_N_AND_T "Saljem broj n i broj podzadatka programu..."
+#define SENDING_N "Saljem broj n programu..."
 #define WAITING "Cekam upite..."
 #define WA_PREMATURE_TERMINATION "Krivo rjesenje: Program je zavrsio izvodjenje prije nego sto je poslao rjesenje."
 #define COMMAND_RECEIVED_PRE "Primio naredbu '"
@@ -61,7 +58,6 @@ using namespace std;
 #define WA_INVALID_L_AND_R "Krivo rjesenje: l i r u %d-tom upitu nisu ispravni."
 #define LOG_QUERY  "Upit: "
 #define LOG_ANSWER ", Odgovor: "
-#define WAITING_FOR_SOLUTION "Cekam rjesenja..."
 #define WA_CANNOT_READ_SOLUTION "Krivo rjesenje: Ne mogu procitati rjesenje."
 #define CONTESTANT_SOLUTION "Natjecatelj kaze da je rjesenje: "
 #define WA_INCORRECT "Krivo rjesenje: Rjesenje nije ispravno."
@@ -129,11 +125,8 @@ void main_problem_interaction() {
 
   const int QUERY_LIMIT = 3e5;
 
-  string s; // string
-  int t;    // subtask number
-
+  string s;
   test_condition(bool(finput >> s), CANNOT_READ_S);
-  test_condition(bool(finput >> t), CANNOT_READ_T);
 
   // Manacher's algorithm
   // d[2i] and d[2i+1] are the increased by 1 lengths of the largest odd- and
@@ -146,9 +139,9 @@ void main_problem_interaction() {
   int query_count = 0;
 
   // Send n and t to program.
-  flog << SENDING_N_AND_T << endl;
-  flog << "n = " << n << ", t = " << t << endl;
-  cout << n << " " << t << endl;
+  flog << SENDING_N << endl;
+  flog << "n = " << n << endl;
+  cout << n << endl;
 
   flog << WAITING << endl;
   // Loop.
@@ -182,8 +175,6 @@ void main_problem_interaction() {
   }
 
   // Read and check the output
-  flog << WAITING_FOR_SOLUTION << endl;
-
   int contestant_sol;
   test_condition(bool(cin >> contestant_sol), WA_CANNOT_READ_SOLUTION);
 

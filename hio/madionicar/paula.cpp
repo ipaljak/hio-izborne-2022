@@ -38,8 +38,8 @@ typedef vector<int> vi;
 typedef vector<ll> vll;
 
 int main() {
-    int n, t;
-    cin >> n >> t;
+    int n;
+    cin >> n;
     int sol = 1;
     for (int i = 0; i < n * 2 - 1; i++) {
         int len0 = sol + 1 + ((sol ^ i) & 1);

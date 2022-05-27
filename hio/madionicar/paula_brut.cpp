@@ -45,8 +45,8 @@ bool query(int l, int r) {
 }
 
 int main() {
-    int n, t;
-    cin >> n >> t;
+    int n;
+    cin >> n;
     int sol = 1;
     for (int i = 1; i <= n; i++)
         for (int j = i; j <= n; j++)
