@@ -18,7 +18,7 @@ MAXL = 200
 MAXQ = 1000000
 
 
-n_dict = {200: 100, 75: 1000, 20: 500000}
+n_dict = {200: 100, 110: 1000, 20: 500000}
 
 
 class Test(object):
@@ -29,10 +29,10 @@ class Test(object):
 
 
     def validate(self):
-        assert(self.l in [20, 75, 200])
+        assert(self.l in [20, 110, 200])
         if self.l == 20:
             assert(1 <= self.q <= 10**6)
-        if self.l == 75:
+        if self.l == 110:
             assert(1 <= self.q <= 10**6)
         if self.l == 200:
             assert(1 <= self.q <= 10**4)
@@ -132,8 +132,8 @@ def gen_cases():
     subtask1 = [gen_test(100, 200)]
     conf1 = [gen_conf(100)]
 
-    # 2. subtask -- n = 1 000, l = 75, q <= 1 000 000
-    subtask2 = [gen_test(1000, 75)]
+    # 2. subtask -- n = 1 000, l = 110, q <= 1 000 000
+    subtask2 = [gen_test(1000, 110)]
     conf2 = [gen_conf(1000)]
 
     # 3. subtask -- n = 500 000, l = 20, q <= 1 000 000
