@@ -18,13 +18,13 @@ Prijamnom ispitu pristupili su Alojzije, Benjamin i Cecilija. Gospodin Malnar
 ih je odmjerio, brzo smislio pravedan zadatak, te se obratio Alojziju:
 
 ``Alojzije, najprije ću tebe pozvati u svoj ured i pokazat ću ti prirodan
-  broj $A$.  Zatim ćeš mi ti na papir napisati niz prirodnih brojeva $a = (a_1, a_2,
+  broj $A$.  Zatim ćeš mi ti na papir napisati niz brojeva $a = (a_1, a_2,
 \ldots, a_{l_a})$, pri čemu njegova duljina $l_a$ ne smije biti veća od $L$.''
 
 Nakon što se uvjerio da je Alojzije shvatio svoj dio posla, obratio se Benjaminu:
 
 ``Benjamine, tebe ću sljedećeg pozvati u ured i pokazat ću ti prirodan
-  broj $B \ne A$.  Zatim ćeš mi ti na papir napisati niz prirodnih brojeva $b = (b_1, b_2,
+  broj $B \ne A$.  Zatim ćeš mi ti na papir napisati niz brojeva $b = (b_1, b_2,
 \ldots, b_{l_b})$, pri čemu njegova duljina $l_b$ ne smije biti veća od $L$.''
 
 Potom se obratio i Ceciliji:
@@ -66,7 +66,7 @@ Ako $i$-ti redak započinje riječju \texttt{benjamin}, tada se u nastavku retka
 nalazi prirodan broj $B$.
 
 Ako $i$-ti redak započinje riječju \texttt{cecilija}, tada se u nastavku retka
-najprije nalazi prirodan broj $l_c$ (duljina niza $c$), a zatim se nalaze
+najprije nalazi cijeli broj $l_c$ (duljina niza $c$), a zatim se nalaze
 elementi niza $c$ u neopadajućem poretku ($c_1 \le c_2 \le \ldots \le c_{l_c}$).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -76,14 +76,15 @@ U $i$-tom od $Q$ redaka treba ispisati odgovor na $i$-ti scenarij iz ulaza.
 
 Ako je $i$-ti scenarij iz ulaza bio oblika \texttt{alojzije $A$}, tada treba
 najprije ispisati broj $0 \le l_a \le L$ (duljinu niza $a$), a zatim elemente niza
-$a$ koji predstavljaju niz prirodnih brojeva koje bi Alojzije napisao na papir nakon što
-mu gospodin Malnar pokaže broj $A$. Elementi niza $a$ ne smiju biti veći od
-$10^9$.
+$a$ koji predstavljaju niz brojeva koje bi Alojzije napisao na papir nakon što
+mu gospodin Malnar pokaže broj $A$. Elementi niza $a$ moraju biti cijeli brojevi
+između $0$ i $10^9$ uključivo.
 
 Ako je $i$-ti scenarij iz ulaza bio oblika \texttt{benjamin $B$}, tada treba
 najprije ispisati broj $0 \le l_b \le L$ (duljinu niza $b$), a zatim elemente niza $b$ koji
-predstavljaju niz prirodnih brojeva koje bi Benjamin napisao na papir nakon što mu gospodin
-Malnar pokaže broj $B$. Elementi niza $b$ ne smiju biti veći od $10^9$.
+predstavljaju niz brojeva koje bi Benjamin napisao na papir nakon što mu gospodin
+Malnar pokaže broj $B$. Elementi niza $b$ moraju biti cijeli brojevi između $0$ 
+i $10^9$ uključivo.
 
 Ako je $i$-ti scenarij iz ulaza bio oblika \texttt{cecilija $l_c$ $c_1$ ...
 $c_{l_c}$}, tada treba ispisati ``\texttt{A}'' ako bi Cecilija na temelju niza
