@@ -18,19 +18,19 @@ Prijamnom ispitu pristupili su Alojzije, Benjamin i Cecilija. Gospodin Malnar
 ih je odmjerio, brzo smislio pravedan zadatak, te se obratio Alojziju:
 
 ``Alojzije, najprije ću tebe pozvati u svoj ured i pokazat ću ti prirodan
-  broj $A$.  Zatim ćeš mi ti na papir napisati niz brojeva $a = (a_1, a_2,
-\ldots, a_{l_a})$, pri čemu njegova duljina $l_a$ ne smije biti veća od $L$''
+  broj $A$.  Zatim ćeš mi ti na papir napisati niz prirodnih brojeva $a = (a_1, a_2,
+\ldots, a_{l_a})$, pri čemu njegova duljina $l_a$ ne smije biti veća od $L$.''
 
 Nakon što se uvjerio da je Alojzije shvatio svoj dio posla, obratio se Benjaminu:
 
 ``Benjamine, tebe ću sljedećeg pozvati u ured i pokazat ću ti prirodan
-  broj $B \ne A$.  Zatim ćeš mi ti na papir napisati niz brojeva $b = (b_1, b_2,
-\ldots, b_{l_b})$, pri čemu njegova duljina $l_b$ ne smije biti veća od $L$''
+  broj $B \ne A$.  Zatim ćeš mi ti na papir napisati niz prirodnih brojeva $b = (b_1, b_2,
+\ldots, b_{l_b})$, pri čemu njegova duljina $l_b$ ne smije biti veća od $L$.''
 
 Potom se obratio i Ceciliji:
 
 ``Cecilijo, tebe ću posljednju pozvati u ured i pokazat ću ti niz $c$ koji
-sam odredio na temelju nizova $a$ i $b$. Precznije, za svaki broj koji se barem
+sam odredio na temelju nizova $a$ i $b$. Preciznije, za svaki broj koji se barem
 jednom pojavljuje u nizovima $a$ i $b$, u niz $c$ ću dodati koliko se ukupno puta
 pojavljuje u uniji nizova $a$ i $b$. Također, elemente niza $c$ ću ti pokazati u
 neopadajućem poretku. Primjerice, ako je $a = (1, 2, 4)$ i $b = (1, 1, 2, 3)$,
@@ -44,7 +44,7 @@ Konačno, kada su se dojmovi malo slegli, obratio se i svim kandidatima zajedno:
 više ne smijete komunicirati. Ovaj postupak ćemo ponoviti par puta
 \sout{da se uvjerim da se ne radi o sreći} dok ne stigne klopa.''
 
-Vaš je zadatak osmisliti strategiju koja bi omogučila Alojziju, Benjaminu i
+Vaš je zadatak osmisliti strategiju koja bi omogućila Alojziju, Benjaminu i
 Ceciliji da prođu IQ dio ispita.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -76,32 +76,32 @@ U $i$-tom od $Q$ redaka treba ispisati odgovor na $i$-ti scenarij iz ulaza.
 
 Ako je $i$-ti scenarij iz ulaza bio oblika \texttt{alojzije $A$}, tada treba
 najprije ispisati broj $0 \le l_a \le L$ (duljinu niza $a$), a zatim elemente niza
-$a$ koji predstavljaju niz brojeva koje bi Alojzije napisao na papir nakon što
+$a$ koji predstavljaju niz prirodnih brojeva koje bi Alojzije napisao na papir nakon što
 mu gospodin Malnar pokaže broj $A$. Elementi niza $a$ ne smiju biti veći od
 $10^9$.
 
 Ako je $i$-ti scenarij iz ulaza bio oblika \texttt{benjamin $B$}, tada treba
 najprije ispisati broj $0 \le l_b \le L$ (duljinu niza $b$), a zatim elemente niza $b$ koji
-predstavljaju niz brojeva koje bi Benjamin napisao na papir nakon što mu gospodin
+predstavljaju niz prirodnih brojeva koje bi Benjamin napisao na papir nakon što mu gospodin
 Malnar pokaže broj $B$. Elementi niza $b$ ne smiju biti veći od $10^9$.
 
 Ako je $i$-ti scenarij iz ulaza bio oblika \texttt{cecilija $l_c$ $c_1$ ...
-$c_{l_c}$}, tada treba ispisati \texttt{"A"} ako bi Cecilija na temelju niza
-$c$ zaključila da je $A > B$, odnosno treba ispisati \texttt{"B"} bi Cecilija
+$c_{l_c}$}, tada treba ispisati ``\texttt{A}'' ako bi Cecilija na temelju niza
+$c$ zaključila da je $A > B$, odnosno treba ispisati ``\texttt{B}'' ako bi Cecilija
 zaključila da je $A < B$. Možete pretpostaviti da će niz $c$ biti generiran na
 temelju nizova $a$ i $b$, čije su duljine bile najviše $L$, te  koje je vaš
-program ispisao prilikom obrade scenarija \texttt{alojzije A} i
-\texttt{benjamin B}. Pritom je moguće da je vaš program takve nizove $a$ i $b$
+program ispisao prilikom obrade scenarija \texttt{alojzije $A$} i
+\texttt{benjamin $B$}. Pritom je moguće da je vaš program takve nizove $a$ i $b$
 ispisao u nekom od prethodnih izvođenja.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Scoring
 \subsection*{Bodovanje}
 Vaše rješenje bit će testirano u dva koraka. Prvo će biti pozvano na testnom
-podatku u kojem su svi scenariji oblika \texttt{alojzije A} ili
-\texttt{benjamin B}. Uz pretpostavku da vaš program obradi sve scenarije u
+podatku u kojem su svi scenariji oblika \texttt{alojzije $A$} ili
+\texttt{benjamin $B$}. Uz pretpostavku da vaš program obradi sve scenarije u
 ispravnom formatu, vaše će rješenje biti pozvano na testnom podatku u kojem
-su svi scenariji započinju riječju \texttt{cecilija}, a pripadajući nizovi $c$
+svi scenariji započinju riječju \texttt{cecilija}, a pripadajući nizovi $c$
 bit će generirani temeljem raznih kombinacija nizova $a$ i $b$ koje je vaš
 program ispisao u prethodnom izvođenju. Vrijednost ulaznog podatka $L$ bit će
 jednaka prilikom oba pokretanja. Ako vaš program u drugom izvođenju ispravno
