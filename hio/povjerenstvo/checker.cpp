@@ -37,7 +37,7 @@ typedef long long llint;
 // The second accepts a fraction and outputs it.
 
 void finish(double score, string feedback){
-  cout << score << endl << feedback << endl;
+  cout << score << endl;
   exit(0);
 }
 
