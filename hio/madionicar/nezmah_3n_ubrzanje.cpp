@@ -33,6 +33,6 @@ int main () {
         }
         sol = max(sol, i - idx + 1);
     }
-    cout << sol;
+    cout << "! " << sol << endl;
     return 0;
 }
