@@ -1,10 +1,10 @@
 // Server to be used by evaluator.
 //
-// Usage: TASK_server input_file log_file output_file
+// Usage: TASK_server input_file config_file log_file output_file
 //
 // To test locally:
 //   mkfifo temp
-//   ./TASK_server test/TASK.in.1 flog foutput < temp | ./MY_SOLUTION > temp
+//   ./TASK_server test/TASK.in.1 /dev/null flog foutput < temp | ./MY_SOLUTION > temp
 //
 
 #include <algorithm>
@@ -15,11 +15,15 @@
 #include <fstream>
 #include <iostream>
 #include <queue>
+#include <stack>
 #include <string>
 #include <utility>
 #include <unistd.h>
+#include <signal.h>
 
 using namespace std;
+
+#define ENGLISH
 
 #ifdef ENGLISH
 
@@ -66,9 +70,10 @@ using namespace std;
 #endif
 
 ifstream finput;   // read from the input file (test case description)
-ofstream flog;     // write to an unofficial log for debugging purposes
+ifstream fconfig;  // read from the config file (additional, per test case)
 ofstream foutput;  // write the output, first the score for the test case,
                    // then the output the contestants will see in the system
+ofstream flog;     // write to an official log for tracing purposes
 
 // assert a condition, awards 0 points if condition fails, same format as a regular printf
 void test_condition(bool condition, const char* format, ...) {
@@ -191,11 +196,16 @@ void main_problem_interaction() {
 
 int main(int argc, char *argv[])
 {
-  assert(argc == 4);
+  struct sigaction act;
+  act.sa_handler = SIG_IGN;
+  sigaction(SIGPIPE, &act, NULL);
+
+  assert(argc == 5);
   finput.open(argv[1]);
-  flog.open(argv[2]);
-  foutput.open(argv[3]);
-  assert(!finput.fail() && !flog.fail() && !foutput.fail());
+  fconfig.open(argv[2]);
+  flog.open(argv[3]);
+  foutput.open(argv[4]);
+  assert(!finput.fail() && !fconfig.fail() && !flog.fail() && !foutput.fail());
   main_problem_interaction();
   return 0;
 }
