@@ -9,6 +9,7 @@ import sys
 sys.setrecursionlimit(500000)
 
 MAXN = 10**5
+MAXM = 10**9
 
 edges = []
 bio = []
@@ -25,16 +26,17 @@ def dfs(x):
                 continue;
             q.append(y)
             bio[y] = 1
-        
+
 
 def check(lines):
     nl = []   # ispravno formatirane linije
     E = "\n"  # line ending
 
 
-    n= int(lines[0].strip())
-    assert 1 <= n <= 100000, "n kriv"
-    nl.append("{}{}".format(n, E));
+    n, m = map(int, lines[0].split())
+    assert 1 <= n <= MAXN, "n kriv"
+    assert 1 <= m <= MAXM, "m kriv"
+    nl.append("{} {}{}".format(n, m, E));
 
 
     global edges
@@ -55,8 +57,8 @@ def check(lines):
 
         assert 1 <= x <= n, "prvi cvor nije iz [1, n]"
         assert 1 <= y <= n, "drugi cvor nije iz [1, n]"
-        assert 1 <= a <= 10**9, "krivi interval"
-        assert 1 <= b <= 10**9, "krivi interval"
+        assert 1 <= a <= m, "krivi interval"
+        assert 1 <= b <= m, "krivi interval"
         assert a <= b, "krivi interval order"
         assert x != y, "isti cvorovi"
 
@@ -70,7 +72,7 @@ def check(lines):
         edges[x - 1].append(y - 1)
         edges[y - 1].append(x - 1)
 
-    
+
     dfs(0)
     for i in range(0, n):
         assert bio[i] == 1, "nije povezano stablo"
@@ -95,7 +97,7 @@ def what_cluster(data):
         return 'n 50000, cost 50000'
     if (data['n'] <= 100000 and data['max_cost'] <= 100000):
         return 'n 100000, cost 100000'
-    
+
     return 'normalni'
 
 ################### Zadatak-specifican kod iznad ove linije #########################
