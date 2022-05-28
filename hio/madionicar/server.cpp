@@ -34,7 +34,7 @@ using namespace std;
 #define WA_TOO_MANY_QUERIES "Wrong answer: Contestant program asked too many queries."
 #define WA_UNKNOWN_COMMAND "Wrong answer: Unknown command '%s'."
 #define WA_CANNOT_READ_L_AND_R "Wrong answer: Cannot read l and r in the %d-th query."
-#define WA_INVALID_L_AND_R "Wrong answer: l and r in the %d-th query are not valid."
+#define WA_INVALID_L_AND_R "Wrong answer: l=%d and r=%d in the %d-th query are not valid."
 #define LOG_QUERY  "Query: "
 #define LOG_ANSWER ", Answer: "
 #define WA_CANNOT_READ_SOLUTION "Wrong answer: Cannot read the solution."
@@ -55,7 +55,7 @@ using namespace std;
 #define WA_TOO_MANY_QUERIES "Krivo rjesenje: Program je postavio previse upita."
 #define WA_UNKNOWN_COMMAND "Krivo rjesenje: Nepoznata naredba '%s'."
 #define WA_CANNOT_READ_L_AND_R "Krivo rjesenje: Ne mogu procitati l i r u %d-tom upitu."
-#define WA_INVALID_L_AND_R "Krivo rjesenje: l i r u %d-tom upitu nisu ispravni."
+#define WA_INVALID_L_AND_R "Krivo rjesenje: l=%d i r=%d u %d-tom upitu nisu ispravni."
 #define LOG_QUERY  "Upit: "
 #define LOG_ANSWER ", Odgovor: "
 #define WA_CANNOT_READ_SOLUTION "Krivo rjesenje: Ne mogu procitati rjesenje."
@@ -123,7 +123,7 @@ void main_problem_interaction() {
   const string QUERY_COMMAND = "?";
   const string END_COMMAND = "!";
 
-  const int QUERY_LIMIT = 3e5;
+  const int QUERY_LIMIT = 2e5;
 
   string s;
   test_condition(bool(finput >> s), CANNOT_READ_S);
@@ -161,7 +161,7 @@ void main_problem_interaction() {
 
     int l, r;
     test_condition(bool(cin >> l >> r), WA_CANNOT_READ_L_AND_R, query_count);
-    test_condition(1 <= l && l <= r && r <= n, WA_INVALID_L_AND_R, query_count);
+    test_condition(1 <= l && l <= r && r <= n, WA_INVALID_L_AND_R, l, r, query_count);
 
     // Calculate the result
     int center = (l - 1) + (r - 1), len = r - l + 1;

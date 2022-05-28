@@ -28,6 +28,6 @@ int main () {
         }
         sol = max(sol, i - idx + 1);
     }
-    cout << sol;
+    cout << "! " << sol;
     return 0;
 }

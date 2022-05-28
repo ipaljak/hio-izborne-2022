@@ -14,19 +14,21 @@ iščeznuća janjetine, rekordno brzog guljenja tvrdo kuhanih jaja i određivanj
 Da, dobro ste čuli, Gospodin Malnar se u \textit{fušu} bavi magijom, a svjetsku
 je slavu stekao nakon nastupa na popularnom televizijskom showu
 \textit{Penn \& Teller: Fool Us}. U svom se nastupu svijetu predstavio kao
-\textit{The Magical Mr. Malnar}, izveo nevjerojatno uvjerljivu mentalističku
+\textit{The Magical Mr.\ Malnar}, izveo nevjerojatno uvjerljivu mentalističku
 točku i oduševio publiku.
 
 Gospodin Malnar je nastup započeo nasumičnim odabirom volontera iz publike kojeg
 je zamolio da po vlastitom izboru zamisli neku riječ koja se sastoji od $N$
 malih slova engleske abecede. Zatim je neko vrijeme zabavljao publiku, ponekad
-je bacio oko na volontera, a na kraju izjavio: ``najdulji palindromski podstring
+je bacio oko na volontera, a na kraju izjavio: ``najdulji palindromski podstring\footnote{
+\textit{Palindrom} je riječ koja čitana od početka prema kraju ili obrnuto glasi jednako. \textit{Podstring} neke riječi je riječ sastavljena od $l$-tog slova do $r$-tog slova te riječi, za neke $1 \leq l \leq r \leq N$. \textit{Palindromski podstring} je podstring koji je palindrom.
+}
 tvoje zamišljene riječi je $L$''. Nakon što je volonter potvrdio istinitost ove
 tvrdnje, publika je pala u trans.
 
 Međutim, pažljiviji gledatelji i bliski prijatelji Gospodina Malnara slute da
 se ipak nije radilo o čitanju misli, već o pomno odabranim rečenicama koje, u
-kombinaciji sa vrlo vještim čitanjem izraza lica, odaju dovoljnu količinu
+kombinaciji s vrlo vještim čitanjem izraza lica, odaju dovoljnu količinu
 informacija potrebnih za uspješan ishod točke.
 
 Naime, Gospodin Malnar je (naizgled zabavljajući publiku) s vremena na vrijeme
@@ -37,12 +39,12 @@ slova (uključivo) njegove zamišljene riječi palindrom.
 
 Možete li napisati program koji će potvrditi da je Gospodin Malnar, ako su
 nagađanja istinita, mogao prikupiti dovoljno informacija da odredi najdulji
-palindromski podstring riječi koju je zamislio volonter.
+palindromski podstring riječi koju je zamislio volonter?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Input
 \subsection*{Interakcija}
-Ovo je interaktivni zadatak. Vaš program treba uspostaviti dijalog sa programom
+Ovo je interaktivni zadatak. Vaš program treba uspostaviti dijalog s programom
 izrađenim od strane organizatora koji simulira ponašanje volontera iz teksta
 zadatka.
 
@@ -56,8 +58,8 @@ upit treba biti ispisan u zaseban redak te poprimati oblik
 gdje vrijedi $1 \le l \le r \le N$. Nakon svakog ispisanog upita, vaš program
 treba napraviti \textit{flush} izlaza te sa standardnog ulaza pročitati
 \textit{odgovor} na upit -- broj $1$ ako je interval zamišljene riječi koji
-započinje $l$-tim, a završava $r$-tim znakom palindrom, odnosno $0$ ako to
-nije. Vaš program smije poslati najviše $??$ ovakvih upita.
+započinje $l$-tim, a završava $r$-tim slovom palindrom, odnosno $0$ ako to
+nije. \textbf{Vaš program smije poslati najviše $200\,000$ ovakvih upita.}
 
 Kada je vaš program odgonetnuo duljinu najduljeg palindromskog podstringa
 zamišljene riječi, treba na standardni izlaz ispisati redak oblika
@@ -77,9 +79,10 @@ izvornih kodova koji na ispravan način obavljaju interakciju, uključujući
   \setlength{\tabcolsep}{6pt}
   \begin{tabular}{ccl}
    Podzadatak & Broj bodova & Ograničenja \\ \midrule
-    1 & ?? & ?? \\
-    2 & ?? & ?? \\
-    3 & ?? & ??
+    1 & 13 & $1 \leq N \leq 7\,500$ \\
+    2 & 25 & $1 \leq N \leq 65\,000$ \\
+    3 & 25 & $1 \leq N \leq 100\,000$, zamišljena riječ sastoji se samo od slova \texttt{a} i \texttt{b} \\
+    4 & 37 & $1 \leq N \leq 100\,000$ \\
 \end{tabular}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -89,12 +92,13 @@ izvornih kodova koji na ispravan način obavljaju interakciju, uključujući
   \setlength{\tabcolsep}{6pt}
   \begin{tabular}{lcl}
     Izlaz & Ulaz & Napomena \\ \midrule
-      & 5 & Zamišljena riječ sastoji se od $5$ slova. U ovom primjeru volonter je zamislio rijeć \texttt{"neven"} \\
+      & 5 & Zamišljena riječ sastoji se od $5$ slova. U ovom primjeru volonter je zamislio riječ \texttt{neven}. \\
     \texttt{\frenchspacing? 1 1} & \texttt{1} & Podstring \texttt{n} je palindrom. \\
     \texttt{\frenchspacing? 2 3} & \texttt{0} & Podstring \texttt{ev} nije palindrom. \\
     \texttt{\frenchspacing? 2 4} & \texttt{1} & Podstring \texttt{eve} je palindrom. \\
+    \texttt{\frenchspacing? 3 5} & \texttt{0} & Podstring \texttt{ven} nije palindrom. \\
     \texttt{\frenchspacing? 1 5} & \texttt{1} & Podstring \texttt{neven} je palindrom. \\
-    \texttt{\frenchspacing! 5} & & Točno, najdulji palindromski podstring je sama zamišljena riječ \texttt{"neven"} \\
+    \texttt{\frenchspacing! 5} & & Točno, najdulji palindromski podstring je sama zamišljena riječ \texttt{neven}. \\
 \end{tabular}}
 
 
