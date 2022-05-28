@@ -11,10 +11,11 @@ struct edge {
   int a, b;
 };
 
-const int MAXN = 50000;
+const int MAXN = 50010;
 vector <edge> ve[MAXN];
 int sol[MAXN];
 bitset <MAXN> bs[MAXN];
+bitset <MAXN> tmp;
 
 void dfs(int x, int par) {
   sol[x] = bs[x].count();
@@ -22,7 +23,6 @@ void dfs(int x, int par) {
   for (auto tr : ve[x]) {
     if (tr.y == par) continue;
 
-    bitset <MAXN> tmp;
     tmp.set();
     tmp <<= tr.a;
     tmp >>= tr.a;
