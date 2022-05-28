@@ -172,65 +172,96 @@ int main() {
 
     //////////////////////////////
 
-    generate_test(3, 100000, 100000, LANAC, VELIKI);
-    generate_test(3, 100000, 100000, LANAC, VELIKI);
-    generate_test(3, 100000, 100000, LANAC, RANDOM);
-    generate_test(3, 100000, 100000, LANAC, RANDOM);
-    generate_test(3, 100000, 100000, LANAC, SINGLE);
-    generate_test(3, 100000, 100000, LANAC, SINGLE);
-    generate_test(3,  20000, 100000, LANAC, DISJUNKTNI);
-    generate_test(3,  20000, 100000, LANAC, DISJUNKTNI);
-    generate_test(3,  20000, 100000, LANAC, CIJELI);
-    generate_test(3,  20000, 100000, LANAC, CIJELI);
+    generate_test(3, 40000, 40000, LANAC, VELIKI);
+    generate_test(3, 40000, 40000, LANAC, VELIKI);
+    generate_test(3, 40000, 40000, LANAC, RANDOM);
+    generate_test(3, 40000, 40000, LANAC, RANDOM);
+    generate_test(3, 40000, 40000, LANAC, SINGLE);
+    generate_test(3, 40000, 40000, LANAC, SINGLE);
+    generate_test(3,  5000, 40000, LANAC, DISJUNKTNI);
+    generate_test(3,  5000, 40000, LANAC, DISJUNKTNI);
+    generate_test(3,  5000, 40000, LANAC, CIJELI);
+    generate_test(3,  5000, 40000, LANAC, CIJELI);
 
-    generate_test(3, 100000, 100000, DUBOKO, VELIKI);
-    generate_test(3, 100000, 100000, DUBOKO, VELIKI);
-    generate_test(3, 100000, 100000, DUBOKO, RANDOM);
-    generate_test(3, 100000, 100000, DUBOKO, RANDOM);
-    generate_test(3, 100000, 100000, DUBOKO, SINGLE);
-    generate_test(3, 100000, 100000, DUBOKO, SINGLE);
-    generate_test(3,  20000, 100000, DUBOKO, DISJUNKTNI);
-    generate_test(3,  20000, 100000, DUBOKO, CIJELI);
+    generate_test(3, 40000, 40000, DUBOKO, VELIKI);
+    generate_test(3, 40000, 40000, DUBOKO, VELIKI);
+    generate_test(3, 40000, 40000, DUBOKO, RANDOM);
+    generate_test(3, 40000, 40000, DUBOKO, RANDOM);
+    generate_test(3, 40000, 40000, DUBOKO, SINGLE);
+    generate_test(3, 40000, 40000, DUBOKO, SINGLE);
+    generate_test(3,  5000, 40000, DUBOKO, DISJUNKTNI);
+    generate_test(3,  5000, 40000, DUBOKO, CIJELI);
 
-    generate_test(3, 100000, 100000, RANDOM, VELIKI);
-    generate_test(3, 100000, 100000, RANDOM, VELIKI);
-    generate_test(3, 100000, 100000, RANDOM, RANDOM);
-    generate_test(3, 100000, 100000, RANDOM, RANDOM);
-    generate_test(3, 100000, 100000, RANDOM, SINGLE);
-    generate_test(3, 100000, 100000, RANDOM, SINGLE);
-    generate_test(3,  20000, 100000, RANDOM, DISJUNKTNI);
-    generate_test(3,  20000, 100000, RANDOM, CIJELI);
+    generate_test(3, 40000, 40000, RANDOM, VELIKI);
+    generate_test(3, 40000, 40000, RANDOM, VELIKI);
+    generate_test(3, 40000, 40000, RANDOM, RANDOM);
+    generate_test(3, 40000, 40000, RANDOM, RANDOM);
+    generate_test(3, 40000, 40000, RANDOM, SINGLE);
+    generate_test(3, 40000, 40000, RANDOM, SINGLE);
+    generate_test(3,  5000, 40000, RANDOM, DISJUNKTNI);
+    generate_test(3,  5000, 40000, RANDOM, CIJELI);
 
     //////////////////////////////
 
-    generate_test(4, 100000, 1e9, LANAC, VELIKI);
-    generate_test(4, 100000, 1e9, LANAC, VELIKI);
-    generate_test(4, 100000, 1e9, LANAC, RANDOM);
-    generate_test(4, 100000, 1e9, LANAC, RANDOM);
-    generate_test(4, 100000, 1e9, LANAC, SINGLE);
-    generate_test(4, 100000, 1e9, LANAC, SINGLE);
-    generate_test(4,  20000, 1e9, LANAC, DISJUNKTNI);
-    generate_test(4,  20000, 1e9, LANAC, DISJUNKTNI);
-    generate_test(4,  20000, 1e9, LANAC, CIJELI);
-    generate_test(4,  20000, 1e9, LANAC, CIJELI);
+    generate_test(4, 100000, 100000, LANAC, VELIKI);
+    generate_test(4, 100000, 100000, LANAC, VELIKI);
+    generate_test(4, 100000, 100000, LANAC, RANDOM);
+    generate_test(4, 100000, 100000, LANAC, RANDOM);
+    generate_test(4, 100000, 100000, LANAC, SINGLE);
+    generate_test(4, 100000, 100000, LANAC, SINGLE);
+    generate_test(4,  20000, 100000, LANAC, DISJUNKTNI);
+    generate_test(4,  20000, 100000, LANAC, DISJUNKTNI);
+    generate_test(4,  20000, 100000, LANAC, CIJELI);
+    generate_test(4,  20000, 100000, LANAC, CIJELI);
 
-    generate_test(4, 100000, 1e9, DUBOKO, VELIKI);
-    generate_test(4, 100000, 1e9, DUBOKO, VELIKI);
-    generate_test(4, 100000, 1e9, DUBOKO, RANDOM);
-    generate_test(4, 100000, 1e9, DUBOKO, RANDOM);
-    generate_test(4, 100000, 1e9, DUBOKO, SINGLE);
-    generate_test(4, 100000, 1e9, DUBOKO, SINGLE);
-    generate_test(4,  20000, 1e9, DUBOKO, DISJUNKTNI);
-    generate_test(4,  20000, 1e9, DUBOKO, CIJELI);
+    generate_test(4, 100000, 100000, DUBOKO, VELIKI);
+    generate_test(4, 100000, 100000, DUBOKO, VELIKI);
+    generate_test(4, 100000, 100000, DUBOKO, RANDOM);
+    generate_test(4, 100000, 100000, DUBOKO, RANDOM);
+    generate_test(4, 100000, 100000, DUBOKO, SINGLE);
+    generate_test(4, 100000, 100000, DUBOKO, SINGLE);
+    generate_test(4,  20000, 100000, DUBOKO, DISJUNKTNI);
+    generate_test(4,  20000, 100000, DUBOKO, CIJELI);
 
-    generate_test(4, 100000, 1e9, RANDOM, VELIKI);
-    generate_test(4, 100000, 1e9, RANDOM, VELIKI);
-    generate_test(4, 100000, 1e9, RANDOM, RANDOM);
-    generate_test(4, 100000, 1e9, RANDOM, RANDOM);
-    generate_test(4, 100000, 1e9, RANDOM, SINGLE);
-    generate_test(4, 100000, 1e9, RANDOM, SINGLE);
-    generate_test(4,  20000, 1e9, RANDOM, DISJUNKTNI);
-    generate_test(4,  20000, 1e9, RANDOM, CIJELI);
+    generate_test(4, 100000, 100000, RANDOM, VELIKI);
+    generate_test(4, 100000, 100000, RANDOM, VELIKI);
+    generate_test(4, 100000, 100000, RANDOM, RANDOM);
+    generate_test(4, 100000, 100000, RANDOM, RANDOM);
+    generate_test(4, 100000, 100000, RANDOM, SINGLE);
+    generate_test(4, 100000, 100000, RANDOM, SINGLE);
+    generate_test(4,  20000, 100000, RANDOM, DISJUNKTNI);
+    generate_test(4,  20000, 100000, RANDOM, CIJELI);
+
+    //////////////////////////////
+
+    generate_test(5, 100000, 1e9, LANAC, VELIKI);
+    generate_test(5, 100000, 1e9, LANAC, VELIKI);
+    generate_test(5, 100000, 1e9, LANAC, RANDOM);
+    generate_test(5, 100000, 1e9, LANAC, RANDOM);
+    generate_test(5, 100000, 1e9, LANAC, SINGLE);
+    generate_test(5, 100000, 1e9, LANAC, SINGLE);
+    generate_test(5,  20000, 1e9, LANAC, DISJUNKTNI);
+    generate_test(5,  20000, 1e9, LANAC, DISJUNKTNI);
+    generate_test(5,  20000, 1e9, LANAC, CIJELI);
+    generate_test(5,  20000, 1e9, LANAC, CIJELI);
+
+    generate_test(5, 100000, 1e9, DUBOKO, VELIKI);
+    generate_test(5, 100000, 1e9, DUBOKO, VELIKI);
+    generate_test(5, 100000, 1e9, DUBOKO, RANDOM);
+    generate_test(5, 100000, 1e9, DUBOKO, RANDOM);
+    generate_test(5, 100000, 1e9, DUBOKO, SINGLE);
+    generate_test(5, 100000, 1e9, DUBOKO, SINGLE);
+    generate_test(5,  20000, 1e9, DUBOKO, DISJUNKTNI);
+    generate_test(5,  20000, 1e9, DUBOKO, CIJELI);
+
+    generate_test(5, 100000, 1e9, RANDOM, VELIKI);
+    generate_test(5, 100000, 1e9, RANDOM, VELIKI);
+    generate_test(5, 100000, 1e9, RANDOM, RANDOM);
+    generate_test(5, 100000, 1e9, RANDOM, RANDOM);
+    generate_test(5, 100000, 1e9, RANDOM, SINGLE);
+    generate_test(5, 100000, 1e9, RANDOM, SINGLE);
+    generate_test(5,  20000, 1e9, RANDOM, DISJUNKTNI);
+    generate_test(5,  20000, 1e9, RANDOM, CIJELI);
 
     //////////////////////////////
 

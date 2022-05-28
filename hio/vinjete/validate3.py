@@ -81,7 +81,7 @@ def check(lines):
 
 
 # Ocekivani clusteri! Ovo vjerojatno zelis promijeniti!
-expected_clusters = {'n 1000, cost 1000' : 1, 'n 1000, cost 1e9': 1, 'n 100000, cost 100000' : 1, 'normalni' : 1}
+expected_clusters = {'n 1000, cost 1000' : 1, 'n 1000, cost 1e9': 1, 'n 50000, cost 50000' : 1, 'n 100000, cost 100000' : 1, 'normalni' : 1}
 
 
 def what_cluster(data):
@@ -91,6 +91,8 @@ def what_cluster(data):
         return 'n 1000, cost 1000'
     if (data['n'] <= 1000):
         return 'n 1000, cost 1e9'
+    if (data['n'] <= 50000 and data['max_cost'] <= 50000):
+        return 'n 50000, cost 50000'
     if (data['n'] <= 100000 and data['max_cost'] <= 100000):
         return 'n 100000, cost 100000'
     
