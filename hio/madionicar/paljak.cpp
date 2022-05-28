@@ -12,7 +12,7 @@ int ask(int l, int r) {
   return ret;
 }
 
-int ans(int L) {
+void ans(int L) {
   printf("! %d\n", L);
   fflush(stdout);
 }
