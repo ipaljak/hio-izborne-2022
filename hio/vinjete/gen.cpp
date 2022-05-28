@@ -7,7 +7,7 @@
 
 using namespace std;
 
-int index[10];
+int _index[10];
 
 #define LANAC  1
 #define DUBOKO 2
@@ -27,11 +27,11 @@ void generate_test(int cluster, int N, int K, int graph_type, int edge_type) {
     random_shuffle(ind.begin(), ind.end());
 
     char test_name[20];
-    sprintf(test_name, "test\\vinjete.in.%d%c", cluster, 'a' + index[cluster]);
+    sprintf(test_name, "test/vinjete.in.%d%c", cluster, 'a' + _index[cluster]);
     FILE* pFile;
     pFile = fopen(test_name, "w");
 
-    fprintf(pFile, "%d\n", N);
+    fprintf(pFile, "%d %d\n", N, K);
 
     set <int> bla;
     if (edge_type == CIJELI || edge_type == DISJUNKTNI) {
@@ -63,16 +63,16 @@ void generate_test(int cluster, int N, int K, int graph_type, int edge_type) {
 
     fclose(pFile);
 
-    /*sprintf(test_name, "test\\vinjete.out.%d%c", cluster, 'a' + index[cluster]);
+    /*sprintf(test_name, "test/vinjete.out.%d%c", cluster, 'a' + _index[cluster]);
     pFile = fopen(test_name, "w");
     fclose(pFile);*/
 
     char command[100];
-    sprintf(command, "vinjete_pravo.exe < test\\vinjete.in.%d%c > test\\vinjete.out.%d%c", cluster, 'a' + index[cluster], cluster, 'a' + index[cluster]);
+    sprintf(command, "./vinjete_pravo < test/vinjete.in.%d%c > test/vinjete.out.%d%c", cluster, 'a' + _index[cluster], cluster, 'a' + _index[cluster]);
     system(command);
 
-    printf("Generated test\\vinjete.in.%d%c\n", cluster, 'a' + index[cluster]);
-    index[cluster]++;
+    printf("Generated test/vinjete.in.%d%c\n", cluster, 'a' + _index[cluster]);
+    _index[cluster]++;
 
     return;
 }
@@ -84,8 +84,8 @@ int main() {
     //////////////////////////////
 
     FILE* pFile;
-    pFile = fopen("test\\vinjete.dummy.in.1", "w");
-    fprintf(pFile, "6\n");
+    pFile = fopen("test/vinjete.dummy.in.1", "w");
+    fprintf(pFile, "6 6\n");
     fprintf(pFile, "1 2 2 4\n");
     fprintf(pFile, "1 3 1 4\n");
     fprintf(pFile, "2 4 3 5\n");
@@ -93,21 +93,21 @@ int main() {
     fprintf(pFile, "3 6 2 3\n");
     fclose(pFile);
 
-    system("vinjete_pravo.exe < test\\vinjete.dummy.in.1 > test\\vinjete.dummy.out.1");
-    printf("Generated test\\vinjete.dummy.in.1\n");
+    system("./vinjete_pravo < test/vinjete.dummy.in.1 > test/vinjete.dummy.out.1");
+    printf("Generated test/vinjete.dummy.in.1\n");
 
     ///
 
-    pFile = fopen("test\\vinjete.dummy.in.2", "w");
-    fprintf(pFile, "5\n");
+    pFile = fopen("test/vinjete.dummy.in.2", "w");
+    fprintf(pFile, "5 6\n");
     fprintf(pFile, "1 2 2 2\n");
     fprintf(pFile, "2 3 3 3\n");
     fprintf(pFile, "3 5 1 5\n");
     fprintf(pFile, "3 4 1 1\n");
     fclose(pFile);
 
-    system("vinjete_pravo.exe < test\\vinjete.dummy.in.2 > test\\vinjete.dummy.out.2");
-    printf("Generated test\\vinjete.dummy.in.2\n");
+    system("./vinjete_pravo < test/vinjete.dummy.in.2 > test/vinjete.dummy.out.2");
+    printf("Generated test/vinjete.dummy.in.2\n");
 
 
     //////////////////////////////

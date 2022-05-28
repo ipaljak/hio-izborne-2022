@@ -96,8 +96,8 @@ void dfs(int x, int par) {
 int main() {
   ios_base::sync_with_stdio(false);
 
-  int n;
-  cin >> n;
+  int n, m;
+  cin >> n >> m;
   REP(i, n - 1) {
     int x, y, a, b;
     cin >> x >> y >> a >> b;
@@ -108,7 +108,7 @@ int main() {
 
   REP(i, n) roots.push_back(new node);
   dfs(0, 0);
-  REP(i, n) cout << sol[i] << " ";
+  for (int i = 1; i < n; ++i) cout << sol[i] << "\n";
 
   return 0;
 }
