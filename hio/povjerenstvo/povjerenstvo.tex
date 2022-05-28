@@ -1,0 +1,86 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Problem statement
+\begin{statement}[
+  problempoints=100,
+  timelimit=1 sekunda,
+  memorylimit=512 MiB,
+]{Povjerenstvo}
+
+Znate li koliko je teško izabrati prikladan skup ljudi koji će tvoriti državno povjerenstvo iz informatike? Ne? Znate li tko zna? Gospodin Malnar, naravno. Proučavajući međuljudske odnose, sveznajući Gospodin zaključio je kako da izgleda idealan izbor povjerenstva.
+
+U razmatranju je $N$ ljudi i poznato je $M$ odnosa između njih. Svaki odnos ima oblik uređenog para $(a, b)$ i predstavlja činjenicu da osoba $b$ ide osobi $a$ na živce. Gospodin Malnar definira \textit{krug nerviranja} kao niz različitih ljudi $x_1, x_2, \dots, x_k$ takav da osoba $x_{i+1}$ ide osobi $x_i$ na živce, za svaki $1 \leq i \leq k$ (pri tome se smatra da je $x_{k+1} = x_1$). Gospodin Malnar uočio je zanimljivo svojstvo vezano za promatrani skup ljudi: \textbf{ne postoji krug nerviranja koji se sastoji od neparnog broja ljudi}.
+
+Kako bi tenzije oko odabira bile minimalne, Gospodin Malnar traži povjerenstvo u kojem nema nesuglasica unutar povjerenstva, a nijednoj osobi izvan povjerenstva nije žao zbog toga što nije u povjerenstvu. Preciznije:
+\begin{itemize}
+    \item Ne smiju postojati dvije osobe unutar povjerenstva tako da jedna ide drugoj na živce.
+    \item Za svaku osobu izvan povjerenstva mora postojati osoba unutar povjerenstva koja joj ide na živce.
+\end{itemize}
+
+Možete li i vi pronaći validan odabir povjerenstva?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Input
+\subsection*{Ulazni podaci}
+
+U prvom su retku prirodni brojevi $N$ i $M$, redom broj ljudi i broj odnosa.
+
+U $i$-tom od sljedećih $M$ redaka je uređeni par prirodnih brojeva $a_i$ i $b_i$ ($1 \leq a_i, b_i \leq N$) koji predstavlja da osoba $b_i$ ide osobi $a_i$ na živce. Vrijedi $a_i \ne b_i$ za sve $i = 1, 2, \dots M$ te nijedan uređeni par neće biti naveden više od jednom.
+
+Zadani odnosi bit će takvi da ne postoji krug nerviranja koji se sastoji od neparnog broja ljudi.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Output
+\subsection*{Izlazni podaci}
+
+Ako ne postoji odabir povjerenstva koji zadovoljava navedena svojstva, u jedini redak ispišite \texttt{-1}.
+
+Inače, u prvi redak ispišite prirodan broj $K$ ($1 \leq K \leq N$), broj ljudi koji čine povjerenstvo. U sljedeći redak ispišite $K$ različitih prirodnih brojeva $p_1, p_2, \dots p_K$ ($1 \leq p_i \leq N$), oznake ljudi koji čine povjerenstvo. 
+
+Ako postoji više rješenja, ispišite bilo koje.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Scoring
+\subsection*{Bodovanje}
+
+U svim podzadacima vrijedi $1 \leq N \leq 500~000$ i $0 \leq M \leq 500~000$.
+
+{\renewcommand{\arraystretch}{1.4}
+  \setlength{\tabcolsep}{6pt}
+  \begin{tabular}{ccl}
+   Podzadatak & Broj bodova & Ograničenja \\ \midrule
+    1 & 13 & Ne postoji krug nerviranja. \\
+    2 & 21 & Ne postoji niz od neparno mnogo različitih ljudi $x_1, x_2, \dots x_k$ takav da \\
+      &    & barem jedna od osoba $x_i$ ili $x_{i+1}$ ide drugoj na živce, za sve $1 \leq i \leq k$. \\
+    3 & 33 & $N, M \leq 5000$ \\
+    4 & 33 & Nema dodatnih ograničenja.
+\end{tabular}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Examples
+\subsection*{Probni primjer}
+\begin{tabularx}{\textwidth}{X'X'X}
+\sampleinputs{test/povjerenstvo.dummy.in.1}{test/povjerenstvo.dummy.out.1} &
+\sampleinputs{test/povjerenstvo.dummy.in.2}{test/povjerenstvo.dummy.out.2} &
+\sampleinputs{test/povjerenstvo.dummy.in.3}{test/povjerenstvo.dummy.out.3}
+\end{tabularx}
+
+\textbf{Pojašnjenje probnih primjera:}
+
+U ispisu pojedinog primjera naveden je pripadni odabir povjerenstva.
+
+Prvi probni primjer mogao bi pripadati prvom podzadatku ili drugom podzadatku.
+
+Drugi probni primjer ne bi mogao pripadati prvom podzadatku, ali bi mogao drugom.
+
+Treći probni primjer ne bi mogao pripadati ni prvom ni drugom podzadatku.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% We're done
+\end{statement}
+
+%%% Local Variables:
+%%% mode: latex
+%%% mode: flyspell
+%%% ispell-local-dictionary: "croatian"
+%%% TeX-master: "../hio.tex"
+%%% End:
