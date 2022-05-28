@@ -84,7 +84,7 @@ void test_condition(bool condition, const char* format, ...) {
     vsprintf(dest, format, argptr);
     va_end(argptr);
 
-    foutput << 0 << endl << dest << endl;
+    foutput << 0 << endl;
     flog << dest << endl;
     exit(0);
   }
@@ -189,7 +189,6 @@ void main_problem_interaction() {
   test_condition(sol == contestant_sol, WA_INCORRECT);
 
   foutput << "1" << endl;
-  foutput << CORRECT << query_count << endl;
 
   flog << CORRECT << query_count << endl;
 }
