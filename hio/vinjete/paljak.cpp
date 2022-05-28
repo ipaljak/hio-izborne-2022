@@ -37,9 +37,12 @@ class Tournament {
     }
 
     Node *insert(Node *node, int lo, int hi, int from, int to) {
-      propagate(node);
       if (lo >= to || hi <= from) return node;
       if (lo >= from && hi <= to) return new Node(hi - lo, true, NIL, NIL);
+      if (node->prop) {
+        propagate(node);
+        return node;
+      }
       int mid = (lo + hi) / 2;
       Node *L = insert(node->l, lo, mid, from, to);
       Node *R = insert(node->r, mid, hi, from, to);
