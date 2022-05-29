@@ -420,6 +420,25 @@ void napravi_primjer (string tip) {
             add_test_case();
         }
         create_single_test_case();
+    } else if (tip == "SPECIAL") {
+        n = n_limit / 10 * 2;
+        for (int i = 1; i <= n; i += 2) {
+            edges.push_back({i, i + 1});
+            edges.push_back({i + 1, i});
+            if (i - 2 > 0) {
+                edges.push_back({i - 2, i});
+                edges.push_back({i - 2, i + 1});
+                edges.push_back({i - 1, i});
+                edges.push_back({i - 1, i + 1});
+            }
+            if (i - 4 > 0) {
+                edges.push_back({i - 4, i});
+                edges.push_back({i - 4, i + 1});
+                edges.push_back({i - 3, i});
+                edges.push_back({i - 3, i + 1});
+            }
+        }
+        m = edges.size();
     }
 
     if (!validate()) {

@@ -98,6 +98,7 @@ void gen_input () {
     add_input(3, "RANDOM_DAG2 3 15");
     add_input(3, "RANDOM_DAG3 3 16");
     add_input(3, "GUSTO_DAG 3 17");
+    add_input(3, "SPECIAL 3 18");
 
     //subtask 4
     add_input(4, "LANAC 4 0");
@@ -118,6 +119,7 @@ void gen_input () {
     add_input(4, "RANDOM_DAG2 4 15");
     add_input(4, "RANDOM_DAG3 4 16");
     add_input(4, "GUSTO_DAG 4 17");
+    add_input(4, "SPECIAL 4 18");
 }
 
 void gen_output () {
