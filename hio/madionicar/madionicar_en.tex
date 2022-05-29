@@ -2,103 +2,98 @@
 % Problem statement
 \begin{statement}[
   problempoints=100,
-  timelimit=5 sekundi,
+  timelimit=5 seconds,
   memorylimit=512 MiB,
 ]{Mađioničar}
 
-\textit{Čujte i počujte! Prvi put u vašem gradu i to samo večeras! Jedan, jedini i
-neponovljivi -- Magični Malnar. Uživajte u mega popularnim točkama poput
-iščeznuća janjetine, rekordno brzog guljenja tvrdo kuhanih jaja i određivanja
-  najduljeg palindromskog podstringa pomoću mentalizma.}
+You might have heard that in his free time, Mr.\ Malnar does magic. 
+His recent appearance in the famous TV show
+\textit{Penn \& Teller: Fool Us} took the world by storm.
+He introduced himself as
+\textit{The Magical Mr.\ Malnar},
+pulled off an incredible mentalist trick, 
+and swept everyone off their feet.
 
-Da, dobro ste čuli, Gospodin Malnar se u \textit{fušu} bavi magijom, a svjetsku
-je slavu stekao nakon nastupa na popularnom televizijskom showu
-\textit{Penn \& Teller: Fool Us}. U svom se nastupu svijetu predstavio kao
-\textit{The Magical Mr.\ Malnar}, izveo nevjerojatno uvjerljivu mentalističku
-točku i oduševio publiku.
+He started off by calling up an eager volounteer from the audience and 
+asking them to think of any string of their choice that consists of exactly $N$ letters.
+He then proceeded to entertain the audience, occasionally glancing at the volounteer,
+and at the end he declared: ``the longest sub-palindrome\footnote{
+A \textit{palindrome} is a string that reads the same backward or forward.
+A \textit{substring} of a string is a string made up from the $l$-th through the $r$-rh letter of that string, for some
+$1 \leq l \leq r \leq N$. A \textit{sub-palindrome} is a substring which is also a palindrome.
+} of your string has length $L$''.
+After the volounteer confirmed this is indeed correct, the audience was stunned.
 
-Gospodin Malnar je nastup započeo nasumičnim odabirom volontera iz publike kojeg
-je zamolio da po vlastitom izboru zamisli neku riječ koja se sastoji od $N$
-malih slova engleske abecede. Zatim je neko vrijeme zabavljao publiku, ponekad
-je bacio oko na volontera, a na kraju izjavio: ``najdulji palindromski podstring\footnote{
-\textit{Palindrom} je riječ koja čitana od početka prema kraju ili obrnuto glasi jednako. \textit{Podstring} neke riječi je riječ sastavljena od $l$-tog slova do $r$-tog slova te riječi, za neke $1 \leq l \leq r \leq N$. \textit{Palindromski podstring} je podstring koji je palindrom.
-}
-tvoje zamišljene riječi je $L$''. Nakon što je volonter potvrdio istinitost ove
-tvrdnje, publika je pala u trans.
+However, observant viewers and close friends of Mr.\ Malnar suspect this was not
+mind reading, but a clever selection of words that, when combined with excellent
+reading of facial expressions, gives away enough information to pull off the trick. 
 
-Međutim, pažljiviji gledatelji i bliski prijatelji Gospodina Malnara slute da
-se ipak nije radilo o čitanju misli, već o pomno odabranim rečenicama koje, u
-kombinaciji s vrlo vještim čitanjem izraza lica, odaju dovoljnu količinu
-informacija potrebnih za uspješan ishod točke.
+While it seemed like Mr.\ Malnar was merely fooling around, from time to time
+he would mention some interval of numbers $[l, r]$, where $1 \leq l \leq r \leq N$
+and briefly glance at the volounteer. There are rumors saying he is able to determine
+whether or not the substring of the volounteer's string that consists of
+the $l$-th through the $r$-th letter (inclusive) is a palindrome, based on their facial
+expression alone.
 
-Naime, Gospodin Malnar je (naizgled zabavljajući publiku) s vremena na vrijeme
-spomenuo neki interval brojeva $[l, r]$, gdje je $1 \le l \le r \le N$, a
-nakon toga je nakratko bacio oko na volontera. Šuška se da je sposoban na
-temelju izraza lica volontera odrediti je li podstring od $l$-tog do $r$-tog
-slova (uključivo) njegove zamišljene riječi palindrom.
-
-Možete li napisati program koji će potvrditi da je Gospodin Malnar, ako su
-nagađanja istinita, mogao prikupiti dovoljno informacija da odredi najdulji
-palindromski podstring riječi koju je zamislio volonter?
+You need to write a program which will confirm that Mr.\ Malnar, if the rumors are true,
+was able to gather enough information to determine the longest sub-palindrome of the
+secret string choosen by the volounteer.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Input
-\subsection*{Interakcija}
-Ovo je interaktivni zadatak. Vaš program treba uspostaviti dijalog s programom
-izrađenim od strane organizatora koji simulira ponašanje volontera iz teksta
-zadatka.
+\subsection*{Interaction}
+This is an interactive task. Your program must communicate with a program made
+by the organizers which simulates the behaviour of the volounteer
+from the task description.
 
-Prije interakcije vaš program treba sa standardnog ulaza pročitati
-prirodan broj $N$ koji predstavlja duljinu riječi koju je volonter
-zamislio.
+Before interaction, your program should read an integer $N$, the length of the
+secret string, from the standard input task statement.
 
-Nakon toga, vaš program može slati upite pisanjem na standardni izlaz. Svaki
-upit treba biti ispisan u zaseban redak te poprimati oblik
-``\texttt{?} \textit{l r}''
-gdje vrijedi $1 \le l \le r \le N$. Nakon svakog ispisanog upita, vaš program
-treba napraviti \textit{flush} izlaza te sa standardnog ulaza pročitati
-\textit{odgovor} na upit -- broj $1$ ako je interval zamišljene riječi koji
-započinje $l$-tim, a završava $r$-tim slovom palindrom, odnosno $0$ ako to
-nije. \textbf{Vaš program smije poslati najviše $200\,000$ ovakvih upita.}
+After that, your program can send query requests by writing to the standard
+output. Each query must be printed in a separate line and have the
+form ``\texttt{?} \textit{l r}'', where $1 \le l \le r \le N$ holds. After
+each query has been written, your program should \textbf{flush} the output
+and read the \textit{answer} from the standard input. The answer is a $1$ if
+the substring $[l, r]$ is a palindrome, or $0$ if it's not.
+\textbf{Your program can make at most $200\,000$ such queries.}
 
-Kada je vaš program odgonetnuo duljinu najduljeg palindromskog podstringa
-zamišljene riječi, treba na standardni izlaz ispisati redak oblika
-``\texttt{!} \textit{L}'' gdje $L$ predstavlja spomenutu duljinu. Nakon toga,
-vaš program ponovno treba napraviti \textit{flush} izlaza i završiti
-izvođenje.
+After your program has deduced the length of the longest sub-palindrome, it should write a line to
+the standard output in the form ``\texttt{!} \textit{L}'', where
+$L$ is the said length.
+After that, your program should \textit{flush} the output once more
+and gracefully terminate its execution.
 
-\textbf{Napomena:} Putem sustava za evaluaciju možete preuzeti primjere
-izvornih kodova koji na ispravan način obavljaju interakciju, uključujući
-\textit{flush} izlaza.
+\textbf{Note:} You can download the sample source code from the judging system
+that performs the interaction correctly, including the output flush.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Scoring
-\subsection*{Bodovanje}
+\subsection*{Scoring}
 
 {\renewcommand{\arraystretch}{1.4}
   \setlength{\tabcolsep}{6pt}
   \begin{tabular}{ccl}
-   Podzadatak & Broj bodova & Ograničenja \\ \midrule
+   Subtask & Score & Constraints \\ \midrule
     1 & 13 & $1 \leq N \leq 7\,500$ \\
     2 & 25 & $1 \leq N \leq 65\,000$ \\
-    3 & 25 & $1 \leq N \leq 100\,000$, zamišljena riječ sastoji se samo od slova \texttt{a} i \texttt{b} \\
+    3 & 25 & $1 \leq N \leq 100\,000$, the secret string consists of letters \texttt{a} and \texttt{b} only \\
     4 & 37 & $1 \leq N \leq 100\,000$ \\
 \end{tabular}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Examples
-\subsection*{Primjer interakcije}
+\subsection*{Interaction Example}
 {\renewcommand{\arraystretch}{1.4}
   \setlength{\tabcolsep}{6pt}
   \begin{tabular}{lcl}
-    Izlaz & Ulaz & Napomena \\ \midrule
-      & 5 & Zamišljena riječ sastoji se od $5$ slova. U ovom primjeru volonter je zamislio riječ \texttt{neven}. \\
-    \texttt{\frenchspacing? 1 1} & \texttt{1} & Podstring \texttt{n} je palindrom. \\
-    \texttt{\frenchspacing? 2 3} & \texttt{0} & Podstring \texttt{ev} nije palindrom. \\
-    \texttt{\frenchspacing? 2 4} & \texttt{1} & Podstring \texttt{eve} je palindrom. \\
-    \texttt{\frenchspacing? 3 5} & \texttt{0} & Podstring \texttt{ven} nije palindrom. \\
-    \texttt{\frenchspacing? 1 5} & \texttt{1} & Podstring \texttt{neven} je palindrom. \\
-    \texttt{\frenchspacing! 5} & & Točno, najdulji palindromski podstring je sama zamišljena riječ \texttt{neven}. \\
+    Output & Input & Comment \\ \midrule
+      & 5 & The secret string has length $5$. In this example, the volounteer chose the string \texttt{neven}. \\
+    \texttt{\frenchspacing? 1 1} & \texttt{1} & Substring \texttt{n} is a palindrome. \\
+    \texttt{\frenchspacing? 2 3} & \texttt{0} & Substring \texttt{ev} isn't a palindrome. \\
+    \texttt{\frenchspacing? 2 4} & \texttt{1} & Substring \texttt{eve} is a palindrome. \\
+    \texttt{\frenchspacing? 3 5} & \texttt{0} & Substring \texttt{ven} isn't a palindrome. \\
+    \texttt{\frenchspacing? 1 5} & \texttt{1} & Substring \texttt{neven} is a palindrome. \\
+    \texttt{\frenchspacing! 5} & & Correct, the longest sub-palindrome is the whole string \texttt{neven}. \\
 \end{tabular}}
 
 
