@@ -2,73 +2,72 @@
 % Problem statement
 \begin{statement}[
   problempoints=100,
-  timelimit=3 sekunde,
+  timelimit=3 seconds,
   memorylimit=512 MiB,
 ]{Vinjete}
 
-Nakon dvije godine \textit{on-line} izvedbe, međunarodna informatička
-olimpijada (IOI) održat će se uživo. Znanstveno i tehničko povjerenstvo je
-pod uobičajenim stresom, natjecatelji su uzbuđeni, roditelji nervozni, a
-najviše od svih putovanju se raduje Gospodin Malnar. Ponovno će okusiti
-ranojutarnji sok od grožđa na zagrebačkom aerodromu, ponovno će okusiti
-najfinije delicije azijske gastro ponude, ponovno će uživati u dnevnim
-izletima.
+After two years of begin online, the International Olympiad in Informatics
+(IOI) is going to be held live. The ISC and ITC are stressed as usual, the
+competitors are excited, parents proud and nervous, but the person most
+excited about the event being held on-site is Mr.\ Malnar. Once more he will
+taste the early-morning grape juice at the Zagreb airport, once more he will
+taste the finest Asian recipes, once more he will enjoy the daily excursions.
 
-Iskusniji među vama zapitat će se: ``Kakvim izletima? Gospodin Malnar skoro
-nikada ne sudjeluje na organiziranim ekskurzijama s ostalim delegacijama\ldots''.
-U pravu ste, Gospodin Malnar ne sudjeluje na organiziranim ekskurzijama, već sam
-planira svoje izlete mjesecima unaprijed.
+More experienced among you will ask themselves: ``What excursions?! Mr.\ Malnar
+almost never takes the organized excursions with the rest of the delegations.''.
+You're right, he doesn't, he plans his own excursions months ahead of the event.
 
-Najprije riješi logistiku oko najma automobila, a zatim napravi kraći popis od
-$N$ gradova koje bi volio posjetiti te ih istakne na karti kontinenta na
-kojem se te godine održava natjecanje. Na kartu dodatno ucrta sve autoceste
-koje spajaju neka dva istaknuta grada. Zanimljivo je da je ove godine na
-kartu Azije ucrtao točno $(N-1)$-u autocestu, te da postoji put između svaka
-dva grada koristeći ucrtane autoceste.
+First he solves all the car rental logistics, then he makes a short list of $N$
+cities he'd like to visit. He circles these cities on the map and connects each
+pair of cities that are directly connected via a highway. Interestingly, this
+year he drew exactly $(N-1)$ connections, and realized there exists a path
+between each pair of cities using these highways.
 
-I to nije sve, Gospodin Malnar je utvrdio da u Aziji postoji $M$ različitih
-vrsta vinjeta, te da je za prelazak svake autoceste potrebno kupiti neki
-podskup tih vinjeta. Gospodin Malnar odmah je numerirao različite vrste
-vinjeta prirodnim brojevima od $1$ do $M$, a posebno je zanimljivo da ih je
-uspio numerirati tako da je za prolazak $i$-te autoceste potrebno kupiti sve
-vinjete koje imaju oznaku veću ili jednaku $l_i$ i manju ili jednaku $r_i$.
+That's not all, it looks like there are $M$ different types of vignettes that
+you're able to purchase in Asia. For each highway, it is known what subset of
+vignette types you need to have. Mr.\ Malnar immediately indexed all the
+different vignette types using integers from $1$ to $M$. Interestingly, he
+managed to index them in such a way that in order to travel via $i$-th
+highway, you need buy all vignettes with indices greater or equal $l_i$ and
+smaller or equal $r_i$.
 
-Gradove je pak numerirao prirodnim brojevima od $1$ do $N$ i to tako da je
-Yogyakarta, grad u Indoneziji u kojem se održava natjecanje, označen brojem $1$.
+Similarly, he indexed all the cities with integers from $1$ to $N$ such that
+Yogyakarta, a city in Indonesia hosting the olympiad, is denoted with $1$.
 
-Kako bi bolje isplanirao svoju rutu, odlučio vas je zamoliti da napišete program
-koji će za svaki grad odrediti koliko najmanje vinjeta mora kupiti da bi
-proputovao od Yogykarte do tog grada.
+To better plan his routes, he decided to ask to write a program that will
+compute, for each city, what is the smallest number of vignettes he has
+to purchase in order to travel from Yogykarta to that city.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Input
-\subsection*{Ulazni podaci}
+\subsection*{Input}
 
-U prvom su retku prirodni brojevi $N$ i $M$ iz teksta zadatka.
+The first line contains integers $N$ and $M$ from the task description.
 
-U $i$-tom od sljedećih $N-1$ redaka nalazi se četvorka $a_i$, $b_i$, $l_i$ i
-$r_i$ koja nam govori da $i$-ta autocesta spaja gradove s oznakama $a_i$ i
-$b_i$ $(1 \le a_i, b_i \le N, a_i \ne b_i)$, te da je za njen prolazak
-potrebno kupiti vinjete s oznakama iz intervala $[l_i, r_i]$ $(1 \le l_i \le
-r_i \le M)$.
+The $i$-th of the next $N-1$ lines contains $a_i$, $b_i$, $l_i$ and $r_i$
+meaning that the $i$-th highway connects cities with indices $a_i$ and $b_i$
+$(1 \le a_i, b_i \le N, a_i \ne b_i)$, and that travelling via that highway
+entails buying vignettes with indices from an interval $[l_i, r_i]$
+$(1 \le l_i \le r_i \le M)$.
 
-Autoceste će biti takve da povezuju svaki par od istaknutih $N$ gradova.
+The highways are such that they connect each pair of the $N$ cities.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Output
-\subsection*{Izlazni podaci}
+\subsection*{Output}
 
-U $i$-ti od $N - 1$ redaka ispišite najmanji broj vinjeta koje Gospodin Malnar
-kupiti da bi proputovao od Yogyakarte (grada s oznakom $1$) do grada s
-oznakom $i+1$.
+The $i$-th of the $N - 1$ lines should contain the smallest number of vignettes
+Mr.\ Malnar has to buy in order to travel from Yogykarta (city with index $1$)
+to city with index $(i + 1)$.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Scoring
-\subsection*{Bodovanje}
+\subsection*{Scoring}
 
 {\renewcommand{\arraystretch}{1.4}
   \setlength{\tabcolsep}{6pt}
   \begin{tabular}{ccl}
-   Podzadatak & Broj bodova & Ograničenja \\ \midrule
+   Subtask & Score & Constraints \\ \midrule
     1 & 11 & $1 \le N \le 1\,000$, $1 \le M \le 1\,000$ \\
     2 & 13 & $1 \le N \le 1\,000$, $1 \le M \le 10^9$ \\
     3 & 16 & $1 \le N \le 50\,000$, $1 \le M \le 50\,000$\\
@@ -78,26 +77,26 @@ oznakom $i+1$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Examples
-\subsection*{Probni primjeri}
+\subsection*{Examples}
 \begin{tabularx}{\textwidth}{X'X}
 \sampleinputs{test/vinjete.dummy.in.1}{test/vinjete.dummy.out.1} &
 \sampleinputs{test/vinjete.dummy.in.2}{test/vinjete.dummy.out.2}
 \end{tabularx}
 
-\textbf{Pojašnjenje prvog probnog primjera:}
+\textbf{Explanation of the first example:}
 
-Za putovanje do grada s oznakom $2$ potrebno je kupiti vinjete s oznakama $(2, 3, 4)$.\\
-Za putovanje do grada s oznakom $3$ potrebno je kupiti vinjete s oznakama $(1, 2, 3, 4)$.\\
-Za putovanje do grada s oznakom $4$ potrebno je kupiti vinjete s oznakama $(2, 3, 4, 5)$.\\
-Za putovanje do grada s oznakom $5$ potrebno je kupiti vinjete s oznakama $(2, 3, 4, 5, 6)$.\\
-Za putovanje do grada s oznakom $6$ potrebno je kupiti vinjete s oznakama $(1, 2, 3, 4)$.
+In order to travel to city with index $2$ you can buy vignettes with indices $(2, 3, 4)$.\\
+In order to travel to city with index $3$ you can buy vignettes with indices $(1, 2, 3, 4)$.\\
+In order to travel to city with index $4$ you can buy vignettes with indices $(2, 3, 4, 5)$.\\
+In order to travel to city with index $5$ you can buy vignettes with indices $(2, 3, 4, 5, 6)$.\\
+In order to travel to city with index $6$ you can buy vignettes with indices $(1, 2, 3, 4)$.
 
-\textbf{Pojašnjenje drugog probnog primjera:}
+\textbf{Explanation of the second example:}
 
-Za putovanje do grada s oznakom $2$ potrebno je kupiti vinjetu s oznakom $2$.\\
-Za putovanje do grada s oznakom $3$ potrebno je kupiti vinjete s oznakama $(2, 3)$.\\
-Za putovanje do grada s oznakom $4$ potrebno je kupiti vinjete s oznakama $(1, 2, 3)$.\\
-Za putovanje do grada s oznakom $5$ potrebno je kupiti vinjete s oznakama $(1, 2, 3, 4, 5)$.
+In order to travel to city with index $2$ you can buy a vignette with index $2$.\\
+In order to travel to city with index $3$ you can buy vignettes with indices $(2, 3)$.\\
+In order to travel to city with index $4$ you can buy vignettes with indices $(1, 2, 3)$.\\
+In order to travel to city with index $5$ you can buy vignettes with indices $(1, 2, 3, 4, 5)$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % We're done
 \end{statement}
