@@ -1,0 +1,54 @@
+\subsection*{Zadatak Mensza}
+\textsf{Pripremio: Ivan Paljak }\\
+\textsf{Potrebno znanje: prikaz prirodnog broja u binarnom zapisu}
+
+Fokusirajmo se najprije na prva dva podzadatka kojima smo mogli pristupiti
+na ``direktan'' način. Odnosno, moguće je osmisliti postupak kojim će Alojzije
+i Benjamin u nizove $a$ i $b$ enkodirati tko su i koji su broj vidjeli u
+uredu Gospodina Malnara.
+
+U prvom podzadatku je postupak enkodiranja relativno jednostavan. Primjerice,
+Alojzije je mogao svoj identitet i broj $A$ enkodirati nizom koji se sastoji od
+$2A$ jedinica, a Benjamin je mogao svoj identitet i broj $B$ enkodirati nizom
+koji se sastoji od $2B - 1$ dvojki.  Budući da Alojzije i Benjamin nikad neće
+imati zajednički broj u svojim nizovima, te da im se nizovi sastoje od
+uzastopnog ponavljanja jednog broja, zaključujemo da će se niz $c$ sastojati od
+dva broja, a to su upravo $2A$ i $2B - 1$. Cecilija će tada parni element niza
+$c$ podijeliti s $2$ kako bi dekodirala broj $A$, te će na sličan naćin
+dekodirati i broj $B$, pa samim time jednostavno odrediti koji je veći.
+
+Na sličan način ćemo pristupiti i drugom podzadatku, samo ćemo osmisliti nešto
+efikasniji način enkodiranja brojeva $A$ i $B$. Poslužit ćemo se pritom zapisom
+brojeva u binarnom sustavu, te ćemo ideju iz prethodnog odlomka primijeniti na
+svaki bit zasebno. Preciznije, Alojzije će za $i$-ti postavljen bit u binarnom
+zapisu broja $A$ u niz $a$ dodati broj $2i + 2$ točno $2i + 2$ puta. Slično,
+Benjamin će za $j$-ti postavljen bit u binarnom zapisu broja $B$ u niz $b$ dodati
+broj $2j + 1$ točno $2j + 1$ puta. Lako je primijetiti da će Cecilija na temelju
+parnosti odrediti koji brojevi odgovaraju bitovima broja $A$, a koji brojevi
+bitovima broja $B$.
+
+Ograničenja za posljednji podzadatak su prestroga za dosadašnju strategiju.
+Odnosno, morat ćemo odustati od ideje će Cecilija rekonstruirati brojeve $A$
+i $B$.
+
+Promatrat ćemo i dalje brojeve u binarnom zapisu i zapitati se što vrijedi kada
+je $A > B$. Vrijedi da brojevi $A$ i $B$ imaju neki zajednički prefiks binarnih
+znamenaka, a sljedeća znamenka je jedinica u broju $A$ i nula u broju $B$.
+Primijetite da je pozicija tog bita jedinstvena, odnosno postoji samo jedna
+pozicija takva da se na toj poziciji u broju $A$ nalazi jedinica, u broju $B$
+nula, a prefiks do te pozicije je jednak u oba broja. Nazovimo taj bit
+\textit{bitnim}. Promatrajmo sve pozicije gdje bi se mogao nalaziti bitni bit.
+Naravno, u broju $A$ to su sve pozicije gdje se nalazi jedinica, a u broju $B$
+to su sve pozicije gdje se nalaze nule. Ideja je na temelju broja $A$ generirati
+skup svih prefiksa do pozicije gdje bi se mogao nalaziti bitni bit, te istu stvar
+napraviti za broj $B$, samo što ćemo tamo invertirati bitni bit. Primijetite da,
+ako je $A > B$, u nizu brojeva koje generiramo temeljem broja $A$ i nizu brojeva
+koje genriramo temeljem broja $B$, postoji točno jedan zajednički element. Ako je
+$A < B$, lako se uvjeriti da ne postoji zajednički element.
+
+Dakle, Alojzije će najprije pretvoriti broj $A$ u binarni zapis, te u niz $a$
+zapisati sve prefikse koji završavaju jedinicom, a sufiks popuniti nulama.
+Benjamin će najprije pretvoriti broj $B$ u binarni zapis, te u niz $b$ zapisati
+sve prefikse koji završavaju nulom, ali će tu nulu pretvoriti u jedinicu i ostatak
+sufiksa popuniti nulama. Ceclija će zaključiti da je $A > B$ ako je $a$ i $b$
+imaju zajednički element.
