@@ -2,123 +2,130 @@
 % Problem statement
 \begin{statement}[
   problempoints=100,
-  timelimit=5 sekundi,
+  timelimit=5 seconds,
   memorylimit=512 MiB,
 ]{Mensza}
 
-Gospodin Malnar nedavno je osnovao Menszu -- najveću, najprestižniju i jedinu
-međunarodnu udrugu visokointeligentnih ljubitelja gastronomije. Pogađate, članom
-udruge ne može postati bilo tko, već samo kandidati koji postignu izvrsne
-rezultate na prijamnom ispitu. Dakako, ispit se sastoji od zahtjevnog IQ dijela
-i vrlo zahtjevnog gurmanskog \sout{di}jela. Primjer tipičnog IQ dijela ispita
-predstavit ćemo vam u ovom zadatku, dok ćete primjer gurmanskog jela imati
-prilike okusiti tek nakon natjecanja.
+Mr.\ Malnar recently founded \textit{Mensza} -- the greatest, most prestigious
+and the only international association of highly-intelligent gastronomy
+enthusiasts. As you might have guessed, not anyone can join the association,
+only special candidates that have excelled on an entrance exam.  Of course,
+the exam consists of an IQ-related part, and a food-related part.  We will
+showcase an example of an IQ-related part in this task, and the contestants
+will have a chance to attempt the food-related part after the contest.
 
-Prijamnom ispitu pristupili su Alojzije, Benjamin i Cecilija. Gospodin Malnar
-ih je odmjerio, brzo smislio pravedan zadatak, te se obratio Alojziju:
+The entrance exam candidates in this story are Alojzije, Benjamin and Cecilija.
+Mr.\ Malnar sized them up, invented a worthy problem, and first spoke to Alojzije:
 
-``Alojzije, najprije ću tebe pozvati u svoj ured i pokazat ću ti prirodan
-  broj $A$.  Zatim ćeš mi ti na papir napisati niz brojeva $a = (a_1, a_2,
-\ldots, a_{l_a})$, pri čemu njegova duljina $l_a$ ne smije biti veća od $L$.''
+``Alojzije, you'll be the first to enter my office, where I'll show you the
+  integer $A$. Then, you'll write an array of integers $a = (a_1, a_2,
+\ldots, a_{l_a})$ on a piece of paper, but it's length $l_a$ must not exceed
+$L$.''
 
-Nakon što se uvjerio da je Alojzije shvatio svoj dio posla, obratio se Benjaminu:
+After that, he turned over to Benjamin:
 
-``Benjamine, tebe ću sljedećeg pozvati u ured i pokazat ću ti prirodan
-  broj $B \ne A$.  Zatim ćeš mi ti na papir napisati niz brojeva $b = (b_1, b_2,
-\ldots, b_{l_b})$, pri čemu njegova duljina $l_b$ ne smije biti veća od $L$.''
+``Benjamin, you'll be the next to enter my office, where I'll show you the
+integer $B \ne A$. Then, you'll write an array of integers $b = (b_1, b_2,
+\ldots, b_{l_b})$ on a piece of paper, but it's length $l_b$ must not exceed
+$L$.''
 
-Potom se obratio i Ceciliji:
+Lastly, he addressed Cecilija:
 
-``Cecilijo, tebe ću posljednju pozvati u ured i pokazat ću ti niz $c$ koji
-sam odredio na temelju nizova $a$ i $b$. Preciznije, za svaki broj koji se barem
-jednom pojavljuje u nizovima $a$ i $b$, u niz $c$ ću dodati koliko se ukupno puta
-pojavljuje u uniji nizova $a$ i $b$. Također, elemente niza $c$ ću ti pokazati u
-neopadajućem poretku. Primjerice, ako je $a = (1, 2, 4)$ i $b = (1, 1, 2, 3)$,
-pokazat ću ti $c = (1, 1, 2, 3)$ zato što se brojevi $3$ i $4$ pojavljuju jednom,
-broj $2$ dva puta i broj $1$ tri puta. Nakon što ti pokažem niz $c$, ti mi trebaš
-odgovoriti koji je od brojeva $A$ i $B$ veći.''
+``Cecliija, you'll be the last to enter my office, where I'll show you the
+array of integers $c$ which I've determined based on arrays $a$ and $b$. More
+precisely, for each number appearing in the arrays $a$ and $b$, I'll append
+to the array $c$ number of times that number occurs in the union of $a$ and
+$b$. Also, I'll present the array $c$ to you in a non-decreasing order. For
+example, if $a = (1, 2, 4)$ and $b = (1, 1, 2, 3)$, I'll show you
+$c = (1, 1, 2, 3)$ because numbers $3$ and $5$ appear once, number $2$ twice,
+and number $1$ thrice. After I show you the array $c$, you should tell me which
+of the integers $A$ and $B$ is greater.''
 
-Konačno, kada su se dojmovi malo slegli, obratio se i svim kandidatima zajedno:
+He once more addressed all of the candidates:
 
-``Imate 60 minuta da smislite strategiju pa krećemo s ispitom. Nakon toga
-više ne smijete komunicirati. Ovaj postupak ćemo ponoviti par puta
-\sout{da se uvjerim da se ne radi o sreći} dok ne stigne klopa.''
+``You have 60 minutes to think of a strategy and then we'll proceed with the
+exam. After that, you're not allowed to communicate any more. We'll repeat the
+whole procedure a couple of times until \sout{I confirm you're not just lucky}
+the food arrives.''
 
-Vaš je zadatak osmisliti strategiju koja bi omogućila Alojziju, Benjaminu i
-Ceciliji da prođu IQ dio ispita.
+Your task is to think of a strategy that would allow Alojzije, Benjamin and
+Cecilija to pass the IQ-part of the exam.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Input
-\subsection*{Ulazni podaci}
-U prvom je retku prirodan broj $L$ iz teksta zadatka.
+\subsection*{Input}
+The first line contains an integer $L$ from the task description.
 
-U drugom je retku prirodan broj $Q$, broj scenarija koje morate obraditi. Svaki
-scenarij odgovara nekoj interakciji koja se zbiva u uredu Gospodina Malnara.
+The second line contains an integer $Q$ representing the number of scenarios
+you must process. Each scenario corresponds to some interaction happening in
+the office of Mr.\ Malnar.
 
-U $i$-tom od sljedećih $Q$ redaka opisan je $i$-ti scenarij. Redak će započeti
-riječju \texttt{alojzije}, \texttt{benjamin} ili \texttt{cecilija}, ovisno o
-tome kojeg je kandidata Gospodin Malnar pozvao u ured.
+The $i$-th of the next $Q$ lines describes the $i$-th scenario. The line will
+begin with either \texttt{alojzije}, \texttt{benjamin} or \texttt{cecilija},
+depending on which candidate was summoned to the office.
 
-Ako $i$-ti redak započinje riječju \texttt{alojzije}, tada se u nastavku retka
-nalazi prirodan broj $A$.
+If the $i$-th line begins with the word \texttt{alojzije}, then it will also
+contain the integer $A$ from the task description.
 
-Ako $i$-ti redak započinje riječju \texttt{benjamin}, tada se u nastavku retka
-nalazi prirodan broj $B$.
+If the $i$-th line begins with the word \texttt{benjamin}, then it will also
+contain the integer $B$ from the task description.
 
-Ako $i$-ti redak započinje riječju \texttt{cecilija}, tada se u nastavku retka
-najprije nalazi cijeli broj $l_c$ (duljina niza $c$), a zatim se nalaze
-elementi niza $c$ u neopadajućem poretku ($c_1 \le c_2 \le \ldots \le c_{l_c}$).
+If the $i$-th line begins with the word \texttt{cecilija}, then it will be
+continued with $l_c$ (length of an array $c$), followed by the elements of
+$c$ in non-decreasing order $(c_1 \le c_2 \le \ldots \le c_{l_c})$.
+
+\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Output
-\subsection*{Izlazni podaci}
-U $i$-tom od $Q$ redaka treba ispisati odgovor na $i$-ti scenarij iz ulaza.
+\subsection*{Output}
+The $i$-th of the next $Q$ lines should contain an answer to the $i$-th
+input scenario.
 
-Ako je $i$-ti scenarij iz ulaza bio oblika \texttt{alojzije $A$}, tada treba
-najprije ispisati broj $0 \le l_a \le L$ (duljinu niza $a$), a zatim elemente niza
-$a$ koji predstavljaju niz brojeva koje bi Alojzije napisao na papir nakon što
-mu Gospodin Malnar pokaže broj $A$. Elementi niza $a$ moraju biti cijeli brojevi
-između $0$ i $10^9$ uključivo.
+If the $i$-th input scenario was of the form \texttt{alojzije $A$}, then you
+should first output the number $0 \le l_a \le L$ (length of $a$), followed by
+the elements of $a$ representing the array that Alozije would write on the
+piece of paper after being presented with the number $A$ in Mr.\ Malnar's office.
+Elements of $a$ need to be between $0$ and $10^9$ inclusive.
 
-Ako je $i$-ti scenarij iz ulaza bio oblika \texttt{benjamin $B$}, tada treba
-najprije ispisati broj $0 \le l_b \le L$ (duljinu niza $b$), a zatim elemente niza $b$ koji
-predstavljaju niz brojeva koje bi Benjamin napisao na papir nakon što mu Gospodin
-Malnar pokaže broj $B$. Elementi niza $b$ moraju biti cijeli brojevi između $0$
-i $10^9$ uključivo.
+If the $i$-th input scenario was of the form \texttt{benjamin $B$}, then you
+should first output the number $0 \le l_b \le L$ (length of $b$), followed by
+the elements of $b$ representing the array that Benjamin would write on the
+piece of paper after being presented with the number $B$ in Mr.\ Malnar's office.
+Elements of $b$ need to be between $0$ and $10^9$ inclusive.
 
-Ako je $i$-ti scenarij iz ulaza bio oblika \texttt{cecilija $l_c$ $c_1$ ...
-$c_{l_c}$}, tada treba ispisati ``\texttt{A}'' ako bi Cecilija na temelju niza
-$c$ zaključila da je $A > B$, odnosno treba ispisati ``\texttt{B}'' ako bi Cecilija
-zaključila da je $A < B$. Možete pretpostaviti da će niz $c$ biti generiran na
-temelju nizova $a$ i $b$, čije su duljine bile najviše $L$, te  koje je vaš
-program ispisao prilikom obrade scenarija \texttt{alojzije $A$} i
-\texttt{benjamin $B$}. Pritom je moguće da je vaš program takve nizove $a$ i $b$
-ispisao u nekom od prethodnih izvođenja.
+If the $i$-th input scenario was of the form \texttt{cecilija $l_c$ $c_1$ ...
+$c_{l_c}$}, then you need to output ``\texttt{A}'' if Ceclija would determine
+that $A > B$ based on array $c$. Conversely, you need to output ``\texttt{B}'',
+of Cecilija would determine that $A < B$ based on array $c$. You can assume that
+an array $c$ will be generated based on arrays $a$ and $b$ that your program has
+produced when processing scenarios \texttt{alojzije $A$} and \texttt{benjamin $B$}.
+It is possible that your program has produce the arrays $a$ and $b$ in a previous
+run.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Scoring
-\subsection*{Bodovanje}
-Vaše rješenje bit će testirano u dva koraka. Prvo će biti pozvano na testnom
-podatku u kojem su svi scenariji oblika \texttt{alojzije $A$} ili
-\texttt{benjamin $B$}. Uz pretpostavku da vaš program obradi sve scenarije u
-ispravnom formatu, vaše će rješenje biti pozvano na testnom podatku u kojem
-svi scenariji započinju riječju \texttt{cecilija}, a pripadajući nizovi $c$
-bit će generirani temeljem raznih kombinacija nizova $a$ i $b$ koje je vaš
-program ispisao u prethodnom izvođenju. Vrijednost ulaznog podatka $L$ bit će
-jednaka prilikom oba pokretanja. Ako vaš program u drugom izvođenju ispravno
-odgovori na sve scenarije, vaše rješenje smatrat će se točnim.
+\subsection*{Scoring}
+Your solution will be tested in two runs. First it will be ran on a test case
+containing only scenarios of the form  \texttt{alojzije $A$} or
+\texttt{benjamin $B$}. Assuming your program processes all scenarios and produces
+outputs in a valid format, it will be ran a second time. In the second run, all
+scenarios will begin with the world \texttt{cecilija}, and the corresponding
+arrays $c$ will be generated based on various combinations of the arrays $a$
+and $b$ your program has produced in the first run. The value of the input parameter
+$L$ will be the same in both runs. If your program correctly answers all scenarios
+in the second run, it will be considered correct.
 
-Vrijeme izvršavanja vašeg rješenja je zbroj vremena izvršavanja
-oba koraka evaluacije.
+The execution time of your submission is the sum of execution times of both runs.
 
-Označimo li s $N$ najveću vrijednost koju će u test podacima nekog podzadatka
-poprimiti brojevi $A$ ili $B$, vaša će se rješenja bodovati prema sljedećoj
-tablici:
+If we denote with $N$ the maximum value of numbers $A$ and $B$ in all test cases
+of a particular subtask, your solutions will be scored according to the following
+table:
 
 {\renewcommand{\arraystretch}{1.4}
   \setlength{\tabcolsep}{6pt}
   \begin{tabular}{ccl}
-   Podzadatak & Broj bodova & Ograničenja \\ \midrule
+   Subtask & Score & Constraints \\ \midrule
     1 & 11 & $N = 100$, $L = 200$, $1 \le Q \le 10\,000$ \\
     2 & 23 & $N = 1\,000$, $L = 110$, $1 \le Q \le 1\,000\,000$ \\
     3 & 66 & $N = 500\,000$, $L = 20$, $1 \le Q \le 1\,000\,000$
@@ -126,28 +133,28 @@ tablici:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Examples
-\subsection*{Probni primjer}
-\subsubsection*{Prvo pokretanje}
+\subsection*{Example Test Case}
+\subsubsection*{First Run}
 {\renewcommand{\arraystretch}{1.4}
   \setlength{\tabcolsep}{6pt}
   \begin{tabular}{ccl}
-    Ulaz & Izlaz & Napomena \\ \midrule
-     200 & & Nizovi koje Alojzije i Benjamin zapisuju smiju imati najviše $200$ elemenata. \\
-     3   & & Potrebno je obraditi $3$ scenarija. \\
-    \texttt{\frenchspacing alojzije 1} & \texttt{1 23} & Alojzije na temelju broja $1$ zapisuje niz $a = (23)$ \\
-    \texttt{\frenchspacing benjamin 2} & \texttt{1 42} & Benjamin na temelju broja $2$ zapisuje niz $b = (42)$ \\
-    \texttt{\frenchspacing alojzije 3} & \texttt{2 11 11} & Alojzije na temelju broja $3$ zapisuje niz $a = (11, 11)$ \\
+    Input & Output & Comment \\ \midrule
+     200 & & Arrays that Alojzije and Benjamin are writing down can have at most $200$ elements. \\
+     3   & & You must process $3$ scenarios. \\
+    \texttt{\frenchspacing alojzije 1} & \texttt{1 23} & Alojzije is writing down $a = (23)$ based on number $1$. \\
+    \texttt{\frenchspacing benjamin 2} & \texttt{1 42} & Benjamin is writing down $b = (42)$ based on number $2$. \\
+    \texttt{\frenchspacing alojzije 3} & \texttt{2 11 11} & Alojzije is writing down $a = (11, 11)$ based on number $3$. \\
 \end{tabular}}
 
-\subsubsection*{Drugo pokretanje}
+\subsubsection*{Second Run}
 {\renewcommand{\arraystretch}{1.4}
   \setlength{\tabcolsep}{6pt}
   \begin{tabular}{ccl}
-    Ulaz & Izlaz & Napomena \\ \midrule
-     200 & & Nizovi koje Alojzije i Benjamin zapisuju smiju imati najviše $200$ elemenata. \\
-     2   & & Potrebno je obraditi $2$ scenarija. \\
-    \texttt{\frenchspacing cecilija 2 1 1} & \texttt{B} & Niz $c = (1, 1)$ nastao je temeljem nizova $a = (23)$ i $b = (42)$, pa je $A < B$. \\
-    \texttt{\frenchspacing cecilija 2 1 2} & \texttt{A} & Niz $c = (1, 2)$ nastao je temeljem nizova $a = (11, 11)$ i $b = (42)$, pa je $A > B$.\\
+    Input & Output & Comment \\ \midrule
+     200 & & Arrays that Alojzije and Benjamin are writing down can have at most $200$ elements. \\
+     2   & & You must process $2$ scenarios. \\
+    \texttt{\frenchspacing cecilija 2 1 1} & \texttt{B} & Array $c = (1, 1)$ was generated based on $a = (23)$ and $b = (42)$, so $A < B$.\\
+    \texttt{\frenchspacing cecilija 2 1 2} & \texttt{A} & Array $c = (1, 2)$ was generated based on $a = (11, 11)$ and $b = (42)$, so $A > B$.\\
 \end{tabular}}
 
 
