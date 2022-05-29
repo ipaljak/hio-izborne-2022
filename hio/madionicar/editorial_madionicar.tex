@@ -1,0 +1,35 @@
+\subsection*{Zadatak Mađioničar}
+\textsf{Pripremili: }\\
+\textsf{Potrebno znanje: palindromi}
+
+Prvi podzadatak možemo riješiti binarnim pretraživanjem. Primijetimo da, ako je
+neka riječ palindrom, onda je i riječ dobivena micanjem prvog i zadnjeg slova također palindrom.
+To znači da, ako postoji postoji palindromski podstring duljine $l > 1$, onda postoji i palindromski podstring duljine $l - 2$ (ali ne nužno i duljine $l - 1$!).
+Stoga, možemo binarnim pretraživanjem odvojeno naći najdulji parni i najdulji neparni palindromski podstring, te je odgovor veći od ta dva.
+Za to nam treba manje od $2 \cdot \lceil{\log(n/2)}\rceil \cdot n$ upita.
+
+Drugi podzadatak podzadatak riješit ćemo koristeći najviše $3n$ upita.
+Za svaki $r$ ($1 \leq r \leq n$), naći ćemo najmanji $l$ za koji je
+podstring $[l, r]$ palindrom (drugim riječima, $[l, r]$ je 
+najdulji palindromski podstring koji završava $r$-tim slovom).
+Na početku stavimo $l = 1$, te idemo redom $r = 1$, $r = 2$, ..., $r = n$.
+Kada prelazimo s $r - 1$ na $r$, primijetimo da novi $l$ može biti najmanje $l - 1$ (jer micanjem prvog i zadnjeg slova palindrom ostaje palindrom). Dakle, pri prijelazu
+prvo provjerimo je li podstring $[l - 1, r]$ palindrom. Ako je, smanjujemo $l$ za 1 te smo našli željeni $l$. Inače, sve dok podstring $[l, r]$ nije palindrom, povećavamo $l$ za 1.
+Primijetimo da je uvijek $1 \leq l \leq n$ te se tijekom algoritma $l$ može smanjiti za 1 najviše $n$ puta,
+pa se stoga može povećati za 1 najviše $2n$ puta, što daje najviše $3n$ upita.
+
+U trećem podzadatku, kada se riječ sastoji od najviše dva različita slova, možemo 
+s $n - 1$ upita otkriti riječ, tako što postavimo upit za svaki podstring duljine dva.
+Ako je palindrom, onda su ta dva slova jednaka, inače su različita. Nakon što znamo riječ,
+najdulji palindromski podstring možemo naći primjerice pomoću binarnog pretraživanja i \textit{hashiranja} ili koristeći Manacherov algoritam.
+
+Četvrti podzadatak rješavamo koristeći najviše $2n$ upita.
+Odvojeno ćemo naći najdulji neparni i najdulji parni palindromski podstring.
+Riješimo prvo neparni slučaj. Neka je na početku $d = 1$, to će nam predstavljati duljinu
+najduljeg do sad nađenog neparnog palindromskog podstringa. Idemo redom $i = 1$, $i = 2$, ..., $i = n$.
+Za svaki $i$ radimo sljedeće: sve dok je podstring duljine $d + 2$ sa ``središtem'' u $i$
+(to je podstring $[i - (d + 1) / 2, i + (d + 1) / 2]$) palindrom, povećavamo $d$ za 2.
+Naravno, ako bi taj podstring izlazio izvan granica riječi, prestajemo i prelazimo na sljedeći $i$.
+Analizirajmo sada broj upita. Postavili smo $(d - 1) / 2$ potvrdnih upita (kada je podstring bio palindrom) te najviše $n - (d + 1) / 2$ negativnih upita
+(za svaki $i \leq n - (d + 1) / 2$ najviše jedan, a za veće $i$ nismo pitali nijedan upit jer je podstring izlazio izvan granica). To ukupno daje najviše $n - 1$ upit.
+Parni slučaj rješavamo analogno. 
