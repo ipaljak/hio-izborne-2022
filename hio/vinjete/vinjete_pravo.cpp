@@ -28,7 +28,7 @@ void update(int a, int b, int lo, int hi, node *x, node *y) {
     x->sum = x->val;
     return;
   }
-  //cout << "!! " << a << " " << b << " " << lo << " " << hi << " " << x << " " << y << endl;
+
   if (b <= lo || hi <= a) return;
   if (a <= lo && hi <= b) {
     x->val = (hi - lo);
@@ -63,30 +63,12 @@ void update(int a, int b, int lo, int hi, node *x, node *y) {
 int sol[MAXN];
 vector <edge> ve[MAXN];
 
-void print(node* x) {
-  if (x == NULL) return;
-  cout << x << " " << x->val << " " << x->sum << " " << x->l << " " << x->r << endl;
-  print(x->l);
-  print(x->r);
-}
-
 void dfs(int x, int par) {
   sol[x] = roots[x]->sum;
 
   for (auto tr : ve[x]) {
     if (tr.y == par) continue;
-
-    //cout << "\n.....\n";
-    //print(roots[x]);
-    //cout << "....\n";
-    //print(roots[tr.y]);
-    //cout << "....\n";
     update(tr.a - 1, tr.b, 0, OFF, roots[tr.y], roots[x]);
-
-    //print(roots[x]);
-    //cout << "....\n";
-    //print(roots[tr.y]);
-    //cout << "....\n";
     dfs(tr.y, x);
   }
 
