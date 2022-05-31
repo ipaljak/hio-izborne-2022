@@ -1,5 +1,5 @@
 \subsection*{Zadatak Vinjete}
-\textsf{Pripremio: }\\
+\textsf{Pripremili: Dominik Fistrić i Ivan Paljak}\\
 \textsf{Potrebno znanje: DFS obilazak stabla, tournament stablo}
 
 Za početak ukorijenimo stablo u čvoru 1. Lako vidimo da je skup potrebnih vinjeta za putovanje do nekog čvora nadskup potrebnih vinjeta za putovanje do roditelja tog čvora. Time dolazimo na ideju da se od čvora 1 spuštamo prema ostalim čvorovima DFS obilaskom te potrebne vinjete za određeni čvor računamo samo preko potrebnih vinjeta roditelja te vinjeta potrebnih za autocestu između čvora i njegovog roditelja. Taj pristup vodi do pravog rješenja, no ovisno o načinu pamćenja vinjeta nekog čvora te spajanja istih s potrebnim vinjetama na autocesti dobivamo rješenja za pojedine podzadatke.
