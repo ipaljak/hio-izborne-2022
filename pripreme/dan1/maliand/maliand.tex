@@ -1,0 +1,117 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Problem statement
+\begin{statement}[
+  problempoints=100,
+  timelimit=2 sekunde,
+  memorylimit=512 MiB,
+]{Maliand}
+
+Braća Maliand, Adrian i Vedran, slobodno vrijeme provode igrajući računalne
+igre na obiteljskom računalu. Pritom su vrlo strastveni pa stvari nerijetko
+izmaknu kontroli, što ima vrlo negativan utjecaj na zdravlje njihove majke.
+Njihova majka je inače umjetnica, a umjetnica mora biti zdrava. Stoga je
+odlučila uvesti raspored kojim će za svakog brata propisati koje dane u tjednu
+smije provesti igrajući se na računalu.
+
+Budući da su Maliandi umjetnička obitelj, odlučili su da se njihov tjedan
+sastoji od $N$ uzastopnih dana.  Majka će dopustiti Adrianu da provede točno
+$K$ dana tjedno igrajući igre, dok će Vedranu dopustiti da provede točno $L$
+dana tjedno igrajući igre.  Rasporede će im uručiti već danas, a Adrian i
+Vedran će ih se pridržavati od sutra.
+
+Kako ne bi ispala prestroga prema svojim sinovima, odlučila im je dopustiti
+da se počnu pridržavati rasporeda počevši od proizvoljnog dana napisanog na
+rasporedu. Naravno, nakon toga se strogo moraju pridržavati rasporeda redom
+kako piše, uz pretpostavku da se raspored periodički ponavlja u beskonačnost.
+
+Primjerice, pretpostavimo da je $N=3$, $K=2$, te da je Adrian dobio raspored
+$(1,0,1)$, gdje $1$ označava da se taj dan smije igrati na računalu, a $0$
+označava da ne smije. Ako se Adrian odlući pridržavati rasporeda od drugog
+napisanog dana, to znaći da se sutra neće igrati, pa će se iduća dva dana
+igrati, pa se opet jedan dan neće igrati, \ldots
+
+Gospođa Maliand je svjesna da će Adrian i Vedran biti najsretniji (i
+najglasniji) one dane kada se obojica mogu igrati na računalu, te zaključuje
+da će odabrati početak pridržavanja rasporeda tako da maksimiziraju broj
+takvih dana.  S druge strane, ona će tada biti najmanje sretna, pa želi
+napraviti takve rasporede da broj dana kada se obojica mogu igrati na
+računalu bude najmanji mogući uz pretpostavku da će Adrian i Vedran početak
+pridržavanja rasporeda odabrati tako da taj broj maksimiziraju.
+
+Pomozite gospođi Maliand odrediti rasporede koji će minimizirati
+broj dana u tjednu kada će se oba dječaka smjeti igrati na računalu.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Input
+\subsection*{Ulazni podaci}
+U prvom su retku brojevi $N$, $K$ i $L$ iz teksta zadatka $(0 \le K, L \le N)$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Output
+\subsection*{Izlazni podaci}
+
+U prvi redak ispišite broj dana u tjednu kada će se oba dječaka smjeti igrati
+na računalu ako gospođa Maliand optimalno odredi rasporede.
+
+U drugi redak ispišite Adrianov raspored u obliku binarnog stringa duljine $N$
+koji sadrži $K$ jedinica. Pritom, znamenka $1$ označava da se Adrian taj dan
+smije igrati na računalu, dok znamenka $0$ označava suprotno.
+
+U treći redak ispišite Vedranov raspored u obliku binarnog stringa duljine $N$
+koji sadrži $L$ jedinica. Interpretacija ovog ispisa analogna je interpretaciji
+Adrianovog rasporeda iz prethodnog odlomka.
+
+Ako postoji više točnih rješenja, ispišite bilo koje.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Scoring
+\subsection*{Bodovanje}
+{\renewcommand{\arraystretch}{1.4}
+  \setlength{\tabcolsep}{6pt}
+  \begin{tabular}{ccl}
+ Podzadatak & Broj bodova & Ograničenja \\ \midrule
+  1 & 5 & $1 \le N \le 13$\\
+  2 & 50 & $1 \le N \le 5\,000$\\
+  3 & 45 & $1 \le N \le 500\,000$\\
+\end{tabular}}
+
+Ako vaš program na nekom testnom podatku ispiše točan prvi redak, ali ponudi
+netočan raspored u drugm ili trećem retku, osvojit će $20\%$ bodova predviđenih
+za taj test podatak. Broj bodova nekog podzadatka odgovara najmanjem broju
+bodova koje je vaše rješenje ostvarilo na nekom od testnih podataka koji čine
+taj podzadatak.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Examples
+\subsection*{Probni primjeri}
+\begin{tabularx}{\textwidth}{X'X'X}
+\sampleinputs{test/maliand.dummy.in.1}{test/maliand.dummy.out.1} &
+\sampleinputs{test/maliand.dummy.in.2}{test/maliand.dummy.out.2} &
+\sampleinputs{test/maliand.dummy.in.3}{test/maliand.dummy.out.3}
+\end{tabularx}
+
+\textbf{Pojašnjenje prvog probnog primjera:} Ako se i Adrian i Vedran odluče
+pridržavati rasporeda od prvog napisanog dana, tada će se obojica na računalu
+igrati trećeg i petog dana (počevši od sutra). Može se pokazati da gospođa
+Maliand ne može napraviti bolje rasporede.
+
+\textbf{Pojašnjenje drugog probnog primjera:} Budući da se Vedran uopće ne
+snije igrati na računalu, rješenje je $0$ neovisno o Adrianovom rasporedu i
+njeogovoj odluci o početku pridržavanja rasporda.
+
+\textbf{Pojašnjenje trećeg probnog promjera:} Ako se Adrian odluči pridržavati
+rasporeda od prvog napisanog dana, a Vedran od četvrtog napisanog dana, tada će
+se obojica na računalu igrati četvrtog, petog, osmog, devetog i desetg dana
+(počevši od sutra). Može se pokazati da gospođa Maliand ne može napraviti bolje
+rasporede.
+
+% We're done
+
+\end{statement}
+
+%%% Local Variables:
+%%% mode: latex
+%%% mode: flyspell
+%%% ispell-local-dictionary: "croatian"
+%%% TeX-master: "../hio.tex"
+%%% End:
