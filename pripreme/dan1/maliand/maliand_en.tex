@@ -1,0 +1,66 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Problem statement
+\begin{statement}[
+  problempoints=100,
+  timelimit=2 seconds,
+  memorylimit=512 MiB,
+]{Maliand}
+
+\chapter
+
+Two brothers, Adrian and Vedran, enjoy playing video games in their spare time. They are so passionate about this activity that it tends to gets out of control from time to time. To rectify this issue, their mother decided to devise a schedule which prescribes for each of the two brothers on which days of the week he can play. 
+
+For reasons unknown, a week in their family consists of $N$ consecutive days, and the mother will permit Adrian and Vedran to play exactly $K$ and $L$ days a week respectively. In order not to be too hard on her sons, she will allow each of them to choose when to start adhering to the schedule, but this must happen within the next week. In other words, each brother can independently choose one of the next $N$ days (starting from today) and start playing according to his schedule, pretending that the week begins on the chosen day. It is not permitted to play before the chosen day and the schedule periodically repeats itself every $N$ days from that day onward.
+
+However, matters are not so simple. Since Adrian and Vedran share a single computer, they often quarrel if they play on the same day. Hence, their mother wants the maximum number of days on which both of them will play during a week to be as small as possible. Here, we are assuming a worst-case scenario, i.e.\ that, given their respective schedules, Adrian and Vedran will choose their starting days so as to maximise this number. Your task is to help the mother by determining this number as well as finding suitable playing schedules for her sons.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Input
+\subsection*{Input}
+
+The first and only line contains the integers $N$, $K$ and $L$ from the task description ($0 \le K, L \le N$).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Output
+\subsection*{Output}
+
+On the first line, output the minimum value of the maximum number of days on which Adrian and Vedran will both play during a week. On the second line, output a playing schedule for Adrian in the form of a binary string of length $N$ containing $K$ occurrences of the digit $1$. The $i$-th digit should be equal to $1$ if Adrian plays on the $i$-th day, and should be equal to $0$ otherwise. On the third line, output a playing schedule for Vedran in the form of a binary string of length $N$ containing $L$ occurrences of the digit $1$. The $i$-th digit should be equal to $1$ if Vedran plays on the $i$-th day, and should be equal to $0$ otherwise.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Scoring
+\subsection*{Scoring}
+{\renewcommand{\arraystretch}{1.4}
+  \setlength{\tabcolsep}{6pt}
+  \begin{tabular}{ccl}
+ Subtask & Score & Constraints \\ \midrule
+  1 & 5 & $1 \le N \le 13$\\
+  2 & 50 & $1 \le N \le 5\,000$\\
+  3 & 45 & $1 \le N \le 500\,000$\\
+\end{tabular}}
+
+If your program outputs the correct first line, but does not provide the correct second and third line, that test case will be scored with $20\%$ of points allocated for the subtask it is part of. The score for each subtask equals the smallest score obtained by one of its test cases.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Examples
+\subsection*{Examples}
+\begin{tabularx}{\textwidth}{X'X'X}
+\sampleinputs{test/maliand.dummy.in.1}{test/maliand.dummy.out.1} &
+\sampleinputs{test/maliand.dummy.in.2}{test/maliand.dummy.out.2} &
+\sampleinputs{test/maliand.dummy.in.3}{test/maliand.dummy.out.3}
+\end{tabularx}
+
+\textbf{Clarification of the first example:} If Adrian and Vedran start their schedules today, they will both play on the third and fifth day. It is easy to see that this is a worst-case scenario.
+
+\textbf{Clarification of the second example:} Since Vedran is not allowed to play on any day, the answer will be $0$ regardless of Adrian's schedule.
+
+\textbf{Clarification of the third example:} If Adrian and Vedran start their schedules today, they will both play on the fourth, fifth, eighth, ninth and tenth day. It is easy to see that the described situation is a worst-case scenario.
+% We're done
+
+\end{statement}
+
+%%% Local Variables:
+%%% mode: latex
+%%% mode: flyspell
+%%% ispell-local-dictionary: "croatian"
+%%% TeX-master: "../hio.tex"
+%%% End:
