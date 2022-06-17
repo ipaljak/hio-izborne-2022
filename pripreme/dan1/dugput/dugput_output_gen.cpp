@@ -736,34 +736,6 @@ void solve(int n, int m, point s, point t, int xoff = 0, int yoff = 0) {
     }
   }
 
-  if (s.y < t.y) {
-    for (int j = s.y; j < t.y; j++) {
-      FOR(i, 1, m + 1) {
-        if (s.x == i && s.y == j) continue;
-        if (t.x == i && t.y + 1 == j) continue;
-        if (U(n, m, s, t) == U(j, m, s, {i, j}) + U(n - j, m, {i, j + 1}, t)) {
-          solve(j, m, s, {i, j}, xoff, yoff);
-          solve(n - j, m, {i, 1}, {t.x, t.y - j}, xoff, yoff + j);
-          dir[i + xoff][j + yoff] = 1;
-          return;
-        }
-      }
-    }
-  } else {
-    for (int j = t.y; j < s.y; j++) {
-      FOR(i, 1, m + 1) {
-        if (t.x == i && t.y == j) continue;
-        if (s.x == i && s.y + 1 == j) continue;
-        if (U(n, m, s, t) == U(j, m, t, {i, j}) + U(n - j, m, {i, j + 1}, s)) {
-          solve(j, m, t, {i, j}, xoff, yoff);
-          solve(n - j, m, {i, 1}, {s.x, s.y - j}, xoff, yoff + j);
-          dir[i + xoff][j + yoff] = 1;
-          return;
-        }
-      }
-    }
-  }
-
   return;
 }
 
@@ -832,13 +804,13 @@ int main() {
     out[(s.y - 1) * 2][(s.x - 1) * 3] = '*';
     out[(t.y - 1) * 2][(t.x - 1) * 3] = '*';
 
-    //cout << U(n, m, s, t) << "\n";
-    REP(i, 2 * n - 1) {
-      REP(j, 3 * m - 2) {
+    cout << U(n, m, s, t) << "\n";
+    /*REP(i, 2 * n) {
+      REP(j, 3 * m) {
         cout << out[i][j];
       }
       cout << "\n";
-    }
+    }*/
   }
 
   return 0;
