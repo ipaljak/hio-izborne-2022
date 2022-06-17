@@ -54,7 +54,8 @@ void checker(ifstream& fin, ifstream& foff, ifstream& fout)
   int T;
   if (!(fin >> T)) finish(0, TEST_DATA_ERROR);
 
-  while (T--) {
+  double score = 0.0;
+  REP(bla, T) {
     // Read official input
     int n, m;
     if (!(fin >> n >> m)) finish(0, TEST_DATA_ERROR);
@@ -148,13 +149,16 @@ void checker(ifstream& fin, ifstream& foff, ifstream& fout)
     int sol;
     if (!(foff >> sol)) finish(0, TEST_DATA_ERROR);
 
-    if (sol != vis[tx][ty]) finish(0, WRONG);
+    if (sol == vis[tx][ty]) score += 2;
+    if (sol * 0.9 <= vis[tx][ty]) score += 1;
+
   }
   string garbage;
   fout >> garbage;
   if (fout >> garbage) finish(0, WRONG_OUTPUT_FORMAT);
 
-  finish(1, CORRECT);
+  if (score == 2 * T) finish(1, CORRECT);
+  finish((double) score / (2 * T), PARTIAL);
   // The function MUST terminate before this line via finish()!
 }
 
