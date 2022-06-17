@@ -150,7 +150,7 @@ void checker(ifstream& fin, ifstream& foff, ifstream& fout)
     if (!(foff >> sol)) finish(0, TEST_DATA_ERROR);
 
     if (sol == vis[tx][ty]) score += 2;
-    if (sol * 0.9 <= vis[tx][ty]) score += 1;
+    else if (sol * 0.9 <= vis[tx][ty]) score += 1;
 
   }
   string garbage;
