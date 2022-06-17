@@ -13,7 +13,7 @@ Dug je put do statusa rock-zvijezde, dug je put kada putujete hrvatskim
 
 Postoje razni dugi putovi i svašta bi se o njima dalo napisati, no to je već
 tema za vaš najdraži blog(aritam). Vjerujemo da ćete se složiti kako je put do
-plasmana u hrvatsku informatičku reprezentaciju takđer dug. Srećom, vaš se
+plasmana u hrvatsku informatičku reprezentaciju također dug. Srećom, vaš se
 ovogodišnji put bliži kraju, a da biste ga uspješno savladali morate nam
 odgovoriti na $Q$ jednostavnih pitanja o dugim putovima.
 
@@ -31,7 +31,7 @@ dolje, lijevo i desno) te na svako polje smijete stati najviše jednom.
 U prvom je retku prirodan broj $Q$ iz teksta zadatka.
 
 U $i$-tom od sljedećih $Q$ redaka su brojevi $N_i$, $M_i$, $A_i$, $B_i$, $C_i$ i 
-$D_i$ iz teksta zadatka.
+$D_i$ iz teksta zadatka. Vrijedit će $(A_i, B_i) \neq (C_i, D_i)$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Output
@@ -61,6 +61,21 @@ između polja u istom stupcu.
   3 & ?? & \\
 \end{tabular}}
 
+Neka je $d_\mathrm{odg}^{(i)}$ duljina puta u vašem odgovoru na $i$-ti upit, a $d_\mathrm{max}^{(i)}$ maksimalna moguća duljina puta u $i$-tom upitu. 
+Tada ćete za $i$-ti upit dobiti sljedeći udio bodova:
+$$
+\begin{cases}
+    100\% & \text{ako } d_\mathrm{odg}^{(i)} = d_\mathrm{max}^{(i)} \\
+    35\% & \text{ako } 0.98 \cdot d_\mathrm{max}^{(i)} \leq d_\mathrm{odg}^{(i)} < d_\mathrm{max}^{(i)} \\
+    0\% & \text{inače.}
+\end{cases}
+$$
+Pritom duljinu puta računamo kao broj polja na tom putu.
+
+Broj bodova za testni podatak jednak je \textbf{prosječnom} broju bodova po svim upitima.
+Broj bodova nekog podzadatka odgovara \textbf{najmanjem} broju
+bodova koje je vaše rješenje ostvarilo na nekom od testnih podataka koji čine
+taj podzadatak.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Examples
