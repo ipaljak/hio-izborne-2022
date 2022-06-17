@@ -1,11 +1,16 @@
-// PAZI OVO NIJE OK ZA CMS EVALUATOR
-//
 // Checker to be used by HSIN evaluator.
 //
-// Usage: [checker] [input] [official_output] [contestant_output]
+// This should *not* be used for CMS!
 //
-// Score (real between 0.0 and 1.0) written on stdout.
-// Textual description of the result written on stderr.
+// Usage: [checker] [input] [official_output] [contestant_output] [configuration_file (optional)]
+//
+// Output (stdout):
+//     Score.
+//     Textual description (optional).
+//
+// Score should be output as an integer (0 or 1), or a real (between 0.0 and
+// 1.0) or a fraction (between `0/1` and `1/1`, you don't have to
+// simplify/reduce the fraction).
 
 #include <algorithm>
 #include <cassert>
@@ -13,12 +18,11 @@
 #include <cstring>
 #include <fstream>
 #include <iostream>
+#include <set>
 #include <sstream>
 #include <string>
 #include <vector>
-#include <set>
 #include <queue>
-#include <math.h>
 
 using namespace std;
 
@@ -29,61 +33,66 @@ using namespace std;
 
 typedef long long llint;
 
-/**
- * @param p fraction of points awarded to the contestant.
- * @pararm m error message displayed to the contestant.
- */
-void finish(double p, const string& m);
+// Use one of the following functions to output the points to the contestant.
+// The first accepts a double and outputs it.
+// The second accepts a fraction and outputs it.
 
-int ceil(int a, int b) { return (a - 1) / b + 1; }
+void finish(double score) {
+  cout << score << endl;
+  exit(0);
+}
 
-/**
- * The main checking function.
- * @param fin official input
- * @param foff official output
- * @param fout contestant's output
- */
-void checker(ifstream& fin, ifstream& foff, ifstream& fout)
+void finish(double score, string message) {
+  cout << score << endl;
+  cout << message << endl;
+  exit(0);
+}
+
+void finish(llint points_awarded, llint points_max) {
+  cout << points_awarded << "/" << points_max << endl;
+  exit(0);
+}
+
+void checker(ifstream& fin, ifstream& foff, ifstream& fout, ifstream& fconf)
 {
-  const string WRONG_OUTPUT_FORMAT = "Krivo formatiran izlaz.";
-  const string TEST_DATA_ERROR = "Greška u službenom ulazu ili izlazu.";
-  const string WRONG = "Netočno.";
-  const string CORRECT = "Točno.";
-  const string PARTIAL = "Suboptimalno rješenje.";
+  const string PANIC = "Correct.";
+  bool panic = false;
 
   int T;
-  if (!(fin >> T)) finish(0, TEST_DATA_ERROR);
+  if (!(fin >> T)) finish(0);
 
-  double score = 0.0;
+  double score = 1;
   REP(bla, T) {
     // Read official input
     int n, m;
-    if (!(fin >> n >> m)) finish(0, TEST_DATA_ERROR);
+    if (!(fin >> n >> m)) finish(0);
     int sx, sy;
-    if (!(fin >> sx >> sy)) finish(0, TEST_DATA_ERROR);
+    if (!(fin >> sx >> sy)) finish(0);
     sx--, sy--;
     int tx, ty;
-    if (!(fin >> tx >> ty)) finish(0, TEST_DATA_ERROR);
+    if (!(fin >> tx >> ty)) finish(0);
     tx--, ty--;
+    //cout << "procitalo input\n";
 
     // Read contestant's output
     int N = 2 * n - 1, M = 3 * m - 2;
     vector<string> G(N);
     for (auto& row : G) {
         getline(fout, row);
-        if ((int)row.size() != M) finish(0, WRONG_OUTPUT_FORMAT);
+        if ((int)row.size() != M) finish(0);
     }
+    //cout << "procitalo output\n";
 
     // Check if output is a valid graph
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
             if (i % 2 == 0) {
-                if (j % 3 == 0 && G[i][j] != 'o'&& G[i][j] != '*') finish(0, WRONG);
-                if (j % 3 == 1 && G[i][j] != G[i][j + 1]) finish(0, WRONG);
-                if (j % 3 != 0 && G[i][j] != '-' && G[i][j] != ' ') finish(0, WRONG);
+                if (j % 3 == 0 && G[i][j] != 'o'&& G[i][j] != '*') finish(0);
+                if (j % 3 == 1 && G[i][j] != G[i][j + 1]) finish(0);
+                if (j % 3 != 0 && G[i][j] != '-' && G[i][j] != ' ') finish(0);
             } else {
-                if (j % 3 == 0 && G[i][j] != '|' && G[i][j] != ' ') finish(0, WRONG);
-                if (j % 3 != 0 && G[i][j] != ' ') finish(0, WRONG);
+                if (j % 3 == 0 && G[i][j] != '|' && G[i][j] != ' ') finish(0);
+                if (j % 3 != 0 && G[i][j] != ' ') finish(0);
             }
         }
     }
@@ -91,6 +100,7 @@ void checker(ifstream& fin, ifstream& foff, ifstream& fout)
     //cout << "valid graph\n";
 
     // Check if output is a valid graph
+    vector<vector<int>> deg(N, vector<int>(M, 0));
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < m; j++) {
         int cnt = 0;
@@ -99,16 +109,22 @@ void checker(ifstream& fin, ifstream& foff, ifstream& fout)
         if (j < m - 1 && G[i * 2][j * 3 + 1] == '-') cnt++;
         if (j > 0 && G[i * 2][j * 3 - 1] == '-') cnt++;
 
+        // ovdje provjeravamo:
+        // * ima deg 1 i o ima deg 0 ili 2
+        // pocetak i kraj su * a ostali o
         if (G[i * 2][j * 3] == '*') {
-          if (cnt != 1) finish(0, WRONG);
+          if (cnt != 1) finish(0);
+          if ((i != sx || j != sy) && (i != tx || j != ty)) finish(0);
         } else {
-          if (cnt == 1) finish(0, WRONG);
-          if (cnt == 3) finish(0, WRONG);
+          if (cnt != 0 && cnt != 2) finish(0);
+          if ((i == sx && j == sy) || (i == tx && j == ty)) finish(0);
         }
+
+        deg[i][j] = cnt;
       }
     }
 
-   ///cout << "valid graph2\n";
+   //cout << "valid graph2\n";
     // Find path length
     vector<vector<int>> vis(N, vector<int>(M, 0));
     queue<pair<int, int>> Q;
@@ -144,41 +160,47 @@ void checker(ifstream& fin, ifstream& foff, ifstream& fout)
       }
     }
     //cout << vis[tx][ty] << endl;
-    if (vis[tx][ty] == 0) finish(0, WRONG);
+    if (vis[tx][ty] == 0) finish(0);
+
+    // treba provjeriti da nije ispisan jos neki ciklus uz put
+    // drugim rijecima, svi cvorovi s deg > 0 moraju biti posjeceni
+    for (int i = 0; i < n; i++)
+      for (int j = 0; j < m; j++)
+        if (deg[i][j] > 0 && vis[i][j] == 0) finish(0);
 
     int sol;
-    if (!(foff >> sol)) finish(0, TEST_DATA_ERROR);
+    if (!(fconf >> sol)) finish(0);
 
-    if (sol == vis[tx][ty]) score += 100;
-    else if (sol * 0.99 <= vis[tx][ty]) score += 35;
-
+    if (sol < vis[tx][ty]) score = min(score, 1.0), panic = true;
+    else if (sol == vis[tx][ty]) score = min(score, 1.0);
+    else if (0.9 * sol <= vis[tx][ty]) score = min(score, 0.35);
+    else score = 0;
   }
   string garbage;
   fout >> garbage;
-  if (fout >> garbage) finish(0, WRONG_OUTPUT_FORMAT);
+  if (fout >> garbage) finish(0);
 
-  if (score == 100 * T) finish(1, CORRECT);
-  finish((double) score / (100 * T), PARTIAL);
+  if (score == 1 && panic) finish(1, PANIC);
+  finish(score);
   // The function MUST terminate before this line via finish()!
 }
 
-void finish(double p, const string& m) {
-  cout << p << endl;
-  cout << m << endl;
-  exit(0);
-}
-
-int main(int argc, char *argv[])
-{
-  assert(argc == 4);
+int main(int argc, char *argv[]) {
+  assert(argc >= 4);
 
   ifstream fin(argv[1]);
   ifstream foff(argv[2]);
   ifstream fout(argv[3]);
 
+  // Optional, uncomment when using the configuration file for additional
+  // information about the testcase.
+  ifstream fconf(argv[4]);
+
   assert(!fin.fail() && !fout.fail());
-  checker(fin, foff, fout);
-  assert(false); // checker must terminate via finish() before exiting!
+  checker(fin, foff, fout, fconf);
+
+  // Checker must terminate via finish() before exiting!
+  assert(false);
 
   return 0;
 }
