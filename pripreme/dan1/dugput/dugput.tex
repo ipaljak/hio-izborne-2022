@@ -31,12 +31,12 @@ dolje, lijevo i desno) te na svako polje smijete stati najviše jednom.
 U prvom je retku prirodan broj $Q$ iz teksta zadatka.
 
 U $i$-tom od sljedećih $Q$ redaka su brojevi $N_i$, $M_i$, $A_i$, $B_i$, $C_i$ i 
-$D_i$ iz teksta zadatka. Vrijedit će $(A_i, B_i) \neq (C_i, D_i)$.
+$D_i$ iz teksta zadatka. Pritom vrijedi $1 \leq A_i, C_i \leq N_i$, $1 \leq B_i, D_i \leq M_i$, te $(A_i, B_i) \neq (C_i, D_i)$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Output
 \subsection*{Izlazni podaci}
-Kao odgovor na $i$-ti upit potrebno je ispisati $2N_i+1$ redaka s po $3M_i+1$
+Kao odgovor na $i$-ti upit potrebno je ispisati $2N_i-1$ redaka s po $3M_i-2$
 znakova koji predstavljaju put koji ste pronašli.
 
 Početno i završno polje ploče predstavljamo znakom \texttt{'*'} (ASCII $42$),
@@ -52,28 +52,30 @@ između polja u istom stupcu.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Scoring
 \subsection*{Bodovanje}
+U svim podzadacima vrijedi $N_i, M_i \leq 5\,000$ i $Q \leq 100$.
+
 {\renewcommand{\arraystretch}{1.4}
   \setlength{\tabcolsep}{6pt}
   \begin{tabular}{ccl}
  Podzadatak & Broj bodova & Ograničenja \\ \midrule
-  1 & ?? & \\
-  2 & ?? & \\
-  3 & ?? & \\
+  1 & ?? & $2 \leq N_i M_i \leq 100$ \\
+  2 & ?? & $2 \leq N_i M_i \leq 1\,000$ \\
+  3 & ?? & $2 \leq N_i M_i \leq 1\,000\,000$, $1 \leq M_i \leq 3$ \\
+  4 & ?? & $2 \leq N_i M_i \leq 1\,000\,000$ \\
 \end{tabular}}
 
 Neka je $d_\mathrm{odg}^{(i)}$ duljina puta u vašem odgovoru na $i$-ti upit, a $d_\mathrm{max}^{(i)}$ maksimalna moguća duljina puta u $i$-tom upitu. 
-Tada ćete za $i$-ti upit dobiti sljedeći udio bodova:
+Tada ćete za testni podatak dobiti sljedeći udio bodova:
 $$
 \begin{cases}
-    100\% & \text{ako } d_\mathrm{odg}^{(i)} = d_\mathrm{max}^{(i)} \\
-    35\% & \text{ako } 0.98 \cdot d_\mathrm{max}^{(i)} \leq d_\mathrm{odg}^{(i)} < d_\mathrm{max}^{(i)} \\
+    100\% & \text{ako $d_\mathrm{odg}^{(i)} = d_\mathrm{max}^{(i)}$ za sve $1 \leq i \leq Q$} \\
+    35\% & \text{ako $0.9 \cdot d_\mathrm{max}^{(i)} \leq d_\mathrm{odg}^{(i)} \leq d_\mathrm{max}^{(i)}$ za sve $1 \leq i \leq Q$ te $d_\mathrm{odg}^{(i)} \neq d_\mathrm{max}^{(i)}$ za barem jedan $i$} \\
     0\% & \text{inače.}
 \end{cases}
 $$
 Pritom duljinu puta računamo kao broj polja na tom putu.
 
-Broj bodova za testni podatak jednak je \textbf{prosječnom} broju bodova po svim upitima.
-Broj bodova nekog podzadatka odgovara \textbf{najmanjem} broju
+Broj bodova nekog podzadatka odgovara najmanjem broju
 bodova koje je vaše rješenje ostvarilo na nekom od testnih podataka koji čine
 taj podzadatak.
 
