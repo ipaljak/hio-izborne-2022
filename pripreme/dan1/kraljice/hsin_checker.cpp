@@ -64,6 +64,7 @@ void checker(ifstream &fin, ifstream &foff, ifstream &fout) {
   // Read contestant's output
   int out_k;
   if (!(fout >> out_k)) finish(0);
+  if (out_k != off_k) finish(0);
 
   vector<pair<int, int>> out_sol(out_k);
   for (int i = 0; i < out_k; i++) {
@@ -74,8 +75,6 @@ void checker(ifstream &fin, ifstream &foff, ifstream &fout) {
   if (fout >> garbage) finish(0);
 
   // Check contestant's solution
-  if (out_k != off_k) finish(0);
-
   vector<int> cnt_row(n), cnt_col(n), cnt_diag1(2 * n), cnt_diag2(2 * n);
   vector<vector<bool>> taken(n, vector<bool>(n));
   for (auto& [x, y] : out_sol) {
