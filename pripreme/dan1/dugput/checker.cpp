@@ -149,16 +149,16 @@ void checker(ifstream& fin, ifstream& foff, ifstream& fout)
     int sol;
     if (!(foff >> sol)) finish(0, TEST_DATA_ERROR);
 
-    if (sol == vis[tx][ty]) score += 2;
-    else if (sol * 0.9 <= vis[tx][ty]) score += 1;
+    if (sol == vis[tx][ty]) score += 100;
+    else if (sol * 0.99 <= vis[tx][ty]) score += 35;
 
   }
   string garbage;
   fout >> garbage;
   if (fout >> garbage) finish(0, WRONG_OUTPUT_FORMAT);
 
-  if (score == 2 * T) finish(1, CORRECT);
-  finish((double) score / (2 * T), PARTIAL);
+  if (score == 100 * T) finish(1, CORRECT);
+  finish((double) score / (100 * T), PARTIAL);
   // The function MUST terminate before this line via finish()!
 }
 
