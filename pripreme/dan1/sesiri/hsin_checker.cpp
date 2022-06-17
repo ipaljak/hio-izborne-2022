@@ -46,7 +46,7 @@ void finish(llint points_awarded, llint points_max) {
   exit(0);
 }
 
-const char CHAR_0 = 'A', CHAR_1 = 'B';
+const char CHAR_0 = 'B', CHAR_1 = 'C';
 /**
  * The main checking function.
  * @param fin official input

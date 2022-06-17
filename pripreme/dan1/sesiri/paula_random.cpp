@@ -37,7 +37,7 @@ typedef pair<ll, ll> pll;
 typedef vector<int> vi;
 typedef vector<ll> vll;
 
-const char CHAR_0 = 'A', CHAR_1 = 'B';
+const char CHAR_0 = 'B', CHAR_1 = 'C';
 
 bool checker(int n, vector<string> sol) {
   vector<vector<int>> cnt(1 << n, vector<int>(2));
