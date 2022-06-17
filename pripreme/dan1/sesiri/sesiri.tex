@@ -1,0 +1,87 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Problem statement
+\begin{statement}[
+  problempoints=100,
+  timelimit=1 sekunda,
+  memorylimit=512 MiB,
+]{Šeširi}
+
+Srednjoeuropska informatička olimpijada (CEOI) ove se godina održava u Lijepoj
+našoj. Natjecatelji su dodatno uzbuđeni zbog najpoznatije hrvatske tradicije na
+informatičkim olimpijadama. Naravno, radi se o darivanju šeširića s
+prepoznatljivim "kockastim" uzorkom.
+
+Ipak, gospodin Malnar odlučio je stati na kraj još jednoj tradiciji. Ove će se
+godine dijeliti jednobojni šeširići, obojeni u crvenu ili bijelu boju. Gospodin
+Malnar nije donio ovu odluku tek tako, već je to dio pomno promišljenog plana.
+
+Naime, Malnar zna da će se u nekom trenutku na istom mjestu naći $N$ mladih
+informatičara te da će svaki od njih na glavi nositi crveni ili bijeli
+šeširić.  Naravno, svaki će informatičar vidjeti sve šeširiće osim svojeg te
+će, po običaju, svi istovremeno viknuti koje boje misle da je njhov šeširić.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Input
+\subsection*{Ulazni podaci}
+U prvom i jedinom retku je prirodan broj $N$, dimenzija šahovske ploče.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Output
+\subsection*{Izlazni podaci}
+
+U prvi redak ispišite prirodan broj $K$, najveći broj kraljica koji se može postaviti na ploču poštujući zadano pravilo.
+
+U $i$-tom od sljedećih $K$ redaka ispišite prirodne brojeve $R_i$ i $S_i$, redak i stupac u koji je stavljena $i$-ta kraljica.
+
+Ako postoji više načina za postaviti kraljice, ispišite bilo koji.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Scoring
+\subsection*{Bodovanje}
+{\renewcommand{\arraystretch}{1.4}
+  \setlength{\tabcolsep}{6pt}
+  \begin{tabular}{ccl}
+ Podzadatak & Broj bodova & Ograničenja \\ \midrule
+  1 & 6 & $1 \le N \le 16$\\
+  2 & 11 & $1 \le N \le 64$\\
+  3 & 28 & $1 \le N \le 256$\\
+  4 & 55 & $1 \le N \le 1024$\\
+\end{tabular}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Examples
+\subsection*{Probni primjeri}
+\begin{tabularx}{\textwidth}{X'X'X}
+\sampleinputs{test/kraljice.dummy.in.1}{test/kraljice.dummy.out.1} &
+\sampleinputs{test/kraljice.dummy.in.2}{test/kraljice.dummy.out.2} &
+\sampleinputs{test/kraljice.dummy.in.3}{test/kraljice.dummy.out.3}
+\end{tabularx}
+
+\pagebreak
+\textbf{Pojašnjenje trećeg probnog primjera:} 
+\begin{figure}[H]
+\setchessboard{maxfield=c3,showmover=false,label=false,normalboard,marginright=false,marginbottom=false}
+\chessboard[setblack={}]
+\chessboard[setblack={Qc2}]
+\chessboard[setblack={Qc2,Qa1}]
+\chessboard[setblack={Qc2,Qa1,Qb2}]
+\chessboard[setblack={Qc2,Qa1,Qb2,Qa3}]
+
+\chessboard[setblack={Qc2,Qa1,Qb2,Qa3,Qc1}]
+\chessboard[setblack={Qc2,Qa1,Qb2,Qa3,Qc1,Qb1}]
+\chessboard[setblack={Qc2,Qa1,Qb2,Qa3,Qc1,Qb1,Qb3}]
+\chessboard[setblack={Qc2,Qa1,Qb2,Qa3,Qc1,Qb1,Qb3,Qc3}]
+\chessboard[setblack={Qc2,Qa1,Qb2,Qa3,Qc1,Qb1,Qb3,Qc3,Qa2}]
+\end{figure}
+
+% We're done
+
+\end{statement}
+
+%%% Local Variables:
+%%% mode: latex
+%%% mode: flyspell
+%%% ispell-local-dictionary: "croatian"
+%%% TeX-master: "../hio.tex"
+%%% End:
