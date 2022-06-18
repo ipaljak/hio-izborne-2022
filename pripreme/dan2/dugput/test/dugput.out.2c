@@ -1,3 +1,4 @@
+50 2 50 2 1 2
 o--*
 |   
 o--o
@@ -97,6 +98,7 @@ o--o
 o--o
 |   
 o--*
+50 2 30 1 49 1
 o--o
 |  |
 o  o
@@ -196,6 +198,7 @@ o--o
 *  o
 |  |
 o--o
+50 2 41 2 10 1
 o--o
 |  |
 o  o
@@ -295,6 +298,7 @@ o  o
 o  o
 |  |
 o--o
+50 2 1 1 46 2
 *--o
    |
 o--o
@@ -394,6 +398,7 @@ o  o
 o  o
 |  |
 o--o
+50 2 1 1 15 1
 *--o
    |
 o--o
@@ -493,6 +498,7 @@ o  o
 o  o
 |  |
 o--o
+50 2 18 2 26 2
 o--o
 |  |
 o  o
@@ -592,6 +598,7 @@ o  o
 o  o
 |  |
 o--o
+50 2 29 1 49 2
 o--o
 |  |
 o  o
@@ -691,6 +698,7 @@ o--o
 o  *
 |  |
 o--o
+50 2 11 2 23 2
 o--o
 |  |
 o  o
@@ -790,6 +798,7 @@ o  o
 o  o
 |  |
 o--o
+50 2 40 2 25 1
 o--o
 |  |
 o  o
@@ -889,132 +898,140 @@ o  o
 o  o
 |  |
 o--o
-*  o--o--o  o--o  o--o  o--o  *
-|  |     |  |  |  |  |  |  |  |
-o  o--o  o  o  o  o  o  o  o  o
-|     |  |  |  |  |  |  |  |  |
-o  o--o  o  o  o  o  o  o  o  o
-|  |     |  |  |  |  |  |  |  |
-o  o--o  o  o  o  o  o  o  o  o
-|     |  |  |  |  |  |  |  |  |
-o  o--o  o  o  o  o  o  o  o  o
-|  |     |  |  |  |  |  |  |  |
-o  o--o  o  o  o  o  o  o  o  o
-|     |  |  |  |  |  |  |  |  |
-o  o--o  o  o  o  o  o  o  o  o
-|  |     |  |  |  |  |  |  |  |
-o  o--o  o  o  o  o  o  o  o  o
-|     |  |  |  |  |  |  |  |  |
-o--o--o  o--o  o--o  o--o  o--o
+9 11 1 11 1 1
+*  o--o--o--o--o--o--o--o--o--*
+|  |                           
+o  o--o--o--o--o--o--o--o--o--o
+|                             |
+o  o--o--o--o--o--o--o--o--o--o
+|  |                           
+o  o--o--o--o--o--o--o--o--o--o
+|                             |
+o  o--o--o--o--o--o--o--o--o--o
+|  |                           
+o  o--o--o--o--o--o--o--o--o--o
+|                             |
+o  o--o--o--o--o--o--o--o--o--o
+|  |                           
+o  o--o--o--o--o--o--o--o--o--o
+|                             |
+o--o--o--o--o--o--o--o--o--o--o
+9 11 1 7 2 11
 o--o--o--o--o--o--*  o--o  o--o
 |                    |  |  |  |
-o  o--o  o--o  o--o  o  o  o  *
-|  |  |  |  |  |  |  |  |  |   
-o  o  o  o  o  o  o  o  o  o--o
-|  |  |  |  |  |  |  |  |     |
-o  o  o  o  o  o  o  o  o--o  o
-|  |  |  |  |  |  |  |     |  |
-o  o  o  o  o  o  o  o--o  o  o
-|  |  |  |  |  |  |     |  |  |
-o  o  o  o  o  o  o  o--o  o  o
-|  |  |  |  |  |  |  |     |  |
-o  o  o  o  o  o  o  o--o  o  o
-|  |  |  |  |  |  |     |  |  |
-o  o  o  o  o  o  o--o  o  o  o
-|  |  |  |  |  |     |  |  |  |
-o--o  o--o  o--o  o  o--o  o--o
-o--o--*  o--o--o  o--o  o--o--o
-|        |     |  |  |  |     |
-o  o--o  o--o  o  o  o  o  o--o
-|  |  |     |  |  |  |  |  |   
-o  o  o  o--o  o  o  o  o  o--o
-|  |  |  |     |  |  |  |     |
-o  o  o  o--o  o  o  o  o  o--o
-|  |  |     |  |  |  |  |  |   
-o  o  o  o--o  o  o  o  o  o  *
-|  |  |  |     |  |  |  |  |  |
-o  o  o  o--o  o  o  o  o  o  o
-|  |  |     |  |  |  |  |  |  |
-o  o  o  o--o  o  o  o  o  o  o
-|  |  |  |     |  |  |  |  |  |
-o  o  o  o--o  o  o  o  o  o  o
-|  |  |     |  |  |  |  |  |  |
-o--o  o--o--o  o--o  o--o  o--o
-*  o--o  o--o  o--o  o--o  o--o
+o  o--o  o--o  o--o--o  o  o  *
+|  |  |  |  |  |        |  |   
+o  o  o  o  o  o  o  o  o  o  o
+|  |  |  |  |  |        |  |   
+o  o  o  o  o  o  o--o--o  o--o
+|  |  |  |  |  |  |           |
+o  o  o  o  o  o  o  o--o--o--o
+|  |  |  |  |  |  |  |         
+o  o  o  o  o  o  o  o--o--o--o
+|  |  |  |  |  |  |           |
+o  o  o  o  o  o  o  o--o--o--o
+|  |  |  |  |  |  |  |         
+o  o  o  o  o  o  o  o--o--o--o
+|  |  |  |  |  |  |           |
+o--o  o--o  o--o  o--o--o--o--o
+9 11 5 11 1 3
+o--o--*  o--o--o--o--o--o--o--o
+|        |                    |
+o  o--o  o  o--o--o--o--o--o--o
+|  |  |  |  |                  
+o  o  o  o  o--o--o--o--o--o--o
+|  |  |  |                    |
+o  o  o  o  o--o--o--o--o--o--o
+|  |  |  |  |                  
+o  o  o  o  o--o--o--o--o--o--*
+|  |  |  |                     
+o  o  o  o--o--o--o--o--o--o--o
+|  |  |                       |
+o  o  o  o--o--o--o--o--o--o--o
+|  |  |  |                     
+o  o  o  o--o--o--o--o--o--o--o
+|  |  |                       |
+o--o  o--o--o--o--o--o--o--o--o
+9 11 1 1 8 11
+*  o--o--o--o--o--o--o--o--o--o
+|  |                          |
+o  o  o--o--o--o--o--o--o--o--o
+|  |  |                        
+o  o  o--o--o--o--o--o--o--o--o
+|  |                          |
+o  o  o--o--o--o--o--o--o--o--o
+|  |  |                        
+o  o  o  o--o  o--o  o--o  o--o
 |  |  |  |  |  |  |  |  |  |  |
-o  o  o--o  o  o  o--o  o  o  o
-|  |        |  |        |  |  |
-o  o--o  o--o  o--o  o--o  o  o
-|     |  |        |  |     |  |
-o  o--o  o  o--o  o  o  o--o  o
-|  |     |  |  |  |  |  |     |
-o  o--o  o  o  o  o  o  o  o--o
-|     |  |  |  |  |  |  |  |   
-o  o--o  o  o  o  o  o  o  o--o
-|  |     |  |  |  |  |  |     |
-o  o--o  o  o  o  o  o  o  o--o
-|     |  |  |  |  |  |  |  |   
-o--o  o  o  o  o  o  o  o  o  *
+o  o  o--o  o  o  o--o  o--o  o
+|  |        |  |              |
+o  o--o  o--o  o--o  o--o--o--o
+|     |  |        |  |         
+o--o  o  o  o--o  o  o  o--o  *
    |  |  |  |  |  |  |  |  |  |
 o  o--o  o--o  o--o  o--o  o--o
-o--o  o--o--o--o--o--o--o--o--o
-|  |  |                       |
-o  o  o  o--o--o  o--o  o--o  o
-|  |  |  |     |  |  |  |  |  |
-o  o  o  o--o  o  o  o  o  o  o
-|  |  |     |  |  |  |  |  |  |
-o  o  o  o--o  o  o  o  o  o  o
-|  |  |  |     |  |  |  |  |  |
-o  o  o  o--o  o  o  o  o  o  o
-|  |  |     |  |  |  |  |  |  |
-o  o  o  o--o  o  o  o  o  o  o
-|  |  |  |     |  |  |  |  |  |
-o  o  o  o--o  o  o  o  o  o  o
-|  |  |     |  |  |  |  |  |  |
-o  o--o  o  o  o  o  o  o  o  o
+9 11 9 1 9 4
+o--o--o--o--o--o--o--o--o--o--o
+|                             |
+o  o--o--o--o--o  o--o  o--o  o
+|  |           |  |  |  |  |  |
+o  o--o--o--o  o  o  o  o  o  o
 |           |  |  |  |  |  |  |
-*  o  o  *--o  o--o  o--o  o--o
-*  o--o--o  o--o--o--o--o--o--o
-|  |     |  |                 |
-o  o--o  o  o  o--o--o  o--o  o
-|     |  |  |  |     |  |  |  |
-o  o--o  o  o  o--o  o  o  o  o
-|  |     |  |     |  |  |  |  |
-o  o--o  o  o  o--o  o  o  o  o
-|     |  |  |  |     |  |  |  |
-o  o--o  o  o  o--o  o  o  o  o
+o  o--o--o--o  o  o  o  o  o  o
+|  |           |  |  |  |  |  |
+o  o--o--o--o  o  o  o  o  o  o
+|           |  |  |  |  |  |  |
+o  o--o--o--o  o  o  o  o  o  o
+|  |           |  |  |  |  |  |
+o  o--o--o--o  o  o  o  o  o  o
+|           |  |  |  |  |  |  |
+o  o--o--o--o  o  o  o  o  o  o
+|  |           |  |  |  |  |  |
+*  o--o--*  o  o--o  o--o  o--o
+9 11 1 1 6 6
+*  o--o--o--o--o--o--o--o--o--o
+|  |                          |
+o  o  o--o--o--o--o--o  o--o  o
+|  |  |              |  |  |  |
+o  o  o--o--o--o--o  o  o  o  o
+|  |              |  |  |  |  |
+o  o  o--o--o--o--o  o  o  o  o
+|  |  |              |  |  |  |
+o  o  o--o  o--o--o  o  o  o  o
 |  |     |  |     |  |  |  |  |
 o  o--o  o  o  *  o  o  o  o  o
 |     |  |  |  |  |  |  |  |  |
-o  o--o  o  o  o  o  o  o  o  o
-|  |     |  |  |  |  |  |  |  |
-o  o--o  o  o  o  o  o  o  o  o
-|     |  |  |  |  |  |  |  |  |
-o--o--o  o--o  o--o  o--o  o--o
-o--o--o  o--o  o--o  o--o--o--o
-|     |  |  |  |  |  |        |
-o--o  o  o  o--o  o  o  o--o  o
-   |  |  |        |  |  |  |  |
-o--o  o  o--o  o--o  o  o  o  o
-|     |     |  |     |  |  |  |
-o--o  o  o--o  o  o--o  o  o  o
-   |  |  |     |  |     |  |  |
-*  o  o  o--o  o  o  *  o  o  o
-|  |  |     |  |  |  |  |  |  |
-o  o  o  o--o  o  o  o  o  o  o
-|  |  |  |     |  |  |  |  |  |
-o  o  o  o--o  o  o  o  o  o  o
-|  |  |     |  |  |  |  |  |  |
-o  o  o--o  o  o  o  o  o  o  o
-|  |     |  |  |  |  |  |  |  |
-o--o  o  o--o  o--o  o--o  o--o
-o--o--o--o--o--o  o--o--o--o--o
-|              |  |           |
-o  o--o  o--o  o  o  o--o--o  o
-|  |  |  |  |  |     |     |  |
-o  o  o  o  o  o--o  o--*  o  o
-|  |  |  |  |              |  |
-o  o  o  o  o  o--o  *--o  o  o
+o  o--o  o--o  o--o  o  o  o  o
+|  |                 |  |  |  |
+o  o--o--o--o--o--o  o  o  o  o
+|                 |  |  |  |  |
+o--o--o--o--o--o--o  o--o  o--o
+9 11 5 1 5 8
+o--o--o--o--o--o--o--o--o--o--o
+|                             |
+o  o--o--o--o--o--o--o--o--o  o
+|  |                       |  |
+o  o--o--o--o--o--o--o--o  o  o
+|                       |  |  |
+o--o  o--o--o--o--o--o--o  o  o
+   |  |                    |  |
+*  o  o--o--o--o--o--*  o  o  o
+|  |                       |  |
+o  o--o--o--o--o--o--o--o  o  o
+|                       |  |  |
+o  o--o--o--o--o--o--o--o  o  o
+|  |                       |  |
+o  o--o--o--o--o--o--o--o  o  o
+|                       |  |  |
+o--o--o--o--o--o--o--o--o  o--o
+9 11 4 8 3 9
+o--o--o--o--o--o--o--o--o--o--o
+|                             |
+o  o--o  o--o  o--o  o--o--o  o
+|  |  |  |  |  |  |  |     |  |
+o  o  o  o  o  o  o  o  *  o  o
+|  |  |  |  |  |  |  |  |  |  |
+o  o  o  o  o  o  o  *  o  o  o
 |  |  |  |  |  |  |     |  |  |
 o  o  o  o  o  o  o  o--o  o  o
 |  |  |  |  |  |  |  |     |  |
@@ -1025,13 +1042,14 @@ o  o  o  o  o  o  o  o--o  o  o
 o  o  o  o  o  o  o  o--o  o  o
 |  |  |  |  |  |  |     |  |  |
 o--o  o--o  o--o  o--o--o  o--o
-o--o--o--o--o--o  o--o--o--o--o
-|              |  |           |
-o  o--o  o--o  o  o  o  o--o  o
-|  |  |  |  |  |        |  |  |
-o  o  o  o  o  o--o  *--o  o  o
-|  |  |  |  |              |  |
-o  o  o  o  o  o--o  *--o  o  o
+9 11 4 8 3 8
+o--o--o--o--o--o--o--o--o--o--o
+|                             |
+o  o--o  o--o  o--o  o--o--o  o
+|  |  |  |  |  |  |  |     |  |
+o  o  o  o  o  o  o  *  o  o  o
+|  |  |  |  |  |  |        |  |
+o  o  o  o  o  o  o  *--o  o  o
 |  |  |  |  |  |  |     |  |  |
 o  o  o  o  o  o  o  o--o  o  o
 |  |  |  |  |  |  |  |     |  |
@@ -1042,11 +1060,12 @@ o  o  o  o  o  o  o  o--o  o  o
 o  o  o  o  o  o  o  o--o  o  o
 |  |  |  |  |  |  |     |  |  |
 o--o  o--o  o--o  o--o--o  o--o
+9 11 4 7 8 9
 o--o--o--o--o--o  o--o--o--o--o
 |              |  |           |
-o  o--o  o--o  o  o  o  o--o  o
-|  |  |  |  |  |  |     |  |  |
-o  o  o  o  o  o  o--o  o  o  o
+o  o--o  o--o  o  o--o  o--o  o
+|  |  |  |  |  |     |  |  |  |
+o  o  o  o  o  o  o  o  o  o  o
 |  |  |  |  |  |     |  |  |  |
 o  o  o  o  o  o--*  o  o  o  o
 |  |  |  |  |        |  |  |  |
@@ -1059,23 +1078,25 @@ o  o  o  o  o  o  o  o  o  o  o
 o  o  o  o  o  o  o  o  *  o  o
 |  |  |  |  |  |  |  |     |  |
 o--o  o--o  o--o  o--o  o  o--o
+9 11 4 7 5 8
 o--o--o--o--o--o--o--o--o--o--o
 |                             |
 o  o--o  o--o  o--o  o--o--o  o
 |  |  |  |  |  |  |  |     |  |
 o  o  o  o  o  o  o  o--o  o  o
 |  |  |  |  |  |  |     |  |  |
-o  o  o  o  o  o  *  o--o  o  o
-|  |  |  |  |  |     |     |  |
+o  o  o  o  o  o  *  o  o  o  o
+|  |  |  |  |  |        |  |  |
 o  o  o  o  o  o  o  *  o  o  o
-|  |  |  |  |  |           |  |
-o  o  o  o  o  o  o  o  o  o  o
-|  |  |  |  |  |           |  |
-o  o  o  o  o  o  o  o  o  o  o
-|  |  |  |  |  |           |  |
-o  o  o  o  o  o  o  o  o  o  o
-|  |  |  |  |  |           |  |
-o--o  o--o  o--o  o  o  o  o--o
+|  |  |  |  |  |     |  |  |  |
+o  o  o  o  o  o  o--o  o  o  o
+|  |  |  |  |  |  |     |  |  |
+o  o  o  o  o  o  o  o--o  o  o
+|  |  |  |  |  |  |  |     |  |
+o  o  o  o  o  o  o  o--o  o  o
+|  |  |  |  |  |  |     |  |  |
+o--o  o--o  o--o  o--o--o  o--o
+4 21 4 21 1 21
 o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--*
 |                                                            
 o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o
@@ -1083,20 +1104,23 @@ o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o
 o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o
 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  *
-o--o--o--o--o--o--o--o--o--*  o  o--o  o--o  o--o--o--o--o--o
-|                                |  |  |  |  |              |
-o  o--o  o--o  o--o  o--o  o--o  o  o  o  o--o  o--o  o--o  o
-|  |  |  |  |  |  |  |  |  |  |  |  |  |        |  |  |  |  |
+4 21 4 17 1 10
+o--o--o--o--o--o--o--o--o--*  o  o--o--o--o--o--o--o--o--o--o
+|                                |                          |
+o  o--o  o--o  o--o  o--o  o--o  o  o--o--o--o--o--o  o--o  o
+|  |  |  |  |  |  |  |  |  |  |  |  |              |  |  |  |
 o  o  o  o  o  o  o  o  o  o  o  o  o  o--o  o--o  o  o  o  o
-|  |  |  |  |  |  |  |  |  |  |  |  |     |  |     |  |  |  |
-o--o  o--o  o--o  o--o  o--o  o--o  o--o--o  o--*  o--o  o--o
-o--o--o  o--o  o--o  o--o  o--o  o--o  o--o--o--o--o--o--o--o
-|     |  |  |  |  |  |  |  |  |  |  |  |                    |
-o--o  o  o  o  o  o  o  o  o  o  o  o--o  o--o  o--o  o--o  o
-   |  |  |  |  |  |  |  |  |  |  |        |  |  |  |  |  |  |
-*  o  o  o  o  o  o  o  o  o  o  o--o  o--o  o  o  o  o  o  o
-|  |  |  |  |  |  |  |  |  |  |     |  |     |  |  |  |  |  |
-o--o  o--o  o--o  o--o  o--o  o--o--o  o--*  o--o  o--o  o--o
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  *  o--o  o--o
+4 21 3 1 4 15
+o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o
+|                                                           |
+o--o  o--o--o--o--o--o--o--o--o--o--o--o--o--o  o--o  o--o  o
+   |  |                                      |  |  |  |  |  |
+*  o  o  o--o  o--o  o--o  o--o  o--o  o--o  o  o  o  o  o  o
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+o--o  o--o  o--o  o--o  o--o  o--o  o--o  *  o--o  o--o  o--o
+4 21 4 21 1 19
 o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--*  o--o
 |                                                        |  |
 o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o  o
@@ -1104,27 +1128,31 @@ o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o  o
 o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o
 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  *
-o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--*  o  o--o  o--o
-|                                                  |  |  |  |
-o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o  o--o  o
-|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |        |
-o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o--o  o--o
-|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |     |  |   
-o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o--o  o--*
-*  o--o--o  o--o  o--o  o--o  o--o  o--o--o--o--o--o--o--o--o
-|  |     |  |  |  |  |  |  |  |  |  |                       |
-o  o--o  o  o  o  o  o  o  o  o  o  o  *  o--o  o--o  o--o  o
-|     |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-o--o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o
-   |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o
-o--o--o  o--o  o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o
-|     |  |  |  |                                            |
-o--o  o  o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o
-   |  |  |        |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-*  o  o  o--o  *  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o
-|  |  |     |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-o--o  o--o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o
+4 21 4 21 1 16
+o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--*  o  o--o--o--o
+|                                                  |        |
+o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o  o--o--o
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |      
+o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o--o
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  *
+4 21 1 1 2 14
+*  o--o  o--o  o--o  o--o  o--o  o--o--o--o--o--o--o--o--o--o
+|  |  |  |  |  |  |  |  |  |  |  |                          |
+o  o  o--o  o--o  o--o  o--o  o--o  o  *--o--o  o--o  o--o  o
+|  |                                         |  |  |  |  |  |
+o  o--o--o--o--o--o--o--o--o--o--o--o--o--o  o  o  o  o  o  o
+|                                         |  |  |  |  |  |  |
+o--o--o--o--o--o--o--o--o--o--o--o--o--o--o  o--o  o--o  o--o
+4 21 3 1 3 6
+o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o
+|                                                           |
+o--o  o--o--o--o--o--o  o--o  o--o  o--o  o--o  o--o  o--o  o
+   |  |              |  |  |  |  |  |  |  |  |  |  |  |  |  |
+*  o  o  o--o  *--o  o  o  o  o  o  o  o  o  o  o  o  o  o  o
+|  |  |  |  |     |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+o--o  o--o  o--o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o
+4 21 3 15 2 12
 o--o--o--o--o--o--o--o--o--o--o--o--o  o--o--o--o--o--o--o--o
 |                                   |  |                    |
 o  o--o  o--o  o--o  o--o  o--o  *  o  o  o--o  o--o  o--o  o
@@ -1132,6 +1160,7 @@ o  o--o  o--o  o--o  o--o  o--o  *  o  o  o--o  o--o  o--o  o
 o  o  o  o  o  o  o  o  o  o  o  o  o  o  *  o  o  o  o  o  o
 |  |  |  |  |  |  |  |  |  |  |  |  |  |     |  |  |  |  |  |
 o--o  o--o  o--o  o--o  o--o  o--o  o--o  o  o--o  o--o  o--o
+4 21 3 15 2 17
 o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o  o--o--o--o
 |                                               |  |        |
 o  o--o  o--o  o--o  o--o  o--o  o--o  o--o--o  *  o  o--o  o
@@ -1139,35 +1168,39 @@ o  o--o  o--o  o--o  o--o  o--o  o--o  o--o--o  *  o  o--o  o
 o  o  o  o  o  o  o  o  o  o  o  o  o  o  *  o--o--o  o  o  o
 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |           |  |  |
 o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o--o--o--o  o--o
-o--o--o--o--o  o--o  o--o  o--o  o--o  o--o--o--o--o--o--o--o
-|           |  |  |  |  |  |  |  |  |  |                    |
-o  o--o  *  o  o  o  o  o  o  o  o  o--o  o--o  o--o  o--o  o
-|  |  |  |  |  |  |  |  |  |  |  |        |  |  |  |  |  |  |
-o  o  o  o  o  o  o  o  o  o  o  o--o  *  o  o  o  o  o  o  o
-|  |  |  |  |  |  |  |  |  |  |     |  |  |  |  |  |  |  |  |
-o--o  o--o  o--o  o--o  o--o  o--o--o  o--o  o--o  o--o  o--o
-o--o--o--o--o--o--o--o--o--o  o  o--o  o--o--o--o--o--o--o--o
-|                          |     |  |  |                    |
-o  o--o  o--o  o--o  o--o  o--*  o  o--o  o--o  o--o  o--o  o
-|  |  |  |  |  |  |  |  |        |        |  |  |  |  |  |  |
-o  o  o  o  o  o  o  o  o  o--o  o--o  *  o  o  o  o  o  o  o
-|  |  |  |  |  |  |  |  |  |  |     |  |  |  |  |  |  |  |  |
-o--o  o--o  o--o  o--o  o--o  o--o--o  o--o  o--o  o--o  o--o
-o--o  o--o  o--o  o--o  o--o  o--o
+4 21 3 14 2 4
+o--o--o--o--o  o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o
+|           |  |                                            |
+o  o--o  *  o  o  o--o--o--o--o--o--o--o--o--o  o--o  o--o  o
+|  |  |  |  |  |  |                          |  |  |  |  |  |
+o  o  o  o  o  o  o  o--o  o--o  o--o  *--o  o  o  o  o  o  o
+|  |  |  |  |  |  |  |  |  |  |  |  |     |  |  |  |  |  |  |
+o--o  o--o  o--o  o--o  o--o  o--o  o--o--o  o--o  o--o  o--o
+4 21 3 14 2 11
+o--o--o--o--o--o--o--o--o--o  o  o--o--o--o--o--o--o--o--o--o
+|                          |     |                          |
+o  o--o  o--o  o--o  o--o  o--*  o  o--o--o--o  o--o  o--o  o
+|  |  |  |  |  |  |  |  |        |  |        |  |  |  |  |  |
+o  o  o  o  o  o  o  o  o  o--o  o  o  *--o  o  o  o  o  o  o
+|  |  |  |  |  |  |  |  |  |  |  |  |     |  |  |  |  |  |  |
+o--o  o--o  o--o  o--o  o--o  o--o  o--o--o  o--o  o--o  o--o
+8 12 8 12 8 1
+o--o--o--o--o--o--o--o--o--o--o--o
+|                                |
+o  o--o--o--o--o--o--o--o--o--o--o
+|  |                              
+o  o--o--o--o--o--o--o--o--o--o--o
+|                                |
+o  o--o--o--o--o--o--o--o--o--o--o
+|  |                              
+o  o--o--o--o--o--o--o--o--o--o--o
+|                                |
+o  o--o--o--o--o--o--o--o--o--o--o
+|  |                              
+o  o  o--o  o--o  o--o  o--o  o--o
 |  |  |  |  |  |  |  |  |  |  |  |
-o  o  o  o  o  o  o  o  o  o--o  o
-|  |  |  |  |  |  |  |  |        |
-o  o  o  o  o  o  o  o  o--o  o--o
-|  |  |  |  |  |  |  |     |  |   
-o  o  o  o  o  o  o  o  o--o  o--o
-|  |  |  |  |  |  |  |  |        |
-o  o  o  o  o  o  o  o  o--o  o--o
-|  |  |  |  |  |  |  |     |  |   
-o  o  o  o  o  o  o  o  o--o  o--o
-|  |  |  |  |  |  |  |  |        |
-o  o  o  o  o  o  o  o  o--o  o--o
-|  |  |  |  |  |  |  |     |  |   
-*  o--o  o--o  o--o  o--o--o  o--*
+*  o--o  o--o  o--o  o--o  o--o  *
+8 12 8 6 1 2
 o--*  o--o  o--o--o--o--o--o--o--o
 |     |  |  |                    |
 o  o--o  o  o  o--o  o--o  o--o  o
@@ -1183,141 +1216,151 @@ o  o  o  o  o--o  o  o  o  o  o  o
 o  o  o  o  o--o  o  o  o  o  o  o
 |  |  |  |  |     |  |  |  |  |  |
 o--o  o--o  o--*  o--o  o--o  o--o
+8 12 1 8 8 4
 o--o--o--o--o  o--o  *--o--o--o--o
 |           |  |  |              |
-o  o--o--o  o  o  o  o--o  o--o  o
-|  |     |  |  |  |  |  |  |  |  |
-o  o  o--o  o  o  o  o  o  o  o  o
-|  |  |     |  |  |  |  |  |  |  |
-o  o  o--o  o  o  o  o  o  o  o  o
-|  |     |  |  |  |  |  |  |  |  |
-o  o  o--o  o  o  o  o  o  o  o  o
-|  |  |     |  |  |  |  |  |  |  |
-o  o  o--o  o  o  o  o  o  o  o  o
-|  |     |  |  |  |  |  |  |  |  |
-o  o  o--o  o  o  o  o  o  o  o  o
-|  |  |     |  |  |  |  |  |  |  |
-o--o  o--*  o--o  o--o  o--o  o--o
-o--o--o--o--o--o  o--o--o  o--o  *
-|              |  |     |  |  |  |
-o  o--o  o--o  o  o--o  o  o  o  o
-|  |  |  |  |  |     |  |  |  |  |
-o  o  o  o  o  o  o--o  o  o  o  o
-|  |  |  |  |  |  |     |  |  |  |
-o  o  o  o  o  o  o--o  o  o  o  o
-|  |  |  |  |  |     |  |  |  |  |
-o  o  o  o  o  o  o--o  o  o  o  o
-|  |  |  |  |  |  |     |  |  |  |
-o  o  o  o  o  o  o--o  o  o  o  o
-|  |  |  |  |  |     |  |  |  |  |
-o  o  o  o  o  o--o  o  o  o  o  o
-|  |  |  |  |     |  |  |  |  |  |
-o--o  o--o  *  o  o--o  o--o  o--o
-*  o--o  o--o  o--o  o--o  o--o--o
-|  |  |  |  |  |  |  |  |  |     |
-o  o  o  o  o  o  o  o  o  o  o--o
-|  |  |  |  |  |  |  |  |  |  |   
-o  o  o  o  o  o  o  o  o  o  o--o
-|  |  |  |  |  |  |  |  |  |     |
-o  o  o  o  o  o  o  o  o  o  o--o
-|  |  |  |  |  |  |  |  |  |  |   
-o  o  o  o  o  o  o  o  o  o  o--o
-|  |  |  |  |  |  |  |  |  |     |
-o  o  o  o  o  o  o  o  o  o  o--o
-|  |  |  |  |  |  |  |  |  |  |   
-o  o  o  o  o  o  o  o  o  o  o  *
+o  o--o--o  o  o  o--o--o  o--o  o
+|  |     |  |  |        |  |  |  |
+o  o  o--o  o  o--o--o  o  o  o  o
+|  |  |     |        |  |  |  |  |
+o  o  o--o  o  o--o--o  o  o  o  o
+|  |     |  |  |        |  |  |  |
+o  o  o--o  o  o--o--o  o  o  o  o
+|  |  |     |        |  |  |  |  |
+o  o  o--o  o  o--o--o  o  o  o  o
+|  |     |  |  |        |  |  |  |
+o  o  o--o  o  o--o--o  o  o  o  o
+|  |  |     |        |  |  |  |  |
+o--o  o--*  o--o--o--o  o--o  o--o
+8 12 1 12 8 5
+o--o--o--o--o--o  o--o  o--o  o  *
+|              |  |  |  |  |     |
+o  o--o  o--o  o  o  o--o  o--o--o
+|  |  |  |  |  |  |               
+o  o  o  o  o  o  o--o--o--o--o--o
+|  |  |  |  |  |                 |
+o  o  o  o  o  o  o--o--o--o--o--o
+|  |  |  |  |  |  |               
+o  o  o  o  o  o  o--o--o--o--o--o
+|  |  |  |  |  |                 |
+o  o  o  o  o  o  o--o--o--o--o--o
+|  |  |  |  |  |  |               
+o  o  o  o  o  o  o--o--o--o--o--o
+|  |  |  |  |  |                 |
+o--o  o--o  *  o--o--o--o--o--o--o
+8 12 1 1 7 12
+*  o--o--o--o--o--o--o--o--o--o--o
+|  |                             |
+o  o  o--o--o--o--o--o--o--o--o--o
+|  |  |                           
+o  o  o--o--o--o--o--o--o--o--o--o
+|  |                             |
+o  o  o--o--o--o--o--o--o--o--o--o
+|  |  |                           
+o  o  o--o--o--o--o--o--o--o--o--o
+|  |                             |
+o  o  o--o--o--o--o--o--o--o--o--o
+|  |  |                           
+o  o  o  o--o  o--o  o--o  o--o  *
 |  |  |  |  |  |  |  |  |  |  |  |
 o--o  o--o  o--o  o--o  o--o  o--o
-o--o--o--o--o--o--o--o  o--o  o--o
-|                    |  |  |  |  |
-o  o--o  o--o  o--o  o  o  o--o  o
-|  |  |  |  |  |  |  |  |        |
-o  o  o  o  o  o  o  o  o--o  o--o
-|  |  |  |  |  |  |  |     |  |   
-o  o  o  o  o  o  o  o  o--o  o--o
-|  |  |  |  |  |  |  |  |        |
-o  o  o  o  o  o  o  o  o--o  o--o
-|  |  |  |  |  |  |  |     |  |   
-o  o  o  o  o  o  o  o  o--o  o--o
-|  |  |  |  |  |  |  |  |        |
+8 12 8 12 7 7
+o--o--o--o--o--o--o--o--o--o--o--o
+|                                |
+o  o--o  o--o  o--o  o--o--o--o--o
+|  |  |  |  |  |  |  |            
+o  o  o  o  o  o  o  o--o--o--o--o
+|  |  |  |  |  |  |              |
+o  o  o  o  o  o  o  o--o--o--o--o
+|  |  |  |  |  |  |  |            
+o  o  o  o  o  o  o  o--o--o--o--o
+|  |  |  |  |  |  |              |
+o  o  o  o  o  o  o  o--o--o--o--o
+|  |  |  |  |  |  |  |            
 o  o  o  o  o  o  *  o  o--o  o--o
-|  |  |  |  |  |     |     |  |   
-o--o  o--o  o--o  o  o--o--o  o--*
-o--o--o--o--o  o--o--o  o--o  o--o
+|  |  |  |  |  |     |  |  |  |  |
+o--o  o--o  o--o  o  o--o  o--o  *
+8 12 2 12 6 4
+o--o  o--o--o  o--o  o--o  o--o  o
+|  |  |     |  |  |  |  |  |  |   
+o  o  o--o  o  o  o--o  o--o  o--*
+|  |     |  |  |                  
+o  o  o--o  o  o--o--o--o--o--o--o
+|  |  |     |                    |
+o  o  o--o  o  o--o--o--o--o--o--o
+|  |     |  |  |                  
+o  o  o--o  o  o--o--o--o--o--o--o
+|  |  |     |                    |
+o  o  o--*  o  o--o--o--o--o--o--o
+|  |        |  |                  
+o  o--o--o--o  o--o--o--o--o--o--o
+|                                |
+o--o--o--o--o--o--o--o--o--o--o--o
+8 12 3 4 7 10
+o--o  o--o--o--o--o--o--o--o--o--o
+|  |  |                          |
+o  o  o--o--o--o  o--o--o--o--o  o
+|  |           |  |           |  |
+o  o--o--*  o  o  o--o--o--o  o  o
+|              |           |  |  |
+o  o--o  o--o  o  o--o--o--o  o  o
+|  |  |  |  |  |  |           |  |
+o  o  o  o  o  o  o--o--o--o  o  o
+|  |  |  |  |  |           |  |  |
+o  o  o  o  o  o  o--o--o--o  o  o
+|  |  |  |  |  |  |           |  |
+o  o  o  o  o  o  o  o--o  *  o  o
+|  |  |  |  |  |  |  |  |  |  |  |
+o--o  o--o  o--o  o--o  o--o  o--o
+8 12 3 4 3 7
+o--o  o--o--o--o--o--o--o--o--o--o
+|  |  |                          |
+o  o  o--o--o  o--o--o--o  o--o  o
+|  |        |  |        |  |  |  |
+o  o--o--*  o  o  *--o  o  o  o  o
 |           |  |     |  |  |  |  |
-o  o--o--o  o  o--o  o  o  o  o  *
-|  |     |  |     |  |  |  |  |   
-o  o  o--o  o  o--o  o  o  o  o--o
-|  |  |     |  |     |  |  |     |
-o  o  o--o  o  o--o  o  o  o--o  o
-|  |     |  |     |  |  |     |  |
-o  o  o--o  o  o--o  o  o--o  o  o
-|  |  |     |  |     |     |  |  |
-o  o  o  *  o  o--o  o  o--o  o  o
-|  |  |  |  |     |  |  |     |  |
-o  o  o  o  o--o  o  o  o--o  o  o
-|  |  |  |     |  |  |     |  |  |
-o--o  o--o  o  o--o  o--o--o  o--o
-o--o--o--o--o  o--o  o--o--o--o--o
-|           |  |  |  |           |
-o  o--o  o  o  o  o  o  o--o--o  o
-|  |  |     |  |  |  |  |     |  |
-o  o  o  *  o  o  o  o  o--o  o  o
-|  |  |  |  |  |  |  |     |  |  |
-o  o  o  o  o  o  o  o  o--o  o  o
-|  |  |  |  |  |  |  |  |     |  |
-o  o  o  o  o  o  o  o  o--o  o  o
-|  |  |  |  |  |  |  |     |  |  |
-o  o  o  o  o  o  o  o  o--o  o  o
-|  |  |  |  |  |  |  |  |     |  |
-o  o  o  o  o  o  o  o  o  *  o  o
-|  |  |  |  |  |  |  |  |  |  |  |
-o--o  o--o  o--o  o--o  o--o  o--o
-o--o--o--o  o--o  o--o--o--o--o--o
-|        |  |  |  |              |
-o  o--o  o--o  o  o  o--o  o--o  o
-|  |  |        |  |  |  |  |  |  |
-o  o  o  *  o--o  *  o  o  o  o  o
-|  |  |  |  |        |  |  |  |  |
-o  o  o  o  o  o--o  o  o  o  o  o
-|  |  |  |  |  |  |  |  |  |  |  |
-o  o  o  o  o  o  o  o  o  o  o  o
-|  |  |  |  |  |  |  |  |  |  |  |
-o  o  o  o  o  o  o  o  o  o  o  o
-|  |  |  |  |  |  |  |  |  |  |  |
-o  o  o  o  o  o  o  o  o  o  o  o
-|  |  |  |  |  |  |  |  |  |  |  |
-o--o  o--o  o--o  o--o  o--o  o--o
-o--o--o  o--o--o--o--o--o--o--o--o
-|     |  |                       |
-o--o  o  o  o--o--o  o--o  o--o  o
-   |  |  |  |     |  |  |  |  |  |
-o--o  o  o  o--o  o  o  o  o  o  o
+o  o--o  o--o  o--o--o  o  o  o  o
+|  |  |  |              |  |  |  |
+o  o  o  o--o--o--o--o  o  o  o  o
+|  |  |              |  |  |  |  |
+o  o  o  o--o--o--o--o  o  o  o  o
+|  |  |  |              |  |  |  |
+o  o  o  o--o--o--o--o  o  o  o  o
+|  |  |              |  |  |  |  |
+o--o  o--o--o--o--o--o  o--o  o--o
+8 12 6 5 6 2
+o--o--o--o--o--o--o--o--o--o--o--o
+|                                |
+o  o--o--o--o--o--o  o--o  o--o  o
+|  |              |  |  |  |  |  |
+o  o--o--o--o--o  o  o  o  o  o  o
+|              |  |  |  |  |  |  |
+o  o--o--o--o--o  o  o  o  o  o  o
+|  |              |  |  |  |  |  |
+o  o--o  o--o--o  o  o  o  o  o  o
 |     |  |     |  |  |  |  |  |  |
-o--o  o  o  o--o  o  o  o  o  o  o
-   |  |  |  |     |  |  |  |  |  |
-o--o  o  o  o--o  o  o  o  o  o  o
+o  *  o--o  *--o  o  o  o  o  o  o
+|  |              |  |  |  |  |  |
+o  o--o--o--o--o  o  o  o  o  o  o
+|              |  |  |  |  |  |  |
+o--o--o--o--o--o  o--o  o--o  o--o
+8 12 6 5 6 2
+o--o--o--o--o--o--o--o--o--o--o--o
+|                                |
+o  o--o--o--o--o--o  o--o  o--o  o
+|  |              |  |  |  |  |  |
+o  o--o--o--o--o  o  o  o  o  o  o
+|              |  |  |  |  |  |  |
+o  o--o--o--o--o  o  o  o  o  o  o
+|  |              |  |  |  |  |  |
+o  o--o  o--o--o  o  o  o  o  o  o
 |     |  |     |  |  |  |  |  |  |
-o  *  o  o  *  o  o  o  o  o  o  o
-|  |  |  |  |  |  |  |  |  |  |  |
-o  o  o  o  o  o  o  o  o  o  o  o
-|  |  |  |  |  |  |  |  |  |  |  |
-o--o  o--o  o--o  o--o  o--o  o--o
-o--o--o  o--o--o--o--o--o--o--o--o
-|     |  |                       |
-o--o  o  o  o--o--o  o--o  o--o  o
-   |  |  |  |     |  |  |  |  |  |
-o--o  o  o  o--o  o  o  o  o  o  o
-|     |  |     |  |  |  |  |  |  |
-o--o  o  o  o--o  o  o  o  o  o  o
-   |  |  |  |     |  |  |  |  |  |
-o--o  o  o  o--o  o  o  o  o  o  o
-|     |  |     |  |  |  |  |  |  |
-o  *  o  o  *  o  o  o  o  o  o  o
-|  |  |  |  |  |  |  |  |  |  |  |
-o  o  o  o  o  o  o  o  o  o  o  o
-|  |  |  |  |  |  |  |  |  |  |  |
-o--o  o--o  o--o  o--o  o--o  o--o
+o  *  o--o  *--o  o  o  o  o  o  o
+|  |              |  |  |  |  |  |
+o  o--o--o--o--o  o  o  o  o  o  o
+|              |  |  |  |  |  |  |
+o--o--o--o--o--o  o--o  o--o  o--o
+100 1 100 1 1 1
 *
 |
 o
@@ -1517,6 +1560,7 @@ o
 o
 |
 *
+100 1 84 1 69 1
 o
  
 o
@@ -1716,6 +1760,7 @@ o
 o
  
 o
+100 1 87 1 78 1
 o
  
 o
@@ -1915,6 +1960,7 @@ o
 o
  
 o
+100 1 1 1 82 1
 *
 |
 o
@@ -2114,6 +2160,7 @@ o
 o
  
 o
+100 1 100 1 83 1
 o
  
 o
@@ -2313,6 +2360,7 @@ o
 o
 |
 *
+100 1 84 1 86 1
 o
  
 o
@@ -2512,6 +2560,7 @@ o
 o
  
 o
+100 1 68 1 6 1
 o
  
 o
@@ -2711,6 +2760,7 @@ o
 o
  
 o
+100 1 22 1 40 1
 o
  
 o
@@ -2910,6 +2960,7 @@ o
 o
  
 o
+100 1 60 1 85 1
 o
  
 o
@@ -3109,60 +3160,79 @@ o
 o
  
 o
+2 50 1 1 2 50
 *  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o--o
 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |     |
 o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o  *
+2 50 1 39 1 6
 o--o--o--o--o--*  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  *--o--o--o--o--o--o--o--o--o--o--o
 |                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |                                   |
 o--o--o--o--o--o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o--o--o--o--o--o--o--o--o--o--o--o
+2 50 2 24 1 37
 o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o  o--o  o--o  o--o  o--o  o--o  o  *--o--o--o--o--o--o--o--o--o--o--o--o--o
 |                                                                       |  |  |  |  |  |  |  |  |  |  |                                            |
 o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--*  o--o  o--o  o--o  o--o  o--o  o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o
+2 50 1 1 2 21
 *  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o
 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |                                                                                         |
 o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  *--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o
+2 50 2 1 1 36
 o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o  *--o--o--o--o--o--o--o--o--o--o--o--o--o--o
 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |                                               |
 *  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o
+2 50 1 27 1 35
 o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--*  o--o  o--o  o--o  o  *--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o
 |                                                                                |  |  |  |  |  |                                                  |
 o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o  o--o  o--o  o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o
+2 50 1 30 2 34
 o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--*  o--o  o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o
 |                                                                                         |  |  |                                                  |
 o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o  o--o  *--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o
+2 50 2 23 2 45
 o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o--o--o--o--o--o--o
 |                                                                    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |                    |
 o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--*  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o  *--o--o--o--o--o
+2 50 2 42 2 8
 o--o--o--o--o--o--o--o--o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o--o--o--o--o--o--o--o--o
 |                          |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |                          |
 o--o--o--o--o--o--o--*  o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  *--o--o--o--o--o--o--o--o
+2 49 1 1 2 1
 *--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o
                                                                                                                                                 |
 *--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o
+2 49 1 42 1 8
 o--o--o--o--o--o--o--*  o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  *--o--o--o--o--o--o--o
 |                          |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |                       |
 o--o--o--o--o--o--o--o--o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o--o--o--o--o--o--o--o
+2 49 1 5 1 25
 o--o--o--o--*  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o  *--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o
 |              |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |                                                                             |
 o--o--o--o--o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o
+2 49 2 1 1 40
 o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o  *--o--o--o--o--o--o--o--o--o
 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |                                |
 *  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o--o--o--o--o--o--o--o--o--o--o
+2 49 2 1 2 41
 o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o--o--o--o--o--o--o--o--o--o
 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |                             |
 *  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o  *--o--o--o--o--o--o--o--o
+2 49 1 31 1 19
 o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--*  o  o--o  o--o  o--o  o--o  o--o  *--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o
 |                                                           |  |  |  |  |  |  |  |  |  |                                                        |
 o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o  o--o  o--o  o--o  o--o  o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o
+2 49 1 23 1 25
 o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--*  o  *--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o
 |                                                                                                                                               |
 o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o
+2 49 1 48 2 10
 o--o--o--o--o--o--o--o--o--o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  *--o
 |                             |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |     |
 o--o--o--o--o--o--o--o--o--*  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o--o
+2 49 1 4 2 45
 o--o--o--*  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o--o--o--o--o--o
 |           |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |                 |
 o--o--o--o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o--o  o  *--o--o--o--o
+32 3 1 1 32 3
 *  o--o
 |  |  |
 o  o  o
@@ -3226,6 +3296,7 @@ o  o  o
 o  o  o
 |  |  |
 o--o  *
+32 3 17 3 8 3
 o--o--o
 |     |
 o  o--o
@@ -3239,7 +3310,7 @@ o  o--o
 o  o--o
 |  |   
 o  o  o
-   |   
+|  |   
 o  o--*
 |      
 o  o--o
@@ -3260,9 +3331,7 @@ o  o  o
 |  |  |
 o  o  *
 |  |   
-o  o--o
-|     |
-o  o--o
+o  o  o
 |  |   
 o  o--o
 |     |
@@ -3286,26 +3355,29 @@ o  o--o
 |  |   
 o  o--o
 |     |
-o--o  o
-   |  |
 o  o--o
+|  |   
+o  o--o
+|     |
+o--o--o
+32 3 10 1 31 3
 o--o--o
 |     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o--o  o
+   |  |
 o  o  o
-|     |
-o--o  o
-   |  |
-o--o  o
-|     |
-o--o  o
-   |  |
-o--o  o
-|     |
-o--o  o
-   |  |
-o--o  o
-|     |
-o--o  o
    |  |
 *  o  o
 |  |  |
@@ -3352,384 +3424,263 @@ o  o  o
 o  o  *
 |  |   
 o--o  o
-*  o  o
-       
-*  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-o--o--o
-|     |
-o  o  o
-|     |
-o--o  o
-   |  |
-o--o  o
-|     |
-o--o  o
-   |  |
-o--o  o
-|     |
-o--o  o
-   |  |
-*  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o--o  *
-o--o  *
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  *  o
-|     |
-o--o  o
-   |  |
-o--o  o
-|     |
-o--o  o
-   |  |
-o--o  o
-|     |
-o--o--o
-o--o--o
-|     |
-o  o--o
-|  |   
-o  o--o
-|     |
-o  o--o
-|  |   
-o  o--o
-|     |
-o  o--o
-|  |   
-o  o  o
-   |   
-o  o--*
-|      
-o  o--o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  *  o
-|     |
-o  o--o
-|  |   
-o  o--o
-|     |
-o  o--o
-|  |   
-o  o--o
-|     |
-o  o--o
-|  |   
-o  o--o
-|     |
-o--o  o
-   |  |
-o  o--o
-o--o--o
-|     |
-o  o--o
-|  |   
-o  o--o
-|     |
-o  o--o
-|  |   
-o  o--o
-|     |
-o  o--o
-|  |   
-o  o--o
-|     |
-o  o--o
-|  |   
-o  o--o
-|     |
-o  o--o
-|  |   
-o  o--o
-|     |
-o  o  o
+32 3 1 1 2 1
+*--o--o
       |
-o  *--o
-|      
-o  o--o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  o  o
-|  |  |
-o  *  o
-|     |
-o  o--o
-|  |   
-o  o--o
-|     |
-o--o  o
-   |  |
-o  o--o
-o--o--o
-|     |
-o  o--o
-|  |   
-o  o--o
-|     |
-o  o--o
-|  |   
-o  o--o
-|     |
-o  o--o
-|  |   
-o  o--o
-|     |
-o  o--o
-|  |   
-o  o--o
-|     |
-o  o--o
-|  |   
-o  o--o
-|     |
-o  o--o
-|  |   
-o  o--o
-|     |
-o  o--o
-|  |   
-o  o--o
-|     |
-o  o--o
-|  |   
-o  o--o
-|     |
-o  o--o
-|  |   
-o  o--o
-|     |
-o  o--o
-|  |   
-o  o--o
-|     |
-o  o--o
-|  |   
-o  o--o
-|     |
-o  o--o
-|  |   
-o  o--o
-|     |
-o  o  o
-|     |
 *  o--o
-   |   
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o--o--o
+32 3 32 3 8 1
+o--o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o--o  o
+   |  |
+o  o  o
+   |  |
+*  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o--o  *
+32 3 1 3 27 2
+o--o  *
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
 o  *  o
-       
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o--o--o
+32 3 8 3 24 2
+o--o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
 o  o  o
-       
+|  |   
+o  o  *
+|  |  |
 o  o  o
-       
+|  |  |
 o  o  o
-       
+|  |  |
 o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o--o
+|      
+o  *  o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o--o--o
+32 3 28 2 13 2
 o--o--o
 |     |
 o  o--o
@@ -3752,11 +3703,139 @@ o  o--o
 |  |   
 o  o--o
 |     |
+o  o--o
+|  |   
+o  *  o
+|      
+o  o--o
+|  |  |
 o  o  o
-|     |
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o--o  o
+      |
 o  *  o
    |  |
+o--o  o
+|     |
 o  o--o
+|  |   
+o  o--o
+|     |
+o--o--o
+32 3 28 2 27 1
+o--o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+*  o--o
+      |
+o  *  o
+   |  |
+o--o  o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o--o--o
+32 3 23 2 13 2
+o--o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o--o  o
+   |  |
+o  *  o
+      |
+o--o--o
 |      
 o  o--o
 |  |  |
@@ -3793,6 +3872,7 @@ o  o--o
 o  o--o
 |     |
 o--o--o
+32 3 23 2 22 2
 o--o--o
 |     |
 o  o--o
@@ -3834,7 +3914,7 @@ o  o--o
 o  o--o
 |  |   
 o  o--o
-      |
+|     |
 o  *--o
 |      
 o  *--o
@@ -3856,6 +3936,7 @@ o  o--o
 o  o--o
 |     |
 o--o--o
+20 5 20 1 1 1
 *--o--o--o--o
             |
 o--o  o--o  o
@@ -3895,6 +3976,7 @@ o  o  o  o  o
 o  o  o  o  o
 |  |  |  |  |
 *  o--o  o--o
+20 5 1 3 19 5
 o--o--*  o--o
 |        |  |
 o  o--o  o  o
@@ -3934,45 +4016,47 @@ o  o  o  o  o
 o  o  o  o  *
 |  |  |  |   
 o--o  o--o  o
-o--o  o  o  o
-|  |         
-*  o  o  o  o
-   |         
+20 5 3 5 2 1
+o--o  o--o--o
+|  |  |     |
+*  o  o  o--o
+   |  |  |   
 o--o  o  o  *
-|            
-o  o--o  o  o
+|     |  |  |
+o  o--o  o--o
 |  |         
-o  o  o  o  o
+o  o--o--o--o
+|           |
+o  o--o--o--o
 |  |         
-o  o  o  o  o
+o  o--o--o--o
+|           |
+o  o--o--o--o
 |  |         
-o  o  o  o  o
+o  o--o--o--o
+|           |
+o  o--o--o--o
 |  |         
-o  o  o  o  o
+o  o--o--o--o
+|           |
+o  o--o--o--o
 |  |         
-o  o  o  o  o
+o  o--o--o--o
+|           |
+o  o--o--o--o
 |  |         
-o  o  o  o  o
+o  o--o--o--o
+|           |
+o  o--o--o--o
 |  |         
-o  o  o  o  o
+o  o--o--o--o
+|           |
+o  o--o--o--o
 |  |         
-o  o  o  o  o
-|  |         
-o  o  o  o  o
-|  |         
-o  o  o  o  o
-|  |         
-o  o  o  o  o
-|  |         
-o  o  o  o  o
-|  |         
-o  o  o  o  o
-|  |         
-o  o  o  o  o
-|  |         
-o  o  o  o  o
-|  |         
-o--o  o  o  o
+o  o--o--o--o
+|           |
+o--o--o--o--o
+20 5 20 1 14 1
 o--o--o--o--o
 |           |
 o  o--o--o  o
@@ -3995,13 +4079,11 @@ o  o--o  o  o
 |  |     |  |
 o  o--o  o  o
 |     |  |  |
-o  o--o  o  o
-|  |     |  |
-o  o--o  o  o
-|     |  |  |
-*  o--o  o  o
-   |     |  |
-o  o--o  o  o
+o--o  o  o  o
+   |  |  |  |
+o  o  o  o  o
+   |  |  |  |
+*--o  o  o  o
       |  |  |
 o--o  o  o  o
 |  |  |  |  |
@@ -4011,46 +4093,50 @@ o  o  o  o  o
 |  |  |  |  |
 o  o  o  o  o
 |  |  |  |  |
-*  o--o  o--o
-*  o--o  o--o
+o  o  o  o  o
 |  |  |  |  |
-o  o  o--o  o
+*  o--o  o--o
+20 5 1 1 18 5
+*  o--o--o--o
 |  |        |
-o  o--o  o--o
-|     |  |   
-o  o--o  o--o
+o  o  o--o--o
+|  |  |      
+o  o  o--o--o
 |  |        |
-o  o--o  o--o
-|     |  |   
-o  o--o  o--o
+o  o  o--o--o
+|  |  |      
+o  o  o--o--o
 |  |        |
-o  o--o  o--o
-|     |  |   
-o  o--o  o--o
+o  o  o--o--o
+|  |  |      
+o  o  o--o--o
 |  |        |
-o  o--o  o--o
-|     |  |   
-o  o--o  o--o
+o  o  o--o--o
+|  |  |      
+o  o  o--o--o
 |  |        |
-o  o--o  o--o
-|     |  |   
-o  o--o  o--o
+o  o  o--o--o
+|  |  |      
+o  o  o--o--o
 |  |        |
-o  o--o  o--o
-|     |  |   
-o  o--o  o--o
+o  o  o--o--o
+|  |  |      
+o  o  o--o--o
 |  |        |
-o  o--o  o--o
-|     |  |   
-o  o--o  o--o
+o  o  o--o--o
+|  |  |      
+o  o  o--o--o
 |  |        |
-o  o--o  o--o
-|     |  |   
-o  o--o  o  *
-|  |     |  |
-o  o--o  o  o
-|     |  |  |
-o--o--o  o--o
+o  o  o--o--o
+|  |  |      
+o  o  o  o--o
+|  |  |  |  |
+o  o  o--o  *
+|  |         
+o  o--o--o--o
+|           |
+o--o--o--o--o
+20 5 1 1 15 2
 *  o--o--o--o
 |  |        |
 o  o  o--o  o
@@ -4090,13 +4176,14 @@ o  o--o  o  o
 o  o--o  o  o
 |     |  |  |
 o--o--o  o--o
-o--o  o--o--o
-|  |        |
-o  o--o  o--o
-|        |   
-o  o--o  o--o
-|  |  |     |
-o  o  *  o--o
+20 5 9 5 4 3
+o--o--o--o--o
+|           |
+o  o--o--o--o
+|  |         
+o  o--o--o--o
+|           |
+o  o--*  o--o
 |  |     |   
 o  o--o  o--o
 |     |     |
@@ -4108,27 +4195,28 @@ o  o--o  o--o
 |  |     |   
 o  o--o  o  *
 |     |  |  |
-o  o--o  o  o
-|  |     |  |
-o  o--o  o  o
-|     |  |  |
-o  o--o  o  o
-|  |     |  |
-o  o--o  o  o
-|     |  |  |
-o  o--o  o  o
-|  |     |  |
-o  o--o  o  o
-|     |  |  |
-o  o--o  o  o
-|  |     |  |
-o  o--o  o  o
-|     |  |  |
-o  o--o  o  o
-|  |     |  |
-o  o--o  o  o
-|     |  |  |
-o--o--o  o--o
+o--o--o  o  o
+         |  |
+o--o--o--o  o
+|           |
+o  o--o--o--o
+|  |         
+o  o--o--o--o
+|           |
+o  o--o--o--o
+|  |         
+o  o--o--o--o
+|           |
+o  o--o--o--o
+|  |         
+o  o--o--o--o
+|           |
+o  o--o--o--o
+|  |         
+o  o--o--o--o
+|           |
+o--o--o--o--o
+20 5 7 3 19 2
 o--o--o--o--o
 |           |
 o  o--o--o  o
@@ -4142,10 +4230,10 @@ o  o--o  o  o
 o  o--o  o  o
 |  |     |  |
 o  o  *  o  o
-   |  |  |  |
-o  o--o  o  o
-|        |  |
-o  o--o  o  o
+|  |  |  |  |
+o  o  o  o  o
+|  |  |  |  |
+o  o  o  o  o
 |  |  |  |  |
 o  o  o  o  o
 |  |  |  |  |
@@ -4168,6 +4256,7 @@ o  o  o  o  o
 o  *  o  o  o
 |     |  |  |
 o--o--o  o--o
+20 5 7 3 9 3
 o--o  o--o--o
 |  |  |     |
 o  o  o  o--o
@@ -4178,113 +4267,116 @@ o  o  o  o--o
 |  |  |  |   
 o  o  o  o--o
 |  |  |     |
-o  o  o  o  o
-|  |  |     |
+o  o  o  o--o
+|  |  |  |   
 o  o  *  o--o
-|  |     |   
-o  o  o  o--o
 |  |        |
-o  o--*  o--o
-|        |   
-o  o--o  o--o
-|  |  |     |
-o  o  o  o--o
-|  |  |  |   
-o  o  o  o--o
-|  |  |     |
-o  o  o  o--o
-|  |  |  |   
-o  o  o  o--o
-|  |  |     |
-o  o  o  o--o
-|  |  |  |   
-o  o  o  o--o
-|  |  |     |
-o  o  o  o--o
-|  |  |  |   
-o  o  o  o--o
-|  |  |     |
-o  o  o--o  o
+o  o--o--o  o
+|        |  |
+o  o--*  o  o
 |  |     |  |
-o--o  o  o--o
+o  o  o  o  o
+|  |     |  |
+o  o  o--o  o
+|  |  |     |
+o  o  o  o--o
+|  |  |  |   
+o  o  o  o--o
+|  |  |     |
+o  o  o  o--o
+|  |  |  |   
+o  o  o  o--o
+|  |  |     |
+o  o  o  o--o
+|  |  |  |   
+o  o  o  o--o
+|  |  |     |
+o  o  o  o--o
+|  |  |  |   
+o  o  o  o--o
+|  |  |     |
+o--o  o--o--o
+20 5 2 4 4 4
 o--o--o--o--o
 |           |
 o  o--o  *--o
 |  |  |      
-o  o  o  o--o
-|  |  |  |  |
+o  o  o--o--o
+|  |        |
 o  o  o  *  o
-|  |  |     |
-o  o  o  o--o
-|  |  |  |   
-o  o  o  o--o
-|  |  |     |
-o  o  o  o--o
-|  |  |  |   
-o  o  o  o--o
-|  |  |     |
-o  o  o  o--o
-|  |  |  |   
-o  o  o  o--o
-|  |  |     |
-o  o  o  o--o
-|  |  |  |   
-o  o  o  o--o
-|  |  |     |
-o  o  o  o--o
-|  |  |  |   
-o  o  o  o--o
-|  |  |     |
-o  o  o  o--o
-|  |  |  |   
-o  o  o  o--o
-|  |  |     |
-o  o  o  o--o
-|  |  |  |   
-o  o  o  o--o
-|  |  |     |
-o  o  o--o  o
 |  |     |  |
-o--o  o  o--o
-o  o  o  *  o
-             
-o  o  o  *  o
-             
-o  o  o  o  o
-             
-o  o  o  o  o
-             
-o  o  o  o  o
-             
-o  o  o  o  o
-             
-o  o  o  o  o
-             
-o  o  o  o  o
-             
-o  o  o  o  o
-             
-o  o  o  o  o
-             
-o  o  o  o  o
-             
-o  o  o  o  o
-             
-o  o  o  o  o
-             
-o  o  o  o  o
-             
-o  o  o  o  o
-             
-o  o  o  o  o
-             
-o  o  o  o  o
-             
-o  o  o  o  o
-             
-o  o  o  o  o
-             
-o  o  o  o  o
+o  o  o--o  o
+|  |  |     |
+o  o  o  o--o
+|  |  |  |   
+o  o  o  o--o
+|  |  |     |
+o  o  o  o--o
+|  |  |  |   
+o  o  o  o--o
+|  |  |     |
+o  o  o  o--o
+|  |  |  |   
+o  o  o  o--o
+|  |  |     |
+o  o  o  o--o
+|  |  |  |   
+o  o  o  o--o
+|  |  |     |
+o  o  o  o--o
+|  |  |  |   
+o  o  o  o--o
+|  |  |     |
+o  o  o  o--o
+|  |  |  |   
+o  o  o  o--o
+|  |  |     |
+o  o  o  o--o
+|  |  |  |   
+o  o  o  o--o
+|  |  |     |
+o--o  o--o--o
+20 5 2 4 1 4
+o--o--o  *--o
+|     |     |
+o--o  o--*  o
+   |        |
+o--o  o--o  o
+|     |  |  |
+o  o--o  o--o
+|  |         
+o  o--o--o--o
+|           |
+o  o--o--o--o
+|  |         
+o  o--o--o--o
+|           |
+o  o--o--o--o
+|  |         
+o  o--o--o--o
+|           |
+o  o--o--o--o
+|  |         
+o  o--o--o--o
+|           |
+o  o--o--o--o
+|  |         
+o  o--o--o--o
+|           |
+o  o--o--o--o
+|  |         
+o  o--o--o--o
+|           |
+o  o--o--o--o
+|  |         
+o  o--o--o--o
+|           |
+o  o--o--o--o
+|  |         
+o  o--o--o--o
+|           |
+o--o--o--o--o
+31 3 1 1 31 1
 *--o--o
       |
 o--o  o
@@ -4346,6 +4438,7 @@ o  o  o
 o  o  o
 |  |  |
 *  o--o
+31 3 7 3 9 1
 o--o--o
 |     |
 o  o--o
@@ -4357,117 +4450,119 @@ o  o--o
 o  o--o
 |     |
 o  o--o
-   |   
-o  o--*
-|      
+|  |   
+o  o  *
+|  |  |
 o  o  o
-       
-*  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-*  o  o
-       
-o  o  o
-|      
-o--o--o
-      |
-o--o--o
-|      
-o--o--o
-      |
-o--o--o
-|      
-o--o--o
-      |
-o--o  o
 |  |  |
 *  o  o
    |  |
 o--o  o
 |     |
-o--o  o
-   |  |
-o--o  o
+o  o--o
+|  |   
+o  o--o
 |     |
-o--o  o
-   |  |
-o--o  o
+o  o--o
+|  |   
+o  o--o
 |     |
-o--o  o
-   |  |
-o--o  o
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
 |     |
 o--o--o
+31 3 15 1 23 1
+o--o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+*  o--o
+      |
+o--o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
+|  |  |
+*  o  o
+   |  |
+o--o  o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o--o--o
+31 3 1 3 27 1
 o--o  *
 |  |  |
 o  o  o
@@ -4524,58 +4619,59 @@ o  o  o
    |  |
 o--o  o
 |     |
-o--o  o
-   |  |
-o--o  o
+o  o--o
+|  |   
+o  o--o
 |     |
 o--o--o
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-o  o  o
-       
-*  o  o
-       
-o  o  o
-|      
+31 3 31 1 21 1
 o--o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+o  o--o
+|     |
+o  o--o
+|  |   
+*  o--o
       |
 o--o  o
+|  |  |
+o  o  o
+|  |  |
+o  o  o
 |  |  |
 o  o  o
 |  |  |
@@ -4590,6 +4686,7 @@ o  o  o
 o  o  o
 |  |  |
 *  o--o
+31 3 31 1 26 2
 o--o--o
 |     |
 o  o--o
@@ -4651,6 +4748,7 @@ o  o  o
 o  o  o
 |  |  |
 *  o--o
+31 3 1 2 12 2
 o  *--o
       |
 o--o--o
@@ -4712,6 +4810,7 @@ o  o--o
 o  o--o
 |     |
 o--o--o
+31 3 10 2 28 2
 o--o--o
 |     |
 o  o--o
@@ -4729,7 +4828,7 @@ o  o--o
 o  o--o
 |  |   
 o  o--o
-      |
+|     |
 o  *--o
 |      
 o  o--o
@@ -4773,6 +4872,7 @@ o  o--o
 o  o--o
 |     |
 o--o--o
+31 3 10 2 9 3
 o--o--o
 |     |
 o  o--o
@@ -4788,10 +4888,10 @@ o  o--o
 o  o--o
 |     |
 o  o--o
-   |   
-o  o--*
-|      
-o  *--o
+|  |   
+o  o  *
+|  |  |
+o  *  o
 |     |
 o  o--o
 |  |   

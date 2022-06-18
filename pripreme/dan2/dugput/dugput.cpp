@@ -107,15 +107,68 @@ const int MAXN = 5010;
 int dir[MAXN][MAXN];
 
 void debug() {
-  REP(j, 4) {
-    REP(i, 4) {
+  REP(j, 11) {
+    REP(i, 3) {
       cout << dir[i + 1][j + 1] << " ";
     } cout << endl;
   }
 }
 
+int bio[5][5];
+
+bool rek(int n, int m, point s, point t, int xoff, int yoff, int dist) {
+  if (s.x == t.x && s.y == t.y) {
+    //debug();
+    //cout << dist << endl;
+    if (dist == n * m) return true;
+    return false;
+  }
+
+  if (s.x > 1) {
+    if (bio[s.x - 1][s.y] == 0) {
+      bio[s.x - 1][s.y] = 1;
+      dir[s.x + xoff][s.y + yoff] = 2;
+      if (rek(n, m, {s.x - 1, s.y}, t, xoff, yoff, dist + 1)) return true;
+      bio[s.x - 1][s.y] = 0;
+      dir[s.x + xoff][s.y + yoff] = -1;
+    }
+  }
+  if (s.x < m) {
+    if (bio[s.x + 1][s.y] == 0) {
+      bio[s.x + 1][s.y] = 1;
+      dir[s.x + xoff][s.y + yoff] = 0;
+      if (rek(n, m, {s.x + 1, s.y}, t, xoff, yoff, dist + 1)) return true;
+      bio[s.x + 1][s.y] = 0;
+      dir[s.x + xoff][s.y + yoff] = -1;
+    }
+  }
+
+  if (s.y > 1) {
+    if (bio[s.x][s.y - 1] == 0) {
+      bio[s.x][s.y - 1] = 1;
+      dir[s.x + xoff][s.y + yoff] = 3;
+      if (rek(n, m, {s.x, s.y - 1}, t, xoff, yoff, dist + 1)) return true;
+      bio[s.x][s.y - 1] = 0;
+      dir[s.x + xoff][s.y + yoff] = -1;
+    }
+  }
+  if (s.y < n) {
+    if (bio[s.x][s.y + 1] == 0) {
+      bio[s.x][s.y + 1] = 1;
+      dir[s.x + xoff][s.y + yoff] = 1;
+      if (rek(n, m, {s.x, s.y + 1}, t, xoff, yoff, dist + 1)) return true;
+      bio[s.x][s.y + 1] = 0;
+      dir[s.x + xoff][s.y + yoff] = -1;
+    }
+  }
+
+  return false;
+}
+
 void solve(int n, int m, point s, point t, int xoff = 0, int yoff = 0) {
-  cout << n << " " << m << " " << s.x << " " << s.y << " " << t.x << " " << t.y << endl;
+  //cout << n << " " << m << " " << s.x << " " << s.y << " " << t.x << " " << t.y << endl;
+  //debug();
+  //cout << endl;
   if (n == 1) {
     int d = 0;
     if (s.x > t.x) d = 2;
@@ -617,7 +670,20 @@ void solve(int n, int m, point s, point t, int xoff = 0, int yoff = 0) {
 
   for (int i = 2; i < min(s.x, t.x); i += 2) {
     if (U(n, i, {i, 1}, {i, 2}) + U(n, m - i, {s.x - i, s.y}, {t.x - i, t.y}) == U(n, m, s, t)) {
+      //cout << ".. " << n << " " << m << " " << s.x << " " << s.y << " " << t.x << " " << t.y << endl;
       solve(n, m - i, {s.x - i, s.y}, {t.x - i, t.y}, xoff + i, yoff);
+      if (t.x == i + 1) {
+        if (t.y > 1 && t.x < m &&  dir[t.x + 1 + xoff][t.y + yoff] == 2 && dir[t.x + 1 + xoff][t.y - 1 + yoff] == 1 && dir[t.x + xoff][t.y - 1 + yoff] == -1) {
+          dir[t.x + 1 + xoff][t.y + yoff] = -1;
+          dir[t.x + 1 + xoff][t.y - 1 + yoff] = 2;
+          dir[t.x + xoff][t.y - 1 + yoff] = 1;
+        }
+        if (t.y < n && t.x < m &&  dir[t.x + 1 + xoff][t.y + yoff] == 2 && dir[t.x + 1 + xoff][t.y + 1 + yoff] == 3 && dir[t.x + xoff][t.y + 1 + yoff] == -1) {
+          dir[t.x + 1 + xoff][t.y + yoff] = -1;
+          dir[t.x + 1 + xoff][t.y + 1 + yoff] = 2;
+          dir[t.x + xoff][t.y + 1 + yoff] = 3;
+        }
+      }
       FOR(j, 1, n + 1) {
         if (dir[i + 1 + xoff][j + yoff] == 1) {
           solve(n, i, {i, j}, {i, j + 1}, xoff, yoff);
@@ -659,13 +725,41 @@ void solve(int n, int m, point s, point t, int xoff = 0, int yoff = 0) {
           return;
         }
       }
+
+      FOR(j, 2, n + 1) {
+        if (dir[i + 1 + xoff][j + yoff] == 0 && dir[i + 2 + xoff][j + yoff] == 3 && dir[i + 1 + xoff][j - 1 + yoff] == -1) {
+          solve(n, i, {i, j}, {i, j - 1}, xoff, yoff);
+          dir[i + 1 + xoff][j - 1 + yoff] = 0;
+          dir[i + 2 + xoff][j + yoff] = -1;
+
+          dir[i + 1 + xoff][j + yoff] = 2;
+          dir[i + xoff][j - 1 + yoff] = 0;
+          return;
+        }
+      }
+
       assert(0);
     }
   }
 
   for (int i = m - 2; i >= max(s.x, t.x); i -= 2) {
     if (U(n, i, s, t) + U(n, m - i, {1, 1}, {1, 2}) == U(n, m, s, t)) {
+      //cout << ".. " << n << " " << m << " " << s.x << " " << s.y << " " << t.x << " " << t.y << endl;
       solve(n, i, s, t, xoff, yoff);
+
+      if (t.x == i) {
+        if (t.y > 1 && t.x > 1 &&  dir[t.x - 1 + xoff][t.y + yoff] == 0 && dir[t.x - 1 + xoff][t.y - 1 + yoff] == 1 && dir[t.x + xoff][t.y - 1 + yoff] == -1) {
+          dir[t.x - 1 + xoff][t.y + yoff] = -1;
+          dir[t.x - 1 + xoff][t.y - 1 + yoff] = 0;
+          dir[t.x + xoff][t.y - 1 + yoff] = 1;
+        }
+        if (t.y < n && t.x > 1 &&  dir[t.x - 1 + xoff][t.y + yoff] == 0 && dir[t.x - 1 + xoff][t.y + 1 + yoff] == 3 && dir[t.x + xoff][t.y + 1 + yoff] == -1) {
+          dir[t.x - 1 + xoff][t.y + yoff] = -1;
+          dir[t.x - 1 + xoff][t.y + 1 + yoff] = 0;
+          dir[t.x + xoff][t.y + 1 + yoff] = 3;
+        }
+      }
+
       FOR(j, 1, n + 1) {
         if (dir[i + xoff][j + yoff] == 1) {
           solve(n, m - i, {1, j}, {1, j + 1}, xoff + i, yoff);
@@ -712,7 +806,22 @@ void solve(int n, int m, point s, point t, int xoff = 0, int yoff = 0) {
 
   for (int i = 2; i < min(s.y, t.y); i += 2) {
     if (U(i, m, {1, i}, {2, i}) + U(n - i, m, {s.x, s.y - i}, {t.x, t.y - i}) == U(n, m, s, t)) {
+      //cout << ".. " << n << " " << m << " " << s.x << " " << s.y << " " << t.x << " " << t.y << endl;
       solve(n - i, m, {s.x, s.y - i}, {t.x, t.y - i}, xoff, yoff + i);
+
+      if (t.y == i + 1) {
+        if (t.x > 1 && t.y < n && dir[t.x + xoff][t.y + 1 + yoff] == 3 && dir[t.x - 1 + xoff][t.y + 1 + yoff] == 0 && dir[t.x - 1 + xoff][t.y + yoff] == -1) {
+          dir[t.x + xoff][t.y + 1 + yoff] = -1;
+          dir[t.x - 1 + xoff][t.y + 1 + yoff] = 3;
+          dir[t.x - 1 + xoff][t.y + yoff] = 0;
+        }
+        if (t.x < n && t.y < n && dir[t.x + xoff][t.y + 1 + yoff] == 3 && dir[t.x + 1 + xoff][t.y + 1 + yoff] == 2 && dir[t.x + 1 + xoff][t.y + yoff] == -1) {
+          dir[t.x + xoff][t.y + 1 + yoff] = -1;
+          dir[t.x + 1 + xoff][t.y + 1 + yoff] = 3;
+          dir[t.x + 1 + xoff][t.y + yoff] = 2;
+        }
+      }
+
       FOR(j, 1, m + 1) {
         if (dir[j + xoff][i + 1 + yoff] == 0) {
           solve(i, m, {j, i}, {j + 1, i}, xoff, yoff);
@@ -723,8 +832,8 @@ void solve(int n, int m, point s, point t, int xoff = 0, int yoff = 0) {
       }
 
       FOR(j, 2, m + 1) {
-        if (dir[j + xoff][i + 1 + yoff] == 3) {
-          solve(i, n, {j, i}, {j - 1, i}, xoff, yoff);
+        if (dir[j + xoff][i + 1 + yoff] == 2) {
+          solve(i, m, {j, i}, {j - 1, i}, xoff, yoff);
           dir[j + xoff][i + 1 + yoff] = 3;
           dir[j - 1 + xoff][i + yoff] = 1;
           return;
@@ -754,13 +863,29 @@ void solve(int n, int m, point s, point t, int xoff = 0, int yoff = 0) {
           return;
         }
       }
+
       assert(0);
     }
   }
 
   for (int i = n - 2; i >= max(s.y, t.y); i -= 2) {
     if (U(i, m, s, t) + U(n - i, m, {1, 1}, {2, 1}) == U(n, m, s, t)) {
+      //cout << ".. " << n << " " << m << " " << s.x << " " << s.y << " " << t.x << " " << t.y << endl;
       solve(i, m, s, t, xoff, yoff);
+
+      if (t.y == i) {
+        if (t.x > 1 && t.y > 1 && dir[t.x + xoff][t.y - 1 + yoff] == 1 && dir[t.x - 1 + xoff][t.y - 1 + yoff] == 0 && dir[t.x - 1 + xoff][t.y + yoff] == -1) {
+          dir[t.x + xoff][t.y - 1 + yoff] = -1;
+          dir[t.x - 1 + xoff][t.y - 1 + yoff] = 1;
+          dir[t.x - 1 + xoff][t.y + yoff] = 0;
+        }
+        if (t.x < n && t.y > 1 && dir[t.x + xoff][t.y - 1 + yoff] == 1 && dir[t.x + 1 + xoff][t.y - 1 + yoff] == 2 && dir[t.x + 1 + xoff][t.y + yoff] == -1) {
+          dir[t.x + xoff][t.y - 1 + yoff] = -1;
+          dir[t.x + 1 + xoff][t.y - 1 + yoff] = 1;
+          dir[t.x + 1 + xoff][t.y + yoff] = 2;
+        }
+      }
+
       FOR(j, 1, m + 1) {
         if (dir[j + xoff][i + yoff] == 0) {
           solve(n - i, m, {j, 1}, {j + 1, 1}, xoff, yoff + i);
@@ -771,7 +896,7 @@ void solve(int n, int m, point s, point t, int xoff = 0, int yoff = 0) {
       }
       FOR(j, 2, m + 1) {
         if (dir[j + xoff][i + yoff] == 2) {
-          solve(n - i, m, {j, 1}, {j - 1, 1}, xoff, yoff + 1);
+          solve(n - i, m, {j, 1}, {j - 1, 1}, xoff, yoff + i);
           dir[j + xoff][i + yoff] = 1;
           dir[j - 1 + xoff][i + 1 + yoff] = 3;
           return;
@@ -801,6 +926,7 @@ void solve(int n, int m, point s, point t, int xoff = 0, int yoff = 0) {
           return;
         }
       }
+
       assert(0);
     }
   }
@@ -861,6 +987,10 @@ void solve(int n, int m, point s, point t, int xoff = 0, int yoff = 0) {
     }
   }
 
+  memset(bio, 0, sizeof bio);
+  bio[s.x][s.y] = 1;
+  if (!rek(n, m, s, t, xoff, yoff, 1)) assert(0);
+
   return;
 }
 
@@ -898,6 +1028,8 @@ int main() {
         dir[j][i] = -1;
       }
     }
+
+    cout << n << " " << m << " " << s.y << " " << s.x << " " << t.y << " " << t.x << endl;
     solve(n, m, s, t);
 
     REP(i, 2 * n) {
