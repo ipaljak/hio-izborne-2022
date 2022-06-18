@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """Upotreba ./validate3.py test/*.in*"""
 
+import hashlib
+import glob
+import sys
 import string
 
 
@@ -9,15 +12,15 @@ def check(lines):
     E = "\n"  # line ending
 
     q = int(lines[0].strip())
-    assert 1 <= q <= 100, "q kriv"
-    nl.append("{}{}".format(q, E));
+    assert 1 <= q <= 1600, "q kriv"
+    nl.append("{}{}".format(q, E))
 
     max_nm = 0
     max_m = 0
     for i in range(q):
         n, m, a, b, c, d = map(int, lines[i+1].split())
-        assert 1 <= n <= 5000, "n kriv" 
-        assert 1 <= m <= 5000, "m kriv" 
+        assert 1 <= n <= 5000, "n kriv"
+        assert 1 <= m <= 5000, "m kriv"
         assert 1 <= a <= n, "a kriv"
         assert 1 <= b <= m, "b kriv"
         assert 1 <= c <= n, "c kriv"
@@ -35,24 +38,24 @@ def check(lines):
 
 
 # Ocekivani clusteri! Ovo vjerojatno zelis promijeniti!
-expected_clusters = {'s1': 1, 's2': 1, 's3': 1, 's4': 1}
+expected_clusters = {'s1': 1, 's2': 1, 's3': 1, 's4': 2}
 
 
 def what_cluster(data):
     # na temelju povratne informacije iz check(lines)
     # zakljucuje za TP u kojoj je bodovnoj sekciji
-    if 2 <= data['nm'] <= 100: return 's1'
-    if 2 <= data['nm'] <= 1000: return 's2'
-    if 2 <= data['nm'] <= 1000000 and data['m'] <= 3: return 's3'
-    if 2 <= data['nm'] <= 1000000: return 's4'
+    if 2 <= data['nm'] <= 100:
+        return 's1'
+    if 2 <= data['nm'] <= 1000:
+        return 's2'
+    if 2 <= data['nm'] <= 15000 and data['m'] <= 3:
+        return 's3'
+    if 2 <= data['nm'] <= 1000000:
+        return 's4'
     assert False, "nijedan cluster"
 
 
 ################### Zadatak-specifican kod iznad ove linije #########################
-
-import sys
-import glob
-import hashlib
 
 
 def group_in_batches(files):
@@ -100,8 +103,5 @@ if __name__ == "__main__":
             clusters[b[0]] = 0
         clusters[b[0]] += 1
 
-    assert clusters == expected_clusters, "Kriva raspodjela clustera ({} vs {})".format(clusters, expected_clusters)
-
-    # Buda test - provjeri duplikate
-    hashes = set(hashlib.sha1(open(x, 'rb').read()).hexdigest() for x in f)
-    assert len(hashes) == len(f), "Ima duplikata!"
+    assert clusters == expected_clusters, "Kriva raspodjela clustera ({} vs {})".format(
+        clusters, expected_clusters)
