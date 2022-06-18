@@ -24,8 +24,8 @@ class Test(object):
         assert(len(self.qs) == self.q)
 
         for (ni, mi, ai, bi, ci, di) in self.qs:
-            assert(1 <= ni <= 5000)
-            assert(1 <= mi <= 5000)
+            assert(1 <= ni <= 500)
+            assert(1 <= mi <= 500)
             assert(1 <= ni * mi <= 10**5)
             for c in [ai, ci]:
                 assert(1 <= c <= ni)
@@ -49,6 +49,20 @@ def remove_cases():
         print>>sys.stderr, 'Removing ' + c
         os.remove(c)
 
+def gen_small(n, m):
+    qs = []
+    for a in range(n):
+        for b in range(m):
+            for c in range(n):
+                for d in range(m):
+                    if (a == c and b == d):
+                        continue;
+                    qs.append((n, m, a + 1, b + 1, c + 1, d + 1))
+    random.shuffle(qs)
+    if len(qs) > 100:
+        qs = qs[:100]
+    return Test(len(qs), qs)                
+
 def gen_s(n_lo, n_hi, m_lo, m_hi, mul=10**5):
     qs = []
     while len(qs) < 100:
@@ -62,8 +76,8 @@ def gen_s(n_lo, n_hi, m_lo, m_hi, mul=10**5):
         if m != 3 and random.randint(1, 4) == 1:
             m = random.randint(1, 3)
             n = mul / m
-        n = min(n, 5000)
-        m = min(m, 5000)
+        n = min(n, 500)
+        m = min(m, 500)
         corner = [(1, 1), (1, m), (n, 1), (n, m)]
         border = []
 
@@ -158,6 +172,14 @@ def gen_cases():
     subtask1 = []
     for i in range(8):
         subtask1.append(gen_s(1, 50, 1, 50, 100))
+    subtask1.append(gen_small(2, 5))
+    subtask1.append(gen_small(10, 2))
+    subtask1.append(gen_small(3, 3))
+    subtask1.append(gen_small(3, 4))
+    subtask1.append(gen_small(4, 4))
+    subtask1.append(gen_small(5, 4))
+    subtask1.append(gen_small(5, 5))
+    subtask1.append(gen_small(5, 6))
 
     real.append(subtask1)
 
@@ -165,6 +187,14 @@ def gen_cases():
     subtask2 = []
     for i in range(8):
         subtask2.append(gen_s(1, 1000, 1, 1000, 1000))
+    subtask2.append(gen_small(2, 5))
+    subtask2.append(gen_small(10, 2))
+    subtask2.append(gen_small(3, 3))
+    subtask2.append(gen_small(3, 4))
+    subtask2.append(gen_small(4, 4))
+    subtask2.append(gen_small(5, 4))
+    subtask2.append(gen_small(5, 5))
+    subtask2.append(gen_small(5, 6))
 
     real.append(subtask2)
 
@@ -175,13 +205,25 @@ def gen_cases():
             subtask3.append(gen_s(100 * i, 5000, 3, 3, 15000))
         else:
             subtask3.append(gen_s(5000, 5000, 3, 3, 15000))
-
+    subtask3.append(gen_small(10, 3))
+    subtask3.append(gen_small(3, 3))
+    subtask3.append(gen_small(4, 3))
+    subtask3.append(gen_small(5, 3))
+    
     real.append(subtask3)
 
     # 4. subtask nm <= 10**5, q = 100
     subtask4 = []
     for i in range(8):
         subtask4.append(gen_s(1, 5000, 1, 5000, 10**5))
+    subtask4.append(gen_small(2, 5))
+    subtask4.append(gen_small(10, 2))
+    subtask4.append(gen_small(3, 3))
+    subtask4.append(gen_small(3, 4))
+    subtask4.append(gen_small(4, 4))
+    subtask4.append(gen_small(5, 4))
+    subtask4.append(gen_small(5, 5))
+    subtask4.append(gen_small(5, 6))
 
     real.append(subtask4)
 
@@ -200,4 +242,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
