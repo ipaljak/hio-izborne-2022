@@ -108,7 +108,7 @@ int dir[MAXN][MAXN];
 
 void debug() {
   REP(j, 5) {
-    REP(i, 4) {
+    REP(i, 6) {
       cout << dir[i + 1][j + 1] << " ";
     } cout << endl;
   }
@@ -166,9 +166,10 @@ bool rek(int n, int m, point s, point t, int xoff, int yoff, int dist) {
 }
 
 void solve(int n, int m, point s, point t, int xoff = 0, int yoff = 0) {
-  //cout << n << " " << m << " " << s.x << " " << s.y << " " << t.x << " " << t.y << endl;
+  //cout << ".. " << n << " " << m << " " << s.x << " " << s.y << " " << t.x << " " << t.y << endl;
   //debug();
   //cout << endl;
+
   if (n == 1) {
     int d = 0;
     if (s.x > t.x) d = 2;
@@ -815,7 +816,7 @@ void solve(int n, int m, point s, point t, int xoff = 0, int yoff = 0) {
           dir[t.x - 1 + xoff][t.y + 1 + yoff] = 3;
           dir[t.x - 1 + xoff][t.y + yoff] = 0;
         }
-        if (t.x < n && t.y < n && dir[t.x + xoff][t.y + 1 + yoff] == 3 && dir[t.x + 1 + xoff][t.y + 1 + yoff] == 2 && dir[t.x + 1 + xoff][t.y + yoff] == -1) {
+        if (t.x < m && t.y < n && dir[t.x + xoff][t.y + 1 + yoff] == 3 && dir[t.x + 1 + xoff][t.y + 1 + yoff] == 2 && dir[t.x + 1 + xoff][t.y + yoff] == -1) {
           dir[t.x + xoff][t.y + 1 + yoff] = -1;
           dir[t.x + 1 + xoff][t.y + 1 + yoff] = 3;
           dir[t.x + 1 + xoff][t.y + yoff] = 2;
@@ -879,7 +880,7 @@ void solve(int n, int m, point s, point t, int xoff = 0, int yoff = 0) {
           dir[t.x - 1 + xoff][t.y - 1 + yoff] = 1;
           dir[t.x - 1 + xoff][t.y + yoff] = 0;
         }
-        if (t.x < n && t.y > 1 && dir[t.x + xoff][t.y - 1 + yoff] == 1 && dir[t.x + 1 + xoff][t.y - 1 + yoff] == 2 && dir[t.x + 1 + xoff][t.y + yoff] == -1) {
+        if (t.x < m && t.y > 1 && dir[t.x + xoff][t.y - 1 + yoff] == 1 && dir[t.x + 1 + xoff][t.y - 1 + yoff] == 2 && dir[t.x + 1 + xoff][t.y + yoff] == -1) {
           dir[t.x + xoff][t.y - 1 + yoff] = -1;
           dir[t.x + 1 + xoff][t.y - 1 + yoff] = 1;
           dir[t.x + 1 + xoff][t.y + yoff] = 2;
