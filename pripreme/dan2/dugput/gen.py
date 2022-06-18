@@ -26,7 +26,7 @@ class Test(object):
         for (ni, mi, ai, bi, ci, di) in self.qs:
             assert(1 <= ni <= 5000)
             assert(1 <= mi <= 5000)
-            assert(1 <= ni * mi <= 10**6)
+            assert(1 <= ni * mi <= 10**5)
             for c in [ai, ci]:
                 assert(1 <= c <= ni)
             for c in [bi, di]:
@@ -49,7 +49,7 @@ def remove_cases():
         print>>sys.stderr, 'Removing ' + c
         os.remove(c)
 
-def gen_s(n_lo, n_hi, m_lo, m_hi, mul=10**6):
+def gen_s(n_lo, n_hi, m_lo, m_hi, mul=10**5):
     qs = []
     while len(qs) < 100:
         n = random.randint(n_lo, n_hi)
