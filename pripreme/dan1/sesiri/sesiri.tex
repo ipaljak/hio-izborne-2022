@@ -7,9 +7,9 @@
 ]{Šeširi}
 
 Srednjoeuropska informatička olimpijada (CEOI) ove se godina održava u Lijepoj
-našoj. Natjecatelji su dodatno uzbuđeni zbog najpoznatije hrvatske tradicije na
+Našoj. Natjecatelji su dodatno uzbuđeni zbog najpoznatije hrvatske tradicije na
 informatičkim olimpijadama. Naravno, radi se o darivanju šeširića s
-prepoznatljivim "kockastim" uzorkom.
+prepoznatljivim ``kockastim'' uzorkom.
 
 Ipak, gospodin Malnar odlučio je stati na kraj još jednoj tradiciji. Ove će se
 godine dijeliti jednobojni šeširići, obojeni u crvenu ili bijelu boju. Gospodin
@@ -20,60 +20,89 @@ informatičara te da će svaki od njih na glavi nositi crveni ili bijeli
 šeširić.  Naravno, svaki će informatičar vidjeti sve šeširiće osim svojeg te
 će, po običaju, svi istovremeno viknuti koje boje misle da je njhov šeširić.
 
+Svi informatičari koji pogode boju svojeg šeširića za nagradu će otići na večeru
+s gospodinom Malnarom. No, gospodinu
+Malnaru jako je stalo do toga da na večeri obje boje šeširića budu dovoljno
+zastupljene. Rekao im je da od svih $b$ informatičara s bijelim
+šeširićem \textbf{barem $\lfloor b/2 \rfloor$} njih mora pogoditi svoju boju, te od svih
+$c$ informatičara s crvenim šeširićem \textbf{barem $\lfloor c/2 \rfloor$} njih mora
+pogoditi svoju boju, jer inače neće nikoga voditi na večeru.
+
+Pomozite mladim informatičarima pronaći strategiju koja će osigurati da uvijet
+gospodina Malnara bude ispunjen za svaki mogući raspored šešira.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Input
 \subsection*{Ulazni podaci}
-U prvom i jedinom retku je prirodan broj $N$, dimenzija šahovske ploče.
+U prvom i jedinom retku je prirodan broj $N$, broj informatičara.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Output
 \subsection*{Izlazni podaci}
 
-U prvi redak ispišite prirodan broj $K$, najveći broj kraljica koji se može postaviti na ploču poštujući zadano pravilo.
+Informatičari su označeni prirodnim brojevima od $1$ do $N$.
+Neka je $s_i$ znak koji predstavlja boju šeširića $i$-tog informatičara, \texttt{B}
+za bijelu odnosno \texttt{C} za crvenu boju.
 
-U $i$-tom od sljedećih $K$ redaka ispišite prirodne brojeve $R_i$ i $S_i$, redak i stupac u koji je stavljena $i$-ta kraljica.
+U $i$-tom retku treba ispisati niz od $2^{N-1}$ znakova \texttt{B} i \texttt{C}
+koji opisuju strategiju $i$-tog informatičara.
+Označimo taj niz znakova s $x_i$.
+Informatičar će pogledati šešire ostalih, i situaciju koju vidi opisati nizom
+znakova $y_i = s_1 \dots s_{i-1} s_{i+1} s_N$. Zatim će odrediti redni broj $k_i$ tog niza
+znakova među abecedno poredanim svim nizovima znakova \texttt{B} i \texttt{C} duljine $N - 1$.
+Ako je $k_i$-to slovo u njegovoj strategiji $x_i$ jednako \texttt{B}, reći će
+``bijela!'', odnosno ako je \texttt{C} onda će reći ``crvena!''.
 
-Ako postoji više načina za postaviti kraljice, ispišite bilo koji.
+Za dodatno pojašnjenje pogledajte probne primjere.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Scoring
 \subsection*{Bodovanje}
 {\renewcommand{\arraystretch}{1.4}
   \setlength{\tabcolsep}{6pt}
-  \begin{tabular}{ccl}
- Podzadatak & Broj bodova & Ograničenja \\ \midrule
-  1 & 6 & $1 \le N \le 16$\\
-  2 & 11 & $1 \le N \le 64$\\
-  3 & 28 & $1 \le N \le 256$\\
-  4 & 55 & $1 \le N \le 1024$\\
+  \begin{tabular}{cc'cc'cc}
+      Testni primjer & Broj bodova & Testni primjer & Broj bodova & Testni primjer & Broj bodova \\ \midrule
+      $N = 4$ & 7 & $N = 9$ & 7 & $N = 14$ & 6 \\
+      $N = 5$ & 7 & $N = 10$ & 7 & $N = 15$ & 6 \\
+      $N = 6$ & 7 & $N = 11$ & 7 & $N = 16$ & 6 \\
+      $N = 7$ & 7 & $N = 12$ & 7 & $N = 17$ & 6 \\
+      $N = 8$ & 7 & $N = 13$ & 7 & $N = 18$ & 6 \\
 \end{tabular}}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Examples
 \subsection*{Probni primjeri}
-\begin{tabularx}{\textwidth}{X'X'X}
-\sampleinputs{test/kraljice.dummy.in.1}{test/kraljice.dummy.out.1} &
-\sampleinputs{test/kraljice.dummy.in.2}{test/kraljice.dummy.out.2} &
-\sampleinputs{test/kraljice.dummy.in.3}{test/kraljice.dummy.out.3}
+\begin{tabularx}{\textwidth}{X'X}
+\sampleinputs{test/sesiri.dummy.in.1}{test/sesiri.dummy.out.1} &
+\sampleinputs{test/sesiri.dummy.in.2}{test/sesiri.dummy.out.2}
 \end{tabularx}
 
-\pagebreak
-\textbf{Pojašnjenje trećeg probnog primjera:} 
+\textbf{Pojašnjenje probnih primjera:} 
 \begin{figure}[H]
-\setchessboard{maxfield=c3,showmover=false,label=false,normalboard,marginright=false,marginbottom=false}
-\chessboard[setblack={}]
-\chessboard[setblack={Qc2}]
-\chessboard[setblack={Qc2,Qa1}]
-\chessboard[setblack={Qc2,Qa1,Qb2}]
-\chessboard[setblack={Qc2,Qa1,Qb2,Qa3}]
-
-\chessboard[setblack={Qc2,Qa1,Qb2,Qa3,Qc1}]
-\chessboard[setblack={Qc2,Qa1,Qb2,Qa3,Qc1,Qb1}]
-\chessboard[setblack={Qc2,Qa1,Qb2,Qa3,Qc1,Qb1,Qb3}]
-\chessboard[setblack={Qc2,Qa1,Qb2,Qa3,Qc1,Qb1,Qb3,Qc3}]
-\chessboard[setblack={Qc2,Qa1,Qb2,Qa3,Qc1,Qb1,Qb3,Qc3,Qa2}]
+    \includegraphics[width=\textwidth]{img/sesiri_dummy.excalidraw.png}
 \end{figure}
+
+Prvi redak slike prikazuje sva četiri moguća slučaja u prvom primjeru.
+
+Drugi redak slike prikazuje dva moguća slučaja u drugom primjeru.
+
+Prvi slučaj:
+$$
+\begin{array}{lccccccccc}
+    1 & & s_1 = \texttt{C} &          & x_1 = \texttt{CC} &          & k_1 = 4 &          & \texttt{C} \\
+    2 & & s_2 = \texttt{C} & \implies & x_2 = \texttt{CC} & \implies & k_2 = 4 & \implies & \texttt{C} \\
+    3 & & s_3 = \texttt{C} &          & x_3 = \texttt{CC} &          & k_3 = 4 &          & \texttt{C} \\
+\end{array}
+$$
+Drugi slučaj:
+$$
+\begin{array}{lccccccccc}
+    1 & & s_1 = \texttt{C} &          & x_1 = \texttt{BB} &          & k_1 = 1 &          & \texttt{B} \\
+    2 & & s_2 = \texttt{B} & \implies & x_2 = \texttt{CB} & \implies & k_2 = 3 & \implies & \texttt{B} \\
+    3 & & s_3 = \texttt{B} &          & x_3 = \texttt{CB} &          & k_3 = 3 &          & \texttt{C} \\
+\end{array}
+$$
 
 % We're done
 
