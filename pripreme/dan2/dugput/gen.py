@@ -20,7 +20,7 @@ class Test(object):
         self.qs = qs
 
     def validate(self):
-        assert(1 <= self.q <= 100)
+        assert(1 <= self.q <= 3000)
         assert(len(self.qs) == self.q)
 
         for (ni, mi, ai, bi, ci, di) in self.qs:
@@ -61,7 +61,7 @@ def gen_small(n, m):
     random.shuffle(qs)
     if len(qs) > 100:
         qs = qs[:100]
-    return Test(len(qs), qs)                
+    return qs                
 
 def gen_s(n_lo, n_hi, m_lo, m_hi, mul=10**5):
     qs = []
@@ -144,7 +144,7 @@ def gen_s(n_lo, n_hi, m_lo, m_hi, mul=10**5):
                 break
 
     qs = qs[:100]
-    return Test(100, qs)
+    return qs
 
 def gen_cases():
     remove_cases()
@@ -181,7 +181,12 @@ def gen_cases():
     subtask1.append(gen_small(5, 5))
     subtask1.append(gen_small(5, 6))
 
-    real.append(subtask1)
+    tmp = []
+    for a in subtask1:
+      for b in a:
+        tmp.append(b);
+
+    real.append(Test(len(tmp), tmp))
 
     # 2. subtask nm <= 1000, q = 100
     subtask2 = []
@@ -196,7 +201,12 @@ def gen_cases():
     subtask2.append(gen_small(5, 5))
     subtask2.append(gen_small(5, 6))
 
-    real.append(subtask2)
+    tmp = []
+    for a in subtask2:
+      for b in a:
+        tmp.append(b);
+
+    real.append(Test(len(tmp), tmp))
 
     # 3. subtask -- n <= 5000, m = 3, q = 100
     subtask3 = []
@@ -209,8 +219,13 @@ def gen_cases():
     subtask3.append(gen_small(3, 3))
     subtask3.append(gen_small(4, 3))
     subtask3.append(gen_small(5, 3))
-    
-    real.append(subtask3)
+
+    tmp = []
+    for a in subtask3:
+      for b in a:
+        tmp.append(b);
+
+    real.append(Test(len(tmp), tmp))    
 
     # 4. subtask nm <= 10**5, q = 100
     subtask4 = []
@@ -225,15 +240,18 @@ def gen_cases():
     subtask4.append(gen_small(5, 5))
     subtask4.append(gen_small(5, 6))
 
-    real.append(subtask4)
+    tmp = []
+    for a in subtask4:
+      for b in a:
+        tmp.append(b);
 
-    for i, batch in enumerate(real):
-        for j, test in enumerate(batch):
-            test.validate()
-            print>>sys.stderr, 'Generating test/%s.in.%d%c' \
-                    % (PROBLEM, i+1, chr(ord('a')+j))
-            input = 'test/%s.in.%d%c' % (PROBLEM, i+1, chr(ord('a')+j))
-            test.write(file(input, 'wt'))
+    real.append(Test(len(tmp), tmp))
+
+    for i, test in enumerate(real):
+      print>>sys.stderr, 'Generating test/%s.in.%d' % (PROBLEM, i+1)
+      test.validate()
+      input = 'test/%s.in.%d' % (PROBLEM, i+1)
+      test.write(file(input, 'wt'))
 
 def main():
     random.seed(293487)
