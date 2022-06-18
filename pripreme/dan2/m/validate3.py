@@ -24,6 +24,7 @@ def check(lines):
 
     q = int(lines[m + 1].strip())
     assert 1 <= q <= 300000, "q kriv"
+    nl.append("{}{}".format(q, E))
     for i in range(q):
         ai, bi = map(int, lines[m + 2 + i].split())
         assert 1 <= ai <= n, "ai kriv"
