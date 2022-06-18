@@ -107,15 +107,15 @@ const int MAXN = 5010;
 int dir[MAXN][MAXN];
 
 void debug() {
-  REP(j, 5) {
-    REP(i, 6) {
+  REP(j, 4) {
+    REP(i, 4) {
       cout << dir[i + 1][j + 1] << " ";
     } cout << endl;
   }
 }
 
 void solve(int n, int m, point s, point t, int xoff = 0, int yoff = 0) {
-  //cout << n << " " << m << " " << s.x << " " << s.y << " " << t.x << " " << t.y << endl;
+  cout << n << " " << m << " " << s.x << " " << s.y << " " << t.x << " " << t.y << endl;
   if (n == 1) {
     int d = 0;
     if (s.x > t.x) d = 2;
@@ -650,7 +650,7 @@ void solve(int n, int m, point s, point t, int xoff = 0, int yoff = 0) {
 
       FOR(j, 2, n + 1) {
         if (dir[i + 1 + xoff][j + yoff] == 0 && dir[i + 2 + xoff][j + yoff] == 3 && dir[i + 1 + xoff][j - 1 + yoff] == -1) {
-          solve(n, i, {i, j}, {i, j + 1}, xoff, yoff);
+          solve(n, i, {i, j}, {i, j - 1}, xoff, yoff);
           dir[i + 1 + xoff][j - 1 + yoff] = 0;
           dir[i + 2 + xoff][j + yoff] = -1;
 
@@ -659,6 +659,7 @@ void solve(int n, int m, point s, point t, int xoff = 0, int yoff = 0) {
           return;
         }
       }
+      assert(0);
     }
   }
 
@@ -705,6 +706,102 @@ void solve(int n, int m, point s, point t, int xoff = 0, int yoff = 0) {
           return;
         }
       }
+      assert(0);
+    }
+  }
+
+  for (int i = 2; i < min(s.y, t.y); i += 2) {
+    if (U(i, m, {1, i}, {2, i}) + U(n - i, m, {s.x, s.y - i}, {t.x, t.y - i}) == U(n, m, s, t)) {
+      solve(n - i, m, {s.x, s.y - i}, {t.x, t.y - i}, xoff, yoff + i);
+      FOR(j, 1, m + 1) {
+        if (dir[j + xoff][i + 1 + yoff] == 0) {
+          solve(i, m, {j, i}, {j + 1, i}, xoff, yoff);
+          dir[j + xoff][i + 1 + yoff] = 3;
+          dir[j + 1 + xoff][i + yoff] = 1;
+          return;
+        }
+      }
+
+      FOR(j, 2, m + 1) {
+        if (dir[j + xoff][i + 1 + yoff] == 3) {
+          solve(i, n, {j, i}, {j - 1, i}, xoff, yoff);
+          dir[j + xoff][i + 1 + yoff] = 3;
+          dir[j - 1 + xoff][i + yoff] = 1;
+          return;
+        }
+      }
+
+      FOR(j, 1, m + 1) {
+        if (dir[j + xoff][i + 1 + yoff] == 1 && dir[j + xoff][i + 2 + yoff] == 0 && dir[j + 1 + xoff][i + 1 + yoff] == -1) {
+          solve(i, m, {j, i}, {j + 1, i}, xoff, yoff);
+          dir[j + 1 + xoff][i + 1 + yoff] = 1;
+          dir[j + xoff][i + 2 + yoff] = -1;
+
+          dir[j + xoff][i + 1 + yoff] = 3;
+          dir[j + 1 + xoff][i + yoff] = 1;
+          return;
+        }
+      }
+
+      FOR(j, 2, m + 1) {
+        if (dir[j + xoff][i + 1 + yoff] == 1 && dir[j + xoff][i + 2 + yoff] == 2 && dir[j - 1 + xoff][i + 1 + yoff] == -1) {
+          solve(i, m, {j, i}, {j - 1, i}, xoff, yoff);
+          dir[j - 1 + xoff][i + 1 + yoff] = 1;
+          dir[j + xoff][i + 2 + yoff] = -1;
+
+          dir[j + xoff][i + 1 + yoff] = 3;
+          dir[j - 1 + xoff][i + yoff] = 1;
+          return;
+        }
+      }
+      assert(0);
+    }
+  }
+
+  for (int i = n - 2; i >= max(s.y, t.y); i -= 2) {
+    if (U(i, m, s, t) + U(n - i, m, {1, 1}, {2, 1}) == U(n, m, s, t)) {
+      solve(i, m, s, t, xoff, yoff);
+      FOR(j, 1, m + 1) {
+        if (dir[j + xoff][i + yoff] == 0) {
+          solve(n - i, m, {j, 1}, {j + 1, 1}, xoff, yoff + i);
+          dir[j + xoff][i + yoff] = 1;
+          dir[j + 1 + xoff][i + 1 + yoff] = 3;
+          return;
+        }
+      }
+      FOR(j, 2, m + 1) {
+        if (dir[j + xoff][i + yoff] == 2) {
+          solve(n - i, m, {j, 1}, {j - 1, 1}, xoff, yoff + 1);
+          dir[j + xoff][i + yoff] = 1;
+          dir[j - 1 + xoff][i + 1 + yoff] = 3;
+          return;
+        }
+      }
+
+      FOR(j, 1, m + 1) {
+        if (dir[j + xoff][i + yoff] == 3 && dir[j + xoff][i - 1 + yoff] == 0 && dir[j + 1 + xoff][i + yoff] == -1) {
+          solve(n - i, m, {j, 1}, {j + 1, 1}, xoff, yoff + i);
+          dir[j + 1 + xoff][i + yoff] = 3;
+          dir[j + xoff][i - 1 + yoff] = -1;
+
+          dir[j + xoff][i + yoff] = 1;
+          dir[j + 1 + xoff][i + 1 + yoff] = 3;
+          return;
+        }
+      }
+
+      FOR(j, 2, m + 1) {
+        if (dir[j + xoff][i + yoff] == 3 && dir[j + xoff][i - 1 + yoff] == 2 && dir[j - 1 + xoff][i + yoff] == -1) {
+          solve(n - i, m, {j, 1}, {j - 1, 1}, xoff, yoff + i);
+          dir[j - 1 + xoff][i + yoff] = 3;
+          dir[j + xoff][i - 1 + yoff] = -1;
+
+          dir[j + xoff][i + yoff] = 1;
+          dir[i + 1 + xoff][j - 1 + yoff] = 3;
+          return;
+        }
+      }
+      assert(0);
     }
   }
 
