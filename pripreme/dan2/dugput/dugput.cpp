@@ -107,20 +107,20 @@ const int MAXN = 5010;
 int dir[MAXN][MAXN];
 
 void debug() {
-  REP(j, 11) {
-    REP(i, 3) {
+  REP(j, 5) {
+    REP(i, 4) {
       cout << dir[i + 1][j + 1] << " ";
     } cout << endl;
   }
 }
 
-int bio[5][5];
+int bio[6][6];
 
 bool rek(int n, int m, point s, point t, int xoff, int yoff, int dist) {
   if (s.x == t.x && s.y == t.y) {
     //debug();
     //cout << dist << endl;
-    if (dist == n * m) return true;
+    if (dist == 0) return true;
     return false;
   }
 
@@ -128,7 +128,7 @@ bool rek(int n, int m, point s, point t, int xoff, int yoff, int dist) {
     if (bio[s.x - 1][s.y] == 0) {
       bio[s.x - 1][s.y] = 1;
       dir[s.x + xoff][s.y + yoff] = 2;
-      if (rek(n, m, {s.x - 1, s.y}, t, xoff, yoff, dist + 1)) return true;
+      if (rek(n, m, {s.x - 1, s.y}, t, xoff, yoff, dist - 1)) return true;
       bio[s.x - 1][s.y] = 0;
       dir[s.x + xoff][s.y + yoff] = -1;
     }
@@ -137,7 +137,7 @@ bool rek(int n, int m, point s, point t, int xoff, int yoff, int dist) {
     if (bio[s.x + 1][s.y] == 0) {
       bio[s.x + 1][s.y] = 1;
       dir[s.x + xoff][s.y + yoff] = 0;
-      if (rek(n, m, {s.x + 1, s.y}, t, xoff, yoff, dist + 1)) return true;
+      if (rek(n, m, {s.x + 1, s.y}, t, xoff, yoff, dist - 1)) return true;
       bio[s.x + 1][s.y] = 0;
       dir[s.x + xoff][s.y + yoff] = -1;
     }
@@ -147,7 +147,7 @@ bool rek(int n, int m, point s, point t, int xoff, int yoff, int dist) {
     if (bio[s.x][s.y - 1] == 0) {
       bio[s.x][s.y - 1] = 1;
       dir[s.x + xoff][s.y + yoff] = 3;
-      if (rek(n, m, {s.x, s.y - 1}, t, xoff, yoff, dist + 1)) return true;
+      if (rek(n, m, {s.x, s.y - 1}, t, xoff, yoff, dist - 1)) return true;
       bio[s.x][s.y - 1] = 0;
       dir[s.x + xoff][s.y + yoff] = -1;
     }
@@ -156,7 +156,7 @@ bool rek(int n, int m, point s, point t, int xoff, int yoff, int dist) {
     if (bio[s.x][s.y + 1] == 0) {
       bio[s.x][s.y + 1] = 1;
       dir[s.x + xoff][s.y + yoff] = 1;
-      if (rek(n, m, {s.x, s.y + 1}, t, xoff, yoff, dist + 1)) return true;
+      if (rek(n, m, {s.x, s.y + 1}, t, xoff, yoff, dist - 1)) return true;
       bio[s.x][s.y + 1] = 0;
       dir[s.x + xoff][s.y + yoff] = -1;
     }
@@ -989,7 +989,7 @@ void solve(int n, int m, point s, point t, int xoff = 0, int yoff = 0) {
 
   memset(bio, 0, sizeof bio);
   bio[s.x][s.y] = 1;
-  if (!rek(n, m, s, t, xoff, yoff, 1)) assert(0);
+  if (!rek(n, m, s, t, xoff, yoff, U(n, m, s, t) - 1)) assert(0);
 
   return;
 }
