@@ -154,27 +154,27 @@ def gen_cases():
         print>>sys.stderr, 'Generating test/%s.dummy.in.%d' % (PROBLEM, i+1)
         test.write(file('test/%s.dummy.in.%d' % (PROBLEM, i+1), 'wt'))
 
-    # 1. subtask -- n <= 5000, m = 3, q = 100
+    # 1. subtask nm <= 100, q = 100
     subtask1 = []
     for i in range(8):
-        if i < 7:
-            subtask1.append(gen_s(100 * i, 5000, 3, 3))
-        else:
-            subtask1.append(gen_s(5000, 5000, 3, 3))
+        subtask1.append(gen_s(1, 50, 1, 50, 100))
 
     real.append(subtask1)
 
-    # 2. subtask nm <= 100, q = 100
+    # 2. subtask nm <= 1000, q = 100
     subtask2 = []
     for i in range(8):
-        subtask2.append(gen_s(1, 50, 1, 50, 100))
+        subtask2.append(gen_s(1, 1000, 1, 1000, 1000))
 
     real.append(subtask2)
 
-    # 3. subtask nm <= 1000, q = 100
+    # 3. subtask -- n <= 5000, m = 3, q = 100
     subtask3 = []
     for i in range(8):
-        subtask3.append(gen_s(1, 1000, 1, 1000, 1000))
+        if i < 7:
+            subtask3.append(gen_s(100 * i, 5000, 3, 3, 15000))
+        else:
+            subtask3.append(gen_s(5000, 5000, 3, 3, 15000))
 
     real.append(subtask3)
 
