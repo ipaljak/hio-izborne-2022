@@ -1,0 +1,53 @@
+\subsection*{Zadatak Kraljice}
+\textsf{Pripremila: Paula Vidas}\\
+\textsf{Potrebno znanje: indukcija}
+
+Najveći broj kraljica koji se može postaviti jednak je $N^2$ ako je $N$ neparan,
+$1$ ako je $N = 2$, odnosno $N^2 - 2$ ako je $N$ paran i veći od $2$.
+
+Prvo ćemo prezentirati konstrukciju, a zatim dokaz da se za parne $N$ ne može bolje.
+
+Rješenje konstruiramo induktivno. Pokazat ćemo da je moguće postaviti kraljice tako da
+prva dva retka i stupca ploče budu popunjena. Tako smo iz $N \times N$ ploče dobili
+situaciju ekvivalentnu praznoj $(N-2) \times (N-2)$ ploči, jer sad sva slobodna polja 
+napada parno mnogo kraljica.
+
+Prvo ćemo popuniti gornji lijevi $3 \times 3$ dio, osim polja $(3, 3)$. Postoji
+više načina za to napraviti, za jedan konkretan primjer pogledajte službeni kod.
+Zatim popunjavamo ostatak prva dva retka i stupca ponavljajući sljedeći postupak:
+\begin{figure}[H]
+    \centering
+    \setchessboard{
+        maxfield=f6,showmover=false,label=false,smallboard,marginright=false,margintop=false,
+        setblack={Qa6,Qb6,Qc6,Qa5,Qb5,Qc5,Qa4,Qb4},
+        markstyle=color,opacity=0.4,colorbackfields={a6,b6,c6,a5,b5,c5,a4,b4},
+    }
+
+    \chessboard[color=yellow,colorbackfields=d5,addblack={Qd5}]
+    \chessboard[color=yellow,colorbackfields=d6,addblack={Qd5,Qd6}]
+    \chessboard[color=yellow,colorbackfields=a3,addblack={Qd5,Qd6,Qa3}]
+    \chessboard[color=yellow,colorbackfields=b3,addblack={Qd5,Qd6,Qa3,Qb3}]
+    \\
+
+    \setchessboard{addblack={Qd5,Qd6,Qa3,Qb3}, marginbottom=false}
+    \chessboard[color=yellow,colorbackfields=e6,addblack={Qe6}]
+    \chessboard[color=yellow,colorbackfields=e5,addblack={Qe6,Qe5}]
+    \chessboard[color=yellow,colorbackfields=b2,addblack={Qe6,Qe5,Qb2}]
+    \chessboard[color=yellow,colorbackfields=a2,addblack={Qe6,Qe5,Qb2,Qa2}]
+\end{figure}
+Tako ćemo doći do $1 \times 1$ ploče ako je $N$ neparan, odnosno $4 \times 4$ ploče
+ako je $N$ paran. $1 \times 1$ ploču lagano je popunit, a za primjer popunjavanja
+$4 \times 4$ ploče s 14 kraljica pogledajte službeni kod.
+
+Preostaje dokazati da za parni $N$ ne možemo postaviti $N^2 - 1$ kraljica.
+
+Primijetimo da na parnoj ploči kraljica uvijek napada neparno mnogo polja (ne računamo polje na kojem ona stoji). Također, primijetimo da postoji parno mnogo (neuređenih) parova polja
+koja se međusobno ``napadaju'' (tj.\ nalaze u istom retku/stupcu/dijagonali).
+Kada bi bilo moguće postaviti $N^2 - 1$ kraljicu, to bi značilo da smo ``iskoristili''
+(tj.\ stavili kraljicu na oba polja iz para) parno mnogo napadajućih parova polja, pa ih je
+stoga ostalo parno mnogo. No, to nije moguće jer ih ima neparno.
+
+\bigskip
+
+\textit{Zadatak je preuzet iz \url{http://ieomsociety.org/proceedings/2021rome/364.pdf}.}
+
