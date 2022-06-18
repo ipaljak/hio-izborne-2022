@@ -1,0 +1,99 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Problem statement
+\begin{statement}[
+  problempoints=100,
+  timelimit=1 sekunda,
+  memorylimit=512 MiB,
+]{M}
+
+M je kodno ime osobe koja obnaša jednu od ključnih funkcija britanske tajne
+službe (MI6). Jedna od glavnih zadaća na toj funkciji je analiza sigurnosnih
+svojstava neprijateljskih komunikacijskih mreža. Ovaj zadatak ocrtava jedan
+od tipičnih problema s kojima se M dnevno susreće.
+
+Neprijateljska komunikacijska mreža sastoji se od $N$ (naizgled običnih)
+poštanskih ureda i $M$ dvosmjernih prometnica koje direktno povezuju neke
+parove poštanskih ureda. Radi jednostavnosti, poštanske urede ćemo označiti
+prirodnim brojevima od $1$ do $N$.
+
+Kada neprijatelj želi poslati tajnu informaciju iz ureda s oznakom $a$ do ureda
+s oznakom $b$, tajni agent će sjesti u lažno vozilo pošte i provozati se
+nekim nizom prometnica koje tvore put između ta dva poštanska ureda.  Par
+poštanskih ureda $(a, b)$ smatra se \textit{ranjivim} ako postoji neka cesta
+po kojoj će tajni agent sigurno morati proći na svom putovanju od ureda $a$
+do ureda $b$.
+
+M se danas bavi analizom povijesne ranjivosti jedne takve mreže. Naime, M je
+prikupio informacije o povijesnom razvoju mreže, što znaći da zna kojim su se
+redoslijedom gradile prometnice između poštanskih ureda. Sada ga za neke
+parove ureda zanima u kojem su trenutku (ako uopće) prestali biti ranjivi.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Input
+\subsection*{Ulazni podaci}
+U prvom su retku brojevi $N$ i $M$ iz teksta zadatka.
+
+U $i$-tom od idućih $M$ redaka su $x_i$ i $y_i$ koji označavaju
+da je $i$-ta izgrađena prometnica povezivala poštanske urede s oznakama $x_i$ i
+$y_i$ $(x_i \ne y_i)$.
+
+Moguće je da više od jedne prometnice povezuje isti par poštanskih ureda.
+
+U sljedećem retku nalazi se prirodan broj $Q$ koji označava broj upita na koje
+M želi dobiti odgovor.
+
+U $j$-tom od sljedećih $Q$ redaka su brojevi $a_j$ i $b_j$ koji definiraju
+$j$-ti upit agenta M. Odnosno, M želi saznati u kojem je trenutku par ureda
+$(a_j, b_j)$ prestao biti ranjiv.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Output
+\subsection*{Izlazni podaci}
+U $j$-tom retku treba ispisati odgovor na $j$-ti upit agenta M.
+
+Ako je par ureda iz $j$-tog upita i dalje ranjiv, odgovor na $j$-ti upit je $-1$.
+Inače, odgovor je prirodan broj $k$ koji označava da je par ureda iz upita
+prestao biti ranjiv nakon izgradnje $k$-te prometnice.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Scoring
+
+\subsection*{Bodovanje}
+
+U svim podzadacima vrijedi $2 \le N \le 300\,000$, $0 \le M \le 300\,000$ i $1
+  \le Q \le 300\,000$.
+
+{\renewcommand{\arraystretch}{1.4}
+  \setlength{\tabcolsep}{6pt}
+  \begin{tabular}{ccl}
+ Podzadatak & Broj bodova & Ograničenja \\ \midrule
+  1 & ?? & $Q = 1$ \\
+  2 & ?? & $(x_{2i}, y_{2i}) = (x_{2i-1}, y_{2i-1})$ i $M$ je paran. \\
+  3 & ?? & $N, M \le 5\,000$ \\
+  4 & ?? & nema dodatnih ograničenja
+\end{tabular}}
+
+Primijetite da u drugom podzadatku prve dvije prometnice povezuju isti par gradova,
+druge dvije prometnice povezuju isti par gradova, itd.
+
+\clearpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Examples
+\subsection*{Probni primjeri}
+\begin{tabularx}{\textwidth}{X'X'X}
+\sampleinputs{test/m.dummy.in.1}{test/m.dummy.out.1} &
+\sampleinputs{test/m.dummy.in.2}{test/m.dummy.out.2} &
+\sampleinputs{test/m.dummy.in.3}{test/m.dummy.out.3}
+\end{tabularx}
+
+\end{statement}
+
+%%% Local Variables:
+%%% mode: latex
+%%% mode: flyspell
+%%% ispell-local-dictionary: "croatian"
+%%% TeX-master: "../hio.tex"
+%%% End:
