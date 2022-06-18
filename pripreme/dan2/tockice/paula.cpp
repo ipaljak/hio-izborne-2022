@@ -67,8 +67,8 @@ int main() {
     }
 
     int inner = n - (int)lower_hull.size() - (int)upper_hull.size() + min(2, n);
-    if (inner % 2 == 0 && n > 1) cout << "Alice\n";
-    else cout << "Bob\n";
+    if (inner % 2 == 0 && n > 1) cout << "Alenka\n";
+    else cout << "Bara\n";
 
     return 0;
 }

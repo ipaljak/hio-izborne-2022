@@ -47,9 +47,9 @@ int main(void) {
   int cnt = 3 * n - (int)H.size() - 3;
 
   if (cnt & 1)
-    printf("Alice\n");
+    printf("Alenka\n");
   else
-    printf("Bob\n");
+    printf("Bara\n");
 
   return 0;
 }

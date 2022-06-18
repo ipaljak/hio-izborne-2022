@@ -57,9 +57,9 @@ int main(void) {
 
   memset(memo, -1, sizeof memo);
   if (rek(0))
-    printf("Alice\n");
+    printf("Alenka\n");
   else
-    printf("Bob\n");
+    printf("Bara\n");
 
   return 0;
 }
