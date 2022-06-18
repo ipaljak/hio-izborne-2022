@@ -61,6 +61,9 @@ void checker(ifstream& fin, ifstream& foff, ifstream& fout, ifstream& fconf)
   int T;
   if (!(fin >> T)) finish(0);
 
+  int test_type;
+  if (!(fconf >> test_type)) finish(0);
+
   double score = 1;
   REP(bla, T) {
     // Read official input
@@ -74,117 +77,132 @@ void checker(ifstream& fin, ifstream& foff, ifstream& fout, ifstream& fconf)
     tx--, ty--;
     //cout << "procitalo input\n";
 
-    // Read contestant's output
-    int N = 2 * n - 1, M = 3 * m - 2;
-    vector<string> G(N);
-    for (auto& row : G) {
-        getline(fout, row);
-        if ((int)row.size() != M) finish(0);
-        //cout << row << endl;
+    if (test_type == 1) {
+      // Read contestant's output
+      int N = 2 * n - 1, M = 3 * m - 2;
+      vector<string> G(N);
+      for (auto& row : G) {
+          getline(fout, row);
+          if ((int)row.size() != M) finish(0);
+          //cout << row << endl;
+      }
+      //cout << "procitalo output\n";
+
+      // Check if output is a valid graph
+      for (int i = 0; i < N; i++) {
+          for (int j = 0; j < M; j++) {
+              if (i % 2 == 0) {
+                  if (j % 3 == 0 && G[i][j] != 'o'&& G[i][j] != '*') finish(0);
+                  if (j % 3 == 1 && G[i][j] != G[i][j + 1]) finish(0);
+                  if (j % 3 != 0 && G[i][j] != '-' && G[i][j] != ' ') finish(0);
+              } else {
+                  if (j % 3 == 0 && G[i][j] != '|' && G[i][j] != ' ') finish(0);
+                  if (j % 3 != 0 && G[i][j] != ' ') finish(0);
+              }
+          }
+      }
+
+      //cout << "valid graph\n";
+
+      // cout << n << " " << m << " " << sx << " " << sy << " " << tx << " " << ty << endl;
+
+      // Check if output is a valid graph
+      vector<vector<int>> deg(N, vector<int>(M, 0));
+      for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+          int cnt = 0;
+          if (i < n - 1 && G[i * 2 + 1][j * 3] == '|') cnt++;
+          if (i > 0 && G[i * 2 - 1][j * 3] == '|') cnt++;
+          if (j < m - 1 && G[i * 2][j * 3 + 1] == '-') cnt++;
+          if (j > 0 && G[i * 2][j * 3 - 1] == '-') cnt++;
+
+          // ovdje provjeravamo:
+          // * ima deg 1 i o ima deg 0 ili 2
+          // pocetak i kraj su * a ostali o
+          if (G[i * 2][j * 3] == '*') {
+            if (cnt != 1) finish(0);
+            if ((i != sx || j != sy) && (i != tx || j != ty)) finish(0);
+          } else {
+            if (cnt != 0 && cnt != 2) finish(0);
+            if ((i == sx && j == sy) || (i == tx && j == ty)) finish(0);
+          }
+
+          deg[i][j] = cnt;
+        }
+      }
+
+      //cout << "valid graph2\n";
+      // Find path length
+      vector<vector<int>> vis(N, vector<int>(M, 0));
+      queue<pair<int, int>> Q;
+      Q.push({sx, sy});
+      vis[sx][sy] = 1;
+      while (!Q.empty()) {
+        int i = Q.front().first, j = Q.front().second;
+        Q.pop();
+
+        if (i > 0) {
+          if (G[i * 2 - 1][j * 3] == '|' && vis[i - 1][j] == 0) {
+            vis[i - 1][j] = vis[i][j] + 1;
+            Q.push({i - 1, j});
+          }
+        }
+        if (i < n - 1) {
+          if (G[i * 2 + 1][j * 3] == '|' && vis[i + 1][j] == 0) {
+            vis[i + 1][j] = vis[i][j] + 1;
+            Q.push({i + 1, j});
+          }
+        }
+        if (j > 0) {
+          if (G[i * 2][j * 3 - 1] == '-' && vis[i][j - 1] == 0) {
+            vis[i][j - 1] = vis[i][j] + 1;
+            Q.push({i, j - 1});
+          }
+        }
+        if (j < m - 1) {
+          if (G[i * 2][j * 3 + 1] == '-' && vis[i][j + 1] == 0) {
+            vis[i][j + 1] = vis[i][j] + 1;
+            Q.push({i, j + 1});
+          }
+        }
+      }
+      if (vis[tx][ty] == 0) finish(0);
+
+      // treba provjeriti da nije ispisan jos neki ciklus uz put
+      // drugim rijecima, svi cvorovi s deg > 0 moraju biti posjeceni
+      for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+          if (deg[i][j] > 0 && vis[i][j] == 0) finish(0);
+
+      int sol;
+      if (!(fconf >> sol)) finish(0);
+
+      // if (sol != vis[tx][ty]) cout << "................" << sol << " " << vis[tx][ty] << endl;
+      if (sol < vis[tx][ty]) score = min(score, 1.0), panic = true;
+      else score = min(score, (double) vis[tx][ty] / sol);
+    } else if (test_type == 2) {
+      int sol;
+      if (!(fconf >> sol)) finish(0);
+
+      int out;
+      if (!(fout >> out)) finish(0);
+
+      if (sol != out) score = 0;
     }
-    //cout << "procitalo output\n";
-
-    // Check if output is a valid graph
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < M; j++) {
-            if (i % 2 == 0) {
-                if (j % 3 == 0 && G[i][j] != 'o'&& G[i][j] != '*') finish(0);
-                if (j % 3 == 1 && G[i][j] != G[i][j + 1]) finish(0);
-                if (j % 3 != 0 && G[i][j] != '-' && G[i][j] != ' ') finish(0);
-            } else {
-                if (j % 3 == 0 && G[i][j] != '|' && G[i][j] != ' ') finish(0);
-                if (j % 3 != 0 && G[i][j] != ' ') finish(0);
-            }
-        }
-    }
-
-    //cout << "valid graph\n";
-
-    //cout << n << " " << m << " " << sx << " " << sy << " " << tx << " " << ty << endl;
-
-    // Check if output is a valid graph
-    vector<vector<int>> deg(N, vector<int>(M, 0));
-    for (int i = 0; i < n; i++) {
-      for (int j = 0; j < m; j++) {
-        int cnt = 0;
-        if (i < n - 1 && G[i * 2 + 1][j * 3] == '|') cnt++;
-        if (i > 0 && G[i * 2 - 1][j * 3] == '|') cnt++;
-        if (j < m - 1 && G[i * 2][j * 3 + 1] == '-') cnt++;
-        if (j > 0 && G[i * 2][j * 3 - 1] == '-') cnt++;
-
-        // ovdje provjeravamo:
-        // * ima deg 1 i o ima deg 0 ili 2
-        // pocetak i kraj su * a ostali o
-        if (G[i * 2][j * 3] == '*') {
-          if (cnt != 1) finish(0);
-          if ((i != sx || j != sy) && (i != tx || j != ty)) finish(0);
-        } else {
-          if (cnt != 0 && cnt != 2) finish(0);
-          if ((i == sx && j == sy) || (i == tx && j == ty)) finish(0);
-        }
-
-        deg[i][j] = cnt;
-      }
-    }
-
-    //cout << "valid graph2\n";
-    // Find path length
-    vector<vector<int>> vis(N, vector<int>(M, 0));
-    queue<pair<int, int>> Q;
-    Q.push({sx, sy});
-    vis[sx][sy] = 1;
-    while (!Q.empty()) {
-      int i = Q.front().first, j = Q.front().second;
-      Q.pop();
-
-      if (i > 0) {
-        if (G[i * 2 - 1][j * 3] == '|' && vis[i - 1][j] == 0) {
-          vis[i - 1][j] = vis[i][j] + 1;
-          Q.push({i - 1, j});
-        }
-      }
-      if (i < n - 1) {
-        if (G[i * 2 + 1][j * 3] == '|' && vis[i + 1][j] == 0) {
-          vis[i + 1][j] = vis[i][j] + 1;
-          Q.push({i + 1, j});
-        }
-      }
-      if (j > 0) {
-        if (G[i * 2][j * 3 - 1] == '-' && vis[i][j - 1] == 0) {
-          vis[i][j - 1] = vis[i][j] + 1;
-          Q.push({i, j - 1});
-        }
-      }
-      if (j < m - 1) {
-        if (G[i * 2][j * 3 + 1] == '-' && vis[i][j + 1] == 0) {
-          vis[i][j + 1] = vis[i][j] + 1;
-          Q.push({i, j + 1});
-        }
-      }
-    }
-    if (vis[tx][ty] == 0) finish(0);
-
-    // treba provjeriti da nije ispisan jos neki ciklus uz put
-    // drugim rijecima, svi cvorovi s deg > 0 moraju biti posjeceni
-    for (int i = 0; i < n; i++)
-      for (int j = 0; j < m; j++)
-        if (deg[i][j] > 0 && vis[i][j] == 0) finish(0);
-
-    int sol;
-    if (!(fconf >> sol)) finish(0);
-
-    // if (sol != vis[tx][ty]) cout << "................" << sol << " " << vis[tx][ty] << endl;
-    if (sol < vis[tx][ty]) score = min(score, 1.0), panic = true;
-    else if (sol == vis[tx][ty]) score = min(score, 1.0);
-    else if (0.9 * sol <= vis[tx][ty]) score = min(score, 0.35);
-    else score = 0;
   }
   string garbage;
   fout >> garbage;
   if (fout >> garbage) finish(0);
 
-  if (score == 1 && panic) finish(1, PANIC);
-  finish(score);
+  if (test_type == 2) {
+    if (score == 1.0 && panic) finish(1, PANIC);
+    if (score == 1.0) finish(score);
+    finish(0);
+  } else {
+    if (score == 1.0 && panic) finish(1, PANIC);
+    if (score == 1.0) finish(score);
+    finish(0.7 * score);
+  }
   // The function MUST terminate before this line via finish()!
 }
 
