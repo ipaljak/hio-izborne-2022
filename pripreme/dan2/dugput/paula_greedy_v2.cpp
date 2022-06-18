@@ -52,6 +52,10 @@ int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(0);
 
+    int q;
+    cin >> q;
+    while (q--) {
+
     int n, m, ax, ay, bx, by;
     cin >> n >> m >> ax >> ay >> bx >> by;
     ax--; ay--;
@@ -125,7 +129,17 @@ int main() {
         x = nx; y = ny;
     }
 
-    assert(sol.back().fi == bx && sol.back().se == by);
+    if (!(sol.back().fi == bx && sol.back().se == by)) {
+        sol.clear();
+        sol.push_back({ax, ay});
+        while (sol.back() != pii(bx, by)) {
+            sol.push_back(sol.back());
+            if (sol.back().fi < bx) sol.back().fi++;
+            else if (sol.back().fi > bx) sol.back().fi--;
+            else if (sol.back().se > by) sol.back().se--;
+            else sol.back().se++;
+        }
+    }
 
     vector<string> sol_out(2 * n - 1, string(3 * m - 2, ' '));
     for (int i = 0; i < n; i++)
@@ -142,9 +156,11 @@ int main() {
             sol_out[2 * ex + 1][3 * ey] = '|';
         }
     }
-    cout << sol.size() - 1 << '\n';
+    //cout << sol.size() - 1 << '\n';
     for (auto& s : sol_out)
         cout << s << '\n';
+
+    }
 
     return 0;
 }
