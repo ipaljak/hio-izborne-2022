@@ -33,42 +33,55 @@ ostream& operator<<(ostream &o, pair<T, U> x) {
 typedef long long ll;
 typedef long double ld;
 typedef pair<int, int> pii;
+typedef pair<ll, ll> pll;
 typedef vector<int> vi;
+typedef vector<ll> vll;
 
-ll ccw(const pii& a, const pii& b, const pii& c) {
-    return (ll)a.fi * (b.se - c.se) +
-           (ll)b.fi * (c.se - a.se) +
-           (ll)c.fi * (a.se - b.se);
-}
+const int MAXN = 5e5 + 10;
 
+vector<int> comp[2][MAXN];
+int dad[2][MAXN];
+unordered_map<ll, int> cnt;
+
+ll h(int x) { return (ll)dad[0][x] * MAXN + dad[1][x]; }
 
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(0);
-    cout.tie(0);
 
-    int n;
-    cin >> n;
-    vector<pii> pts(n);
-    for (auto& pt : pts) cin >> pt.fi >> pt.se;
+    int n, q;
+    cin >> n >> q;
 
-    sort(pts.begin(), pts.end());
-    vector<pii> upper_hull, lower_hull;
-    for (auto& pt : pts) {
-        while (upper_hull.size() >= 2 &&
-                ccw(upper_hull.end()[-2], upper_hull.end()[-1], pt) > 0)
-            upper_hull.pop_back();
-        upper_hull.push_back(pt);
-
-        while (lower_hull.size() >= 2 &&
-                ccw(lower_hull.end()[-2], lower_hull.end()[-1], pt) < 0)
-            lower_hull.pop_back();
-        lower_hull.push_back(pt);
+    for (int i = 1; i <= n; i++) {
+        comp[0][i] = comp[1][i] = {i};
+        dad[0][i] = dad[1][i] = i;
+        cnt[h(i)] = 1;
     }
 
-    int inner = n - (int)lower_hull.size() - (int)upper_hull.size() + min(2, n);
-    if (inner % 2 == 0 && n > 1) cout << "Alenka\n";
-    else cout << "Bara\n";
+    int sol = 0;
+    while (q--) {
+        int x, y, t;
+        cin >> x >> y >> t;
+        t--;
+
+        x = dad[t][x];
+        y = dad[t][y];
+        if (x == y) continue;
+        if (comp[t][x].size() < comp[t][y].size()) swap(x, y);
+
+        for (int z : comp[t][y]) {
+            cnt[h(z)]--;
+            sol -= cnt[h(z)];
+
+            dad[t][z] = x;
+            comp[t][x].push_back(z);
+
+            sol += cnt[h(z)];
+            cnt[h(z)]++;
+        }
+
+        cout << sol << '\n';
+    }
 
     return 0;
 }

@@ -13,7 +13,7 @@ doc = """
   Cenerate all test cases in test/:  gen.py
 """
 
-PROBLEM = "points"
+PROBLEM = "tockice"
 sys.setrecursionlimit(1000010)
 
 MAXN = 3*10**5
