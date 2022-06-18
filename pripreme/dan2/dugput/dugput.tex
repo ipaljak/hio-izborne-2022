@@ -36,6 +36,11 @@ $D_i$ iz teksta zadatka. Pritom vrijedi $1 \leq A_i, C_i \leq N_i$, $1 \leq B_i,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Output
 \subsection*{Izlazni podaci}
+
+Postoje dva tipa podzadataka (vidi tablicu bodovanja).
+
+\textbf{Tip \textit{konstrukcija}:}
+
 Kao odgovor na $i$-ti upit potrebno je ispisati $2N_i-1$ redaka s po $3M_i-2$
 znakova koji predstavljaju put koji ste pronašli.
 
@@ -49,35 +54,49 @@ Između susjednih polja gdje put ne prolazi nalaze se bjeline, i to dva znaka
 razmaka (ASCII $32$) između polja u istom retku, odnosno jedan znak razmaka
 između polja u istom stupcu.
 
+\textbf{Tip \textit{duljina puta}:}
+
+Kao odgovor na $i$-ti upit potrebno je ispisati prirodan broj koji predstavlja
+najveću moguću duljinu puta.
+
+\textit{Napomena:} Duljinu puta definiramo kao \textbf{broj polja} kroz koje put prolazi.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Scoring
 \subsection*{Bodovanje}
-U svim podzadacima vrijedi $1 \leq N_i, M_i \leq 5\,000$ i $1 \leq Q \leq 100$.
+U svim podzadacima vrijedi $1 \leq N_i, M_i \leq 5\,000$ i $1 \leq Q \leq 1\,600$.
 
 {\renewcommand{\arraystretch}{1.4}
   \setlength{\tabcolsep}{6pt}
-  \begin{tabular}{ccl}
- Podzadatak & Broj bodova & Ograničenja \\ \midrule
-  1 & ?? & $2 \leq N_i \cdot M_i \leq 100$ \\
-  2 & ?? & $2 \leq N_i \cdot M_i \leq 1\,000$ \\
-  3 & ?? & $2 \leq N_i \cdot M_i \leq 15\,000$, $1 \leq M_i \leq 3$ \\
-  4 & ?? & $2 \leq N_i \cdot M_i \leq 100\,000$ \\
+  \begin{tabular}{ccll}
+  Podzadatak & Broj bodova & Ograničenja & Tip izlaza \\ \midrule
+  1 & ?? & $2 \leq N_i \cdot M_i \leq 100$ & konstrukcija \\
+  2 & ?? & $2 \leq N_i \cdot M_i \leq 1\,000$ & konstrukcija \\
+  3 & ?? & $2 \leq N_i \cdot M_i \leq 15\,000$, $1 \leq M_i \leq 3$ & konstrukcija \\
+  4 & ?? & $2 \leq N_i \cdot M_i \leq 100\,000$ & konstrukcija \\
+  5 & 15 & $2 \leq N_i \cdot M_i \leq 100\,000$ & duljina puta \\
 \end{tabular}}
 
-Neka je $d_\mathrm{odg}^{(i)}$ duljina puta u vašem odgovoru na $i$-ti upit, a $d_\mathrm{max}^{(i)}$ maksimalna moguća duljina puta u $i$-tom upitu. 
-Tada ćete za testni podatak dobiti sljedeći udio bodova:
-$$
-\begin{cases}
-    100\% & \text{ako $d_\mathrm{odg}^{(i)} = d_\mathrm{max}^{(i)}$ za sve $1 \leq i \leq Q$} \\
-    35\% & \text{ako $0.9 \cdot d_\mathrm{max}^{(i)} \leq d_\mathrm{odg}^{(i)} \leq d_\mathrm{max}^{(i)}$ za sve $1 \leq i \leq Q$ te $d_\mathrm{odg}^{(i)} \neq d_\mathrm{max}^{(i)}$ za barem jedan $i$} \\
-    0\% & \text{inače.}
-\end{cases}
-$$
-Pritom duljinu puta računamo kao broj polja na tom putu.
+\textbf{Tip \textit{konstrukcija}:}
 
-Broj bodova nekog podzadatka odgovara najmanjem broju
-bodova koje je vaše rješenje ostvarilo na nekom od testnih podataka koji čine
-taj podzadatak.
+Neka je
+\begin{align*}
+    d_\mathrm{odg}^{(i)} &= \text{duljina puta u vašem odgovoru na $i$-ti upit} \\ 
+    d_\mathrm{max}^{(i)} &= \text{najveća moguća duljina puta u $i$-tom upitu} \\
+    k &= \min_{1 \leq i \leq Q} \frac{d_\mathrm{odg}^{(i)}}{d_\mathrm{max}^{(i)}}
+\end{align*}
+Tada ćete u tom podzadatku dobiti sljedeći udio bodova:
+\begin{align*}
+    100\% &\quad \text{ako $k = 1$ (tj.\ $d_\mathrm{odg}^{(i)} = d_\mathrm{max}^{(i)}$ za sve $i$)} \\
+    k \cdot 70\% &\quad \text{inače}
+\end{align*}
+
+Svaki podzadatak sadržavat će točno jedan testni primjer.
+
+\textbf{Tip \textit{duljina puta}:}
+
+Bodovanje je ``obično'', tj.\ ako su dvi odgovori točni dobit ćete sve bodove,
+a inače ćete dobiti nula bodova.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Examples
