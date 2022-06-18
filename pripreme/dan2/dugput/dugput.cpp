@@ -936,7 +936,7 @@ void solve(int n, int m, point s, point t, int xoff = 0, int yoff = 0) {
       FOR(j, 1, n + 1) {
         if (s.x == i && s.y == j) continue;
         if (t.x == i + 1 && t.y == j) continue;
-        if (U(n, m, s, t) == U(n, i, s, {i, j}) + U(n, m - i, {i + 1, j}, t)) {
+        if (U(n, m, s, t) == U(n, i, s, {i, j}) + U(n, m - i, {1, j}, {t.x - i, t.y})) {
           solve(n, i, s, {i, j}, xoff, yoff);
           solve(n, m - i, {1, j}, {t.x - i, t.y}, xoff + i, yoff);
           dir[i + xoff][j + yoff] = 0;
@@ -949,10 +949,10 @@ void solve(int n, int m, point s, point t, int xoff = 0, int yoff = 0) {
       FOR(j, 1, n + 1) {
         if (t.x == i && t.y == j) continue;
         if (s.x == i + 1 && s.y == j) continue;
-        if (U(n, m, s, t) == U(n, i, t, {i, j}) + U(n, m - i, {i + 1, j}, s)) {
-          solve(n, i, t, {i, j}, xoff, yoff);
-          solve(n, m - i, {1, j}, {s.x - i, s.y}, xoff + i, yoff);
-          dir[i + xoff][j + yoff] = 0;
+        if (U(n, m, s, t) == U(n, i, {i, j}, t) + U(n, m - i, {s.x - i, s.y}, {1, j})) {
+          solve(n, i, {i, j}, t, xoff, yoff);
+          solve(n, m - i, {s.x - i, s.y}, {1, j}, xoff + i, yoff);
+          dir[i + 1 + xoff][j + yoff] = 2;
           return;
         }
       }
@@ -964,7 +964,7 @@ void solve(int n, int m, point s, point t, int xoff = 0, int yoff = 0) {
       FOR(i, 1, m + 1) {
         if (s.x == i && s.y == j) continue;
         if (t.x == i && t.y + 1 == j) continue;
-        if (U(n, m, s, t) == U(j, m, s, {i, j}) + U(n - j, m, {i, j + 1}, t)) {
+        if (U(n, m, s, t) == U(j, m, s, {i, j}) + U(n - j, m, {i, 1}, {t.x, t.y - j})) {
           solve(j, m, s, {i, j}, xoff, yoff);
           solve(n - j, m, {i, 1}, {t.x, t.y - j}, xoff, yoff + j);
           dir[i + xoff][j + yoff] = 1;
@@ -977,10 +977,10 @@ void solve(int n, int m, point s, point t, int xoff = 0, int yoff = 0) {
       FOR(i, 1, m + 1) {
         if (t.x == i && t.y == j) continue;
         if (s.x == i && s.y + 1 == j) continue;
-        if (U(n, m, s, t) == U(j, m, t, {i, j}) + U(n - j, m, {i, j + 1}, s)) {
-          solve(j, m, t, {i, j}, xoff, yoff);
-          solve(n - j, m, {i, 1}, {s.x, s.y - j}, xoff, yoff + j);
-          dir[i + xoff][j + yoff] = 1;
+        if (U(n, m, s, t) == U(j, m, {i, j}, t) + U(n - j, m, {s.x, s.y - j}, {i, 1})) {
+          solve(j, m, {i, j}, t, xoff, yoff);
+          solve(n - j, m, {s.x, s.y - j}, {i, 1}, xoff, yoff + j);
+          dir[i + xoff][j + 1 + yoff] = 3;
           return;
         }
       }

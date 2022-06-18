@@ -80,6 +80,7 @@ void checker(ifstream& fin, ifstream& foff, ifstream& fout, ifstream& fconf)
     for (auto& row : G) {
         getline(fout, row);
         if ((int)row.size() != M) finish(0);
+        //cout << row << endl;
     }
     //cout << "procitalo output\n";
 
@@ -98,6 +99,8 @@ void checker(ifstream& fin, ifstream& foff, ifstream& fout, ifstream& fconf)
     }
 
     //cout << "valid graph\n";
+
+    //cout << n << " " << m << " " << sx << " " << sy << " " << tx << " " << ty << endl;
 
     // Check if output is a valid graph
     vector<vector<int>> deg(N, vector<int>(M, 0));
@@ -124,7 +127,7 @@ void checker(ifstream& fin, ifstream& foff, ifstream& fout, ifstream& fconf)
       }
     }
 
-   //cout << "valid graph2\n";
+    //cout << "valid graph2\n";
     // Find path length
     vector<vector<int>> vis(N, vector<int>(M, 0));
     queue<pair<int, int>> Q;
@@ -159,7 +162,6 @@ void checker(ifstream& fin, ifstream& foff, ifstream& fout, ifstream& fconf)
         }
       }
     }
-    //cout << vis[tx][ty] << endl;
     if (vis[tx][ty] == 0) finish(0);
 
     // treba provjeriti da nije ispisan jos neki ciklus uz put
@@ -171,6 +173,7 @@ void checker(ifstream& fin, ifstream& foff, ifstream& fout, ifstream& fconf)
     int sol;
     if (!(fconf >> sol)) finish(0);
 
+    // if (sol != vis[tx][ty]) cout << "................" << sol << " " << vis[tx][ty] << endl;
     if (sol < vis[tx][ty]) score = min(score, 1.0), panic = true;
     else if (sol == vis[tx][ty]) score = min(score, 1.0);
     else if (0.9 * sol <= vis[tx][ty]) score = min(score, 0.35);
