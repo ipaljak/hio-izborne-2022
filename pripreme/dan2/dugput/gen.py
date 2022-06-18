@@ -153,14 +153,9 @@ def gen_cases():
     dummy = []
 
     dummy.append(Test(
-        1,
-        [(5, 5, 1, 1, 5, 5)]
-    ))
-
-    dummy.append(Test(
         2,
         [(2, 3, 1, 1, 2, 2),
-         (7, 9, 4, 4, 5, 5)]
+        (3, 3, 1, 1, 3, 3)]
     ))
 
     for i, test in enumerate(dummy):

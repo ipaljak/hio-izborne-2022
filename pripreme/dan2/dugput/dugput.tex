@@ -101,10 +101,17 @@ a inače ćete dobiti nula bodova.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Examples
 \subsection*{Probni primjeri}
-\begin{tabularx}{\textwidth}{X'X}
+\begin{tabularx}{\textwidth}{X'X'X}
 \sampleinputs{test/dugput.dummy.in.1}{test/dugput.dummy.out.1} &
-\sampleinputs{test/dugput.dummy.in.2}{test/dugput.dummy.out.2}
+\sampleinputs{test/dugput.dummy.in.2}{test/dugput.dummy.out.2} &
+\sampleinputs{test/dugput.dummy.in.3}{test/dugput.dummy.out.3}
 \end{tabularx}
+
+\textbf{Pojašnjenje probnih primjera:}
+Prva dva probna primjera su tipa \textit{konstrukcija}.
+Prvi primjer prikazuje optimalno rješenje i taj izlaz donio bi $100\%$ bodova.
+Drugi primjer prikazuje suboptimalno rješnje. Za taj izlaz je $k = \frac{1}{2} (\frac{3}{5} + \frac{7}{9}) = \frac{31}{45}$, te stoga nosi $\frac{31}{45} \cdot 70\% \approx 48.2\%$ bodova.
+Treći primjer je tipa \textit{duljina puta}.
 
 % We're done
 
