@@ -179,11 +179,11 @@ def gen_cases():
     real.append(subtask3)
 
     # 4. subtask nm <= 10**5, q = 100
-    # subtask4 = []
-    # for i in range(8):
-        # subtask4.append(gen_s(1, 5000, 1, 5000, 10**4))
+    subtask4 = []
+    for i in range(8):
+        subtask4.append(gen_s(1, 5000, 1, 5000, 10**5))
 
-    # real.append(subtask4)
+    real.append(subtask4)
 
     for i, batch in enumerate(real):
         for j, test in enumerate(batch):

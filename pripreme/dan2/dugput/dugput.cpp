@@ -1029,7 +1029,6 @@ int main() {
       }
     }
 
-    cout << n << " " << m << " " << s.y << " " << s.x << " " << t.y << " " << t.x << endl;
     solve(n, m, s, t);
 
     REP(i, 2 * n) {

@@ -2,7 +2,7 @@
 
 for f in test/*.in.*
 do
-  #./dugput < $f > ${f/in/out}
   echo "bla" $f
+  ./dugput < $f > ${f/in/out}
   ./dugput_output_gen < $f > ${f/in/conf}
 done
