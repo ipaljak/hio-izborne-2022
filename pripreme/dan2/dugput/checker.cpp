@@ -64,7 +64,8 @@ void checker(ifstream& fin, ifstream& foff, ifstream& fout, ifstream& fconf)
   int test_type;
   if (!(fconf >> test_type)) finish(0);
 
-  double score = 1;
+  double score = 0;
+  bool krivo = false;
   REP(bla, T) {
     // Read official input
     int n, m;
@@ -177,9 +178,10 @@ void checker(ifstream& fin, ifstream& foff, ifstream& fout, ifstream& fconf)
       int sol;
       if (!(fconf >> sol)) finish(0);
 
-      // if (sol != vis[tx][ty]) cout << "................" << sol << " " << vis[tx][ty] << endl;
-      if (sol < vis[tx][ty]) score = min(score, 1.0), panic = true;
-      else score = min(score, (double) vis[tx][ty] / sol);
+
+      if (sol < vis[tx][ty]) score += 1.0, panic = true;
+      else if (vis[tx][ty] == sol) score += 1.0;
+      else score += (double) vis[tx][ty] / sol, krivo = true;
     } else if (test_type == 2) {
       int sol;
       if (!(fconf >> sol)) finish(0);
@@ -187,7 +189,7 @@ void checker(ifstream& fin, ifstream& foff, ifstream& fout, ifstream& fconf)
       int out;
       if (!(fout >> out)) finish(0);
 
-      if (sol != out) score = 0;
+      if (sol != out) score = -1;
     }
   }
   string garbage;
@@ -195,13 +197,16 @@ void checker(ifstream& fin, ifstream& foff, ifstream& fout, ifstream& fconf)
   if (fout >> garbage) finish(0);
 
   if (test_type == 2) {
-    if (score == 1.0 && panic) finish(1, PANIC);
-    if (score == 1.0) finish(score);
+    if (score == 0.0) finish(1.0);
     finish(0);
   } else {
-    if (score == 1.0 && panic) finish(1, PANIC);
-    if (score == 1.0) finish(score);
-    finish(0.7 * score);
+    if (krivo == false) {
+      if (panic) finish(score / T, PANIC);
+      finish(score / T);
+    } else {
+      if (panic) finish((score / T) * 0.7, PANIC);
+      finish((score / T) * 0.7);
+    }
   }
   // The function MUST terminate before this line via finish()!
 }
