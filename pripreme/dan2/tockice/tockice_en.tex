@@ -1,0 +1,62 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Problem statement
+\begin{statement}[
+  problempoints=100,
+  timelimit=1 second,
+  memorylimit=1024 MiB,
+]{Points}
+
+\chapter
+
+A well-known Croatian singer and entertainer Jole is playing a game with his sweetheart that has to do with portraits being erased, months being stolen, calling, calling, and of course drawing the last segment between $N$ points in the plane. In this problem, we consider a simpler version which still keeps all relevant geometric aspects.
+
+There are $N$ points in the plane. The singer and his sweetheart take turns alternately.
+On each turn, the current player draws a segment connecting two of the given points, such that the new segment doesn't intersect the interior of any previously drawn segment. Jole goes first.
+The player who can't make a move loses. For a given set of points, determine who wins if both players play optimally.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Input
+\subsection*{Input}
+The first line contains the integer $N$ from the task description.
+
+The next $N$ lines describe the points. 
+The $i$-th of these lines contains two space-separated integers $1 \leq x_i, y_i \leq 10^6$, the coordinates of the $i$-th point.
+
+No three given points are collinear, and all points are distinct.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Output
+\subsection*{Output}
+On the only line of the output, output \texttt{"JOLE"} if Jole wins, or \texttt{"ONA"}, otherwise.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Scoring
+\subsection*{Scoring}
+{\renewcommand{\arraystretch}{1.4}
+  \setlength{\tabcolsep}{6pt}
+  \begin{tabular}{ccl}
+ Subtask & Score & Constraints \\ \midrule
+  1 & ? & $1 \le N \le 7$\\
+  2 & ? & $1 \le N \le 3\,00$\\
+  3 & ? & $1 \le N \le 1\,000$\\
+  4 & ? & $1 \le N \le 100\,000$\\
+\end{tabular}}
+
+TODO Paljak check that you indeed want these subtasks
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Examples
+\subsection*{Examples}
+\begin{tabularx}{\textwidth}{X'X'X}
+\end{tabularx}
+
+\textbf{Clarification of the first example:}
+TODO
+
+\end{statement}
+
+%%% Local Variables:
+%%% mode: latex
+%%% mode: flyspell
+%%% ispell-local-dictionary: "croatian"
+%%% TeX-master: "../hio.tex"
+%%% End:
