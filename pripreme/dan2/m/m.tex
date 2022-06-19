@@ -2,7 +2,7 @@
 % Problem statement
 \begin{statement}[
   problempoints=100,
-  timelimit=1 sekunda,
+  timelimit=3 sekunde,
   memorylimit=512 MiB,
 ]{M}
 
@@ -21,10 +21,10 @@ s oznakom $b$, tajni agent će sjesti u lažno vozilo pošte i provozati se
 nekim nizom prometnica koje tvore put između ta dva poštanska ureda.  Par
 poštanskih ureda $(a, b)$ smatra se \textit{ranjivim} ako postoji neka cesta
 po kojoj će tajni agent sigurno morati proći na svom putovanju od ureda $a$
-do ureda $b$.
+do ureda $b$, ili ako uopće ne postoji put između ta dva ureda.
 
 M se danas bavi analizom povijesne ranjivosti jedne takve mreže. Naime, M je
-prikupio informacije o povijesnom razvoju mreže, što znaći da zna kojim su se
+prikupio informacije o povijesnom razvoju mreže, što znači da zna kojim su se
 redoslijedom gradile prometnice između poštanskih ureda. Sada ga za neke
 parove ureda zanima u kojem su trenutku (ako uopće) prestali biti ranjivi.
 
@@ -40,10 +40,10 @@ $y_i$ $(x_i \ne y_i)$.
 
 Moguće je da više od jedne prometnice povezuje isti par poštanskih ureda.
 
-U sljedećem retku nalazi se prirodan broj $Q$ koji označava broj upita na koje
+U sljedećem se retku nalazi prirodan broj $Q$ koji označava broj upita na koje
 M želi dobiti odgovor.
 
-U $j$-tom od sljedećih $Q$ redaka su brojevi $a_j$ i $b_j$ koji definiraju
+U $j$-tom od sljedećih $Q$ redaka su različiti brojevi $a_j$ i $b_j$ koji definiraju
 $j$-ti upit agenta M. Odnosno, M želi saznati u kojem je trenutku par ureda
 $(a_j, b_j)$ prestao biti ranjiv.
 
@@ -68,10 +68,10 @@ U svim podzadacima vrijedi $2 \le N \le 300\,000$, $0 \le M \le 300\,000$ i $1
   \setlength{\tabcolsep}{6pt}
   \begin{tabular}{ccl}
  Podzadatak & Broj bodova & Ograničenja \\ \midrule
-  1 & ?? & $Q = 1$ \\
-  2 & ?? & $(x_{2i}, y_{2i}) = (x_{2i-1}, y_{2i-1})$ i $M$ je paran. \\
-  3 & ?? & $N, M \le 5\,000$ \\
-  4 & ?? & nema dodatnih ograničenja
+  1 & 10 & $Q = 1$ \\
+  2 & 20 & $(x_{2i}, y_{2i}) = (x_{2i-1}, y_{2i-1})$ i $M$ je paran. \\
+  3 & 30 & $N, M \le 5\,000$ \\
+  4 & 40 & Nema dodatnih ograničenja.
 \end{tabular}}
 
 Primijetite da u drugom podzadatku prve dvije prometnice povezuju isti par gradova,
@@ -88,6 +88,9 @@ druge dvije prometnice povezuju isti par gradova, itd.
 \sampleinputs{test/m.dummy.in.2}{test/m.dummy.out.2} &
 \sampleinputs{test/m.dummy.in.3}{test/m.dummy.out.3}
 \end{tabularx}
+
+\textbf{Pojašnjenje trećeg probnog primjera:}\\
+Promatrajmo prvi upit. Do trenutka 6 (uključivo) između ureda 1 i 3 ili nije postojao put, ili je svaki takav put prolazio prometnicom 1. Tek u trenutku 7 to nije slučaj. Za peti upit, između ureda 2 i 6 nikada nije postojao put pa je odgovor -1.
 
 \end{statement}
 
